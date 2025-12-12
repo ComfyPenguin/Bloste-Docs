@@ -1,5 +1,6 @@
 name: Deploy MkDocs to GitHub Pages (with Mermaid)
-
+permissions:
+  contents: write
 on:
   push:
     branches:
