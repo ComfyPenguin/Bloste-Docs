@@ -1,1 +1,26 @@
-site_name: Bloste Docs
+site_name: "Bloste Software"
+# Ajusta site_url si usas GitHub Pages (opcional)
+# Ejemplo: https://ComfyPenguin.github.io/mi-repo/
+site_url: "https://github.com/ComfyPenguin/Bloste-Docs"
+repo_name: "ComfyPenguin/Bloste-Docs"
+edit_uri: "edit/main/docs/"
+
+theme:
+  name: "material"
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - pymdownx.superfences
+  - attr_list
+
+nav:
+  - Home: index.md
+  - ER: EntidadRelacion.md
+  - Uso: CasosdeUso.md
+
+# Opcional: forzar versión de mermaid (ejemplo)
+# mermaid2:
+#   mermaid_version: "10.4.0"
