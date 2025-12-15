@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ComfyPenguin/Bloste-Docs/EntidadRelacion/">
+        <link rel="canonical" href="https://github.com/ComfyPenguin/Bloste-Docs/pasarela-pagos/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Diagramas Entidad Relación - Bloste Software</title>
+        <title>Pasarela pagos - Bloste Software</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#diagramas-entidad-relacion" class="md-skip">
+        <a href="#diagrama-e-r" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Diagramas Entidad Relación
+              Pasarela pagos
             
           </span>
         </div>
@@ -231,8 +231,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -241,13 +239,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#catalogo-de-contenidos" class="md-nav__link">
+  <a href="#diagrama-e-r" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Catálogo de contenidos
+        Diagrama E-R
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-cu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama CU
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrama CU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -271,32 +297,87 @@
   
 
 
-<h1 id="diagramas-entidad-relacion">Diagramas Entidad Relación</h1>
-<h2 id="catalogo-de-contenidos">Catálogo de contenidos</h2>
+<h2 id="diagrama-e-r">Diagrama E-R</h2>
 <div class="highlight"><pre><span></span><code>erDiagram
-    VIDEO {
+    PERSONA {
         int id PK
-        string titulo
-        int duracion
-        string thumbnail
-        string url
-        string creador
+        string username
+        string password
+        string name
+        string surname
+        string address
+        string phone
+        string dni
     }
 
-    GENERO {
+    ADMIN {
         int id PK
+    }
+
+    USUARIO {
+        int id PK
+    }
+
+    SUSCRIPCION {
+        int id PK
+        int usuario_id FK
         string tipo
+        datetime fecha_inicio
+        datetime fecha_fin
     }
 
-    VIDEO_GENERO {
-        int video_id FK
-        int genero_id FK
+    METODO_PAGO {
+        int id PK
+        int usuario_id FK
+        string tipo
+        string detalles
     }
 
-    VIDEO ||--o{ VIDEO_GENERO : &quot;tiene&quot;
-    GENERO ||--o{ VIDEO_GENERO : &quot;clasifica&quot;
-    VIDEO }o--o{ GENERO : &quot;muchos_a_muchos&quot;
+    ROL {
+        int id PK
+        string nombre
+        string descripcion
+    }
+
+    ADMIN_ROL {
+        int admin_id FK
+        int rol_id FK
+    }
+
+    PERSONA ||--|| ADMIN : &quot;herencia&quot;
+    PERSONA ||--|| USUARIO : &quot;herencia&quot;
+
+    USUARIO ||--o{ SUSCRIPCION : &quot;tiene&quot;
+    USUARIO ||--o{ METODO_PAGO : &quot;posee&quot;
+
+    ADMIN ||--o{ ADMIN_ROL : &quot;asignado_a&quot;
+    ROL ||--o{ ADMIN_ROL : &quot;incluye&quot;
+    ADMIN }o--o{ ROL : &quot;muchos_a_muchos&quot;
 </code></pre></div>
+<h1 id="diagrama-cu">Diagrama CU</h1>
+<div class="highlight"><pre><span></span><code>graph TD
+
+    UC1[Registrarse]
+    UC2[Gestionar Método de Pago]
+    UC3[Gestionar Suscripción]
+    UC4[Iniciar Sesión]
+    UC5[Gestionar Usuarios]
+    UC6[Gestionar Roles]
+    UC7[Gestionar Suscripciones]
+    UC8[Asignar Roles a Administradores]
+
+    Usuario --&gt; UC1
+    Usuario --&gt; UC2
+    Usuario --&gt; UC3
+    Usuario --&gt; UC4
+
+    Administrador --&gt; UC4
+    Administrador --&gt; UC5
+    Administrador --&gt; UC6
+    Administrador --&gt; UC7
+    Administrador --&gt; UC8
+</code></pre></div>
+<h2 id="endpoints">Endpoints</h2>
 
 
 
