@@ -1,12 +1,12 @@
 # Backend catálogo
-
+Documentación del backend catálogo.
 ## ENDPOINTS:
 ```
         BUSCAR TODO         --> api/catalogo
 GET:    BUSCAR POR CATEGORÍA--> api/catalogo/categoria
         BUSCAR POR TITULO   --> api/catalogo/titulo
 
-POST:   SUBIR VIDEO--> api/catalogo/:id
+POST:   SUBIR ENTRADA-CATALOGO--> api/catalogo/:id
 
 PUT:   MODIFICAR VIDEO--> api/catalogo/:id
 
@@ -34,4 +34,4 @@ graph TD
     U3 --> UC6
     U3 --> UC7
 ```
-# Backend suscripciones
+## Diagrama Entidad Relación
