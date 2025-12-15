@@ -241,10 +241,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#backend-suscripciones" class="md-nav__link">
+  <a href="#endpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Backend suscripciones
+        ENDPOINTS:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CASOS DE USO
       
     </span>
   </a>
@@ -272,8 +283,39 @@
 
 
 <h1 id="backend-catalogo">Backend catálogo</h1>
-<h2 id="backend-suscripciones">Backend suscripciones</h2>
-<p>Hola rubén :3 </p>
+<h2 id="endpoints">ENDPOINTS:</h2>
+<div class="highlight"><pre><span></span><code>        BUSCAR TODO         --&gt; api/catalogo
+GET:    BUSCAR POR CATEGORÍA--&gt; api/catalogo/categoria
+        BUSCAR POR TITULO   --&gt; api/catalogo/titulo
+
+POST:   SUBIR VIDEO--&gt; api/catalogo/:id
+
+PUT:   MODIFICAR VIDEO--&gt; api/catalogo/:id
+
+DELETE:   ELIMINAR VIDEO--&gt; api/catalogo/:id
+</code></pre></div>
+<h2 id="casos-de-uso">CASOS DE USO</h2>
+<div class="highlight"><pre><span></span><code>graph TD
+    U2[Usuario: App Usuario]
+    U3[Usuario: App Admin]
+
+    UC2[Consultar catálogo completo]
+    UC3[Consultar por categoría]
+    UC4[Consultar por título]
+
+    U2 --&gt; UC2
+    U2 --&gt; UC3
+    U2 --&gt; UC4
+
+    UC5[Subir video]
+    UC6[Modificar video]
+    UC7[Eliminar video]
+
+    U3 --&gt; UC5
+    U3 --&gt; UC6
+    U3 --&gt; UC7
+</code></pre></div>
+<h1 id="backend-suscripciones">Backend suscripciones</h1>
 
 
 
