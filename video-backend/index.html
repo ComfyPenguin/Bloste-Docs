@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ComfyPenguin/Bloste-Docs/EntidadRelacion/">
+        <link rel="canonical" href="https://github.com/ComfyPenguin/Bloste-Docs/video-backend/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Diagramas Entidad Relación - Bloste Software</title>
+        <title>Documentación del servidor HLS de videos. - Bloste Software</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#diagramas-entidad-relacion" class="md-skip">
+        <a href="#documentacion-del-servidor-hls-de-videos" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Diagramas Entidad Relación
+              Documentación del servidor HLS de videos.
             
           </span>
         </div>
@@ -241,10 +241,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#catalogo-de-contenidos" class="md-nav__link">
+  <a href="#descripcion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Catálogo de contenidos
+        Descripción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responsabilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsabilidades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interacion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints GET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints POST
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Casos de uso
       
     </span>
   </a>
@@ -271,31 +343,33 @@
   
 
 
-<h1 id="diagramas-entidad-relacion">Diagramas Entidad Relación</h1>
-<h2 id="catalogo-de-contenidos">Catálogo de contenidos</h2>
-<div class="highlight"><pre><span></span><code>erDiagram
-    VIDEO {
-        int id PK
-        string titulo
-        int duracion
-        string thumbnail
-        string url
-        string creador
-    }
+<h1 id="documentacion-del-servidor-hls-de-videos">Documentación del servidor HLS de videos.</h1>
+<h3 id="descripcion">Descripción</h3>
+<p>Servidor express encargado de servir los videos mediante HLS.</p>
+<h3 id="responsabilidades">Responsabilidades</h3>
+<p>Reproducir videos 
+Gestionar subida de videos</p>
+<h3 id="interacion">Interacion</h3>
+<p>Este componente interactua con:
++ Video Player
++ Admin App</p>
+<h2 id="endpoints">Endpoints</h2>
+<h3 id="endpoints-get">Endpoints GET</h3>
+<p><code>api/hls/:videoid</code> : Envia los videos en formato hls para que el cliente pueda reproducir</p>
+<h3 id="endpoints-post">Endpoints POST</h3>
+<p><code>api/videoserver/upload</code> : Recibe un video en bruto, devuelve los metadatos técnicos (duracion, resolucion, codec, bitrate, fps, tamaño, audio tracks)</p>
+<h2 id="casos-de-uso">Casos de uso</h2>
+<div class="highlight"><pre><span></span><code>flowchart LR
+    Player([🎬 Video Player])
+    Admin([👤 Admin App ])
 
-    GENERO {
-        int id PK
-        string tipo
-    }
+    subgraph Servidor_HLS
+        DescargarSegmentos((Descargar segmentos))
+        SubirVideo((Subir video original))
+    end
 
-    VIDEO_GENERO {
-        int video_id FK
-        int genero_id FK
-    }
-
-    VIDEO ||--o{ VIDEO_GENERO : &quot;tiene&quot;
-    GENERO ||--o{ VIDEO_GENERO : &quot;clasifica&quot;
-    VIDEO }o--o{ GENERO : &quot;muchos_a_muchos&quot;
+    Player --&gt; DescargarSegmentos
+    Admin --&gt; SubirVideo
 </code></pre></div>
 
 

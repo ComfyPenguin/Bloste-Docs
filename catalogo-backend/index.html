@@ -328,6 +328,30 @@ DELETE:   ELIMINAR VIDEO--&gt; api/catalogo/:id
     U3 --&gt; UC7
 </code></pre></div>
 <h2 id="diagrama-entidad-relacion">Diagrama Entidad Relación</h2>
+<div class="highlight"><pre><span></span><code>erDiagram
+    VIDEO {
+        int id PK
+        string titulo
+        int duracion
+        string thumbnail
+        string url
+        string creador
+    }
+
+    GENERO {
+        int id PK
+        string tipo
+    }
+
+    VIDEO_GENERO {
+        int video_id FK
+        int genero_id FK
+    }
+
+    VIDEO ||--o{ VIDEO_GENERO : &quot;tiene&quot;
+    GENERO ||--o{ VIDEO_GENERO : &quot;clasifica&quot;
+    VIDEO }o--o{ GENERO : &quot;muchos_a_muchos&quot;
+</code></pre></div>
 
 
 
