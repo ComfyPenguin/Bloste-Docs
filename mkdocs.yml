@@ -17,10 +17,4 @@ markdown_extensions:
   - attr_list
 
 nav:
-  - Home: index.md
-  - ER: EntidadRelacion.md
-  - Uso: CasosdeUso.md
-
-# Opcional: forzar versión de mermaid (ejemplo)
-# mermaid2:
-#   mermaid_version: "10.4.0"
+  - "Inici": 'index.md'
