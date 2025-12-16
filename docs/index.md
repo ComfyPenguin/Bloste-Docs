@@ -1,6 +1,5 @@
-## Bienvenido a la documentacion de Blosteflix
+# Bienvenido a la documentacion de Blosteflix
 
-## Bienvenido a la documentacion de Blosteflix
 Blosteflix es un proyecto de desarrollo de una app al estilo Netflix.
 Esta formado por varios componentes cada uno con su responsabilidad, entre ellos tenemos:
 

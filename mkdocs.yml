@@ -1,20 +1,69 @@
-site_name: "Bloste Software"
-# Ajusta site_url si usas GitHub Pages (opcional)
-# Ejemplo: https://ComfyPenguin.github.io/mi-repo/
-site_url: "https://github.com/ComfyPenguin/Bloste-Docs"
-repo_name: "ComfyPenguin/Bloste-Docs"
-edit_uri: "edit/main/docs/"
+site_name: Bloste Software
+repo_url: https://github.com/ComfyPenguin/Bloste-Software
+
+nav:
+  - Home: index.md
+  - Pasarela: pasarela-pagos.md
+
 
 theme:
-  name: "material"
+    name: material
+    favicon: assets/logo.svg
+    logo: assets/logo.svg
+    icon:
+      repo: fontawesome/brands/github
+    features:
+      - navigation.tabs
+      - navigation.path
+      - navigation.top
+      - search.suggest
+      - search.highlight
+      - content.tabs.links
+      - content.code.annotation
+      - content.code.copy
+    language: es
+    
+    palette:
+      # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.blocks.caption
 
 plugins:
   - search
-  - mermaid2
+  - glightbox
+  - mermaid2:
+      version: "10.4.0"
 
-markdown_extensions:
-  - pymdownx.superfences
-  - attr_list
-
-nav:
-  - "Inici": 'index.md'

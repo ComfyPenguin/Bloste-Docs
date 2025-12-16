@@ -1,0 +1,28 @@
+# Virtual environment
+.venv/
+
+# Build output
+site/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# pytest
+.pytest_cache/
+
+# mkdocs cache
+.cache/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+
+# Environment files
+.env
+.env.*
