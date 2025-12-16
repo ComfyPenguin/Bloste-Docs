@@ -4,7 +4,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../assets/logo.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Backend catálogo - Bloste Software</title>
+<title>Prueba - Bloste Software</title>
 <link href="../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -27,9 +27,6 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#backend-catalogo">
-          Saltar a contenido
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -51,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Backend catálogo
+              Prueba
             
           </span>
 </div>
@@ -196,102 +193,231 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints">
-<span class="md-ellipsis">
-      
-        ENDPOINTS:
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#casos-de-uso">
-<span class="md-ellipsis">
-      
-        CASOS DE USO
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#diagrama-entidad-relacion">
-<span class="md-ellipsis">
-      
-        Diagrama Entidad Relación
-      
-    </span>
-</a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="backend-catalogo">Backend catálogo<a class="headerlink" href="#backend-catalogo" title="Permanent link">¶</a></h1>
-<p>Documentación del backend catálogo.</p>
-<h2 id="endpoints">ENDPOINTS:<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>        BUSCAR TODO         --&gt; api/catalogo
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>GET:    BUSCAR POR CATEGORÍA--&gt; api/catalogo/categoria
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>        BUSCAR POR TITULO   --&gt; api/catalogo/titulo
-</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>POST:   SUBIR ENTRADA-CATALOGO--&gt; api/catalogo/:id
-</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>PUT:   MODIFICAR VIDEO--&gt; api/catalogo/:id
-</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>DELETE:   ELIMINAR VIDEO--&gt; api/catalogo/:id
-</span></code></pre></div>
-<h2 id="casos-de-uso">CASOS DE USO<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
-<div class="mermaid">graph TD
-    U2[Usuario: App Usuario]
-    U3[Usuario: App Admin]
-
-    UC2[Consultar catálogo completo]
-    UC3[Consultar por categoría]
-    UC4[Consultar por título]
-
-    U2 --&gt; UC2
-    U2 --&gt; UC3
-    U2 --&gt; UC4
-
-    UC5[Subir video]
-    UC6[Modificar video]
-    UC7[Eliminar video]
-
-    U3 --&gt; UC5
-    U3 --&gt; UC6
-    U3 --&gt; UC7</div>
-<h2 id="diagrama-entidad-relacion">Diagrama Entidad Relación<a class="headerlink" href="#diagrama-entidad-relacion" title="Permanent link">¶</a></h2>
+<h1>Prueba</h1>
 <div class="mermaid">erDiagram
-    VIDEO {
-        int id PK
-        string titulo
-        int duracion
-        string thumbnail
-        string url
-        string creador
+    ASSET {
+        uuid id PK
+        varchar title
+        varchar subtitle
+        text description
+        varchar type
+        varchar status
+        varchar language
+        int duration_seconds
+        uuid primary_category_id FK
+        uuid license_id FK
+        timestamp created_at
+        timestamp updated_at
     }
 
-    GENERO {
-        int id PK
-        string tipo
+    CATEGORY {
+        uuid id PK
+        varchar name
+        uuid parent_id FK
     }
 
-    VIDEO_GENERO {
-        int video_id FK
-        int genero_id FK
+    TAG {
+        uuid id PK
+        varchar name
     }
 
-    VIDEO ||--o{ VIDEO_GENERO : "tiene"
-    GENERO ||--o{ VIDEO_GENERO : "clasifica"
-    VIDEO }o--o{ GENERO : "muchos_a_muchos"</div>
+    ASSET_TAG {
+        uuid asset_id PK,FK
+        uuid tag_id PK,FK
+    }
+
+    PERSON {
+        uuid id PK
+        varchar name
+        varchar role
+    }
+
+    ASSET_PERSON {
+        uuid asset_id PK,FK
+        uuid person_id PK,FK
+        varchar role_detail
+    }
+
+    LICENSE {
+        uuid id PK
+        varchar name
+        date start_date
+        date end_date
+        varchar territory
+        text notes
+    }
+
+    CATEGORY ||--o{ ASSET : "primary / contains"
+    ASSET ||--o{ ASSET_TAG : "has"
+    TAG ||--o{ ASSET_TAG : "tagged in"
+    ASSET ||--o{ ASSET_PERSON : "credits"
+    PERSON ||--o{ ASSET_PERSON : "credited in"
+    LICENSE ||--o{ ASSET : "licensed by"</div>
+<hr/>
+<div class="mermaid">erDiagram
+    MEDIA_FILE {
+        uuid id PK
+        uuid asset_id FK
+        varchar storage_path
+        varchar filename
+        varchar mime_type
+        bigint size_bytes
+        int bitrate
+        varchar resolution
+        varchar quality
+        varchar checksum
+        int duration_seconds
+        varchar status
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    INGEST_JOB {
+        uuid id PK
+        uuid media_id FK
+        varchar source_uri
+        varchar status
+        timestamp started_at
+        timestamp finished_at
+        text logs
+    }
+
+    TRANSCODE_JOB {
+        uuid id PK
+        uuid media_id FK
+        varchar target_profile
+        varchar status
+        timestamp started_at
+        timestamp finished_at
+        uuid output_media_id FK
+    }
+
+    STORAGE_LOCATION {
+        uuid id PK
+        varchar provider
+        varchar bucket
+        varchar region
+    }
+
+    PLAYBACK_EVENT {
+        uuid id PK
+        uuid user_id
+        uuid asset_id
+        uuid media_id
+        timestamp event_at
+        int position_seconds
+        varchar event_type
+        varchar device
+    }
+
+    STORAGE_LOCATION ||--o{ MEDIA_FILE : "stores"
+    MEDIA_FILE ||--o{ INGEST_JOB : "ingested by"
+    MEDIA_FILE ||--o{ TRANSCODE_JOB : "transcoded by"
+    MEDIA_FILE ||--o{ PLAYBACK_EVENT : "played as"</div>
+<hr/>
+<div class="mermaid">erDiagram
+    "USER" {
+        uuid id PK
+        varchar email
+        varchar password_hash
+        varchar name
+        timestamp created_at
+        timestamp updated_at
+        varchar status
+    }
+
+    PLAN {
+        uuid id PK
+        varchar name
+        int price_cents
+        varchar currency
+        varchar billing_period
+        text description
+    }
+
+    SUBSCRIPTION {
+        uuid id PK
+        uuid user_id FK
+        uuid plan_id FK
+        date start_date
+        date end_date
+        varchar status
+        varchar recurring_id
+    }
+
+    ENTITLEMENT {
+        uuid id PK
+        uuid user_id FK
+        uuid asset_id FK
+        timestamp granted_at
+        timestamp expires_at
+        varchar source
+    }
+
+    PAYMENT {
+        uuid id PK
+        uuid subscription_id FK
+        int amount_cents
+        varchar currency
+        varchar status
+        timestamp paid_at
+        varchar provider_ref
+    }
+
+    DEVICE {
+        uuid id PK
+        uuid user_id FK
+        varchar device_uuid
+        timestamp last_seen_at
+        varchar name
+    }
+
+    "USER" ||--o{ SUBSCRIPTION : "has"
+    PLAN ||--o{ SUBSCRIPTION : "offers"
+    "USER" ||--o{ ENTITLEMENT : "has"
+    SUBSCRIPTION ||--o{ PAYMENT : "payments"
+    "USER" ||--o{ DEVICE : "owns"</div>
+<hr/>
+<div class="mermaid">graph LR
+    subgraph Cataleg_DB
+    end
+
+    subgraph Continguts_DB
+        M[MediaFile]
+        S[StorageLocation]
+        I[IngestJob]
+        T[TranscodeJob]
+    end
+
+    subgraph Subscriptions_DB
+        U[User]
+        E[Entitlement]
+        Sub[Subscription]
+    end
+
+    A -- "1..* media (asset_id)" --&gt; M
+    M -- "stored en" --&gt; S
+    M -- "ingest/transcode" --&gt; I
+    M -- "transcode jobs" --&gt; T
+
+    U -- "0..* entitlements" --&gt; E
+    A -- "0..* entitlements (asset_id)" --&gt; E
+
+    click A "#note" "Catàleg contiene metadata; IDs (uuid) referenciados por otros servicios"
+    classDef dbs fill:#f4f4f4,stroke:#333,stroke-width:1px;
+    class Cataleg_DB,Continguts_DB,Subscriptions_DB dbs
+
+    %% Nota: las FK cross-db se mantienen como uuid y se validan por API/eventos.</div>
+<hr/>
+<div class="mermaid"></div>
+<hr/>
+<div class="mermaid"></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
