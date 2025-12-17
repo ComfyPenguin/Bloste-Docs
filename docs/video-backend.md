@@ -16,7 +16,9 @@ Este componente interactua con:
 
 ## Endpoints
 ### Endpoints GET
-`api/hls/:videoid` : Envia los videos en formato hls para que el cliente pueda reproducir
++ `api/hls/:videoid` : Envia el mapa hls para que el cliente pueda reproducir
+
++ `api/hls/:videoid/:segment.ts` : Envia los segmentos del video  al cliente
 ### Endpoints POST
 `api/videoserver/upload` : Recibe un video en bruto, devuelve los metadatos técnicos (duracion, resolucion, codec, bitrate, fps, tamaño, audio tracks)
 
