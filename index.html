@@ -423,6 +423,24 @@ Esta formado por varios componentes cada uno con su responsabilidad, entre ellos
 <li>Un servidor de contenido HLS, hecho en hls</li>
 <li>Y a futuro una pasarela de pagos administrada mediante Odoo.</li>
 </ul>
+<p>## Documentación FFmpeg
+ Una solución para grabar, convertir y transmitir audio y vídeo. </p>
+<p>FFmpeg incluye:
++ ffmpeg: El comando principal para convertir (transcodificar) archivos multimedia.</p>
+<ul>
+<li>
+<p>ffplay: Un reproductor multimedia simple.</p>
+</li>
+<li>
+<p>ffprobe: Para analizar y obtener información de archivos multimedia.</p>
+</li>
+<li>
+<p>Librerías (libavcodec, libavformat, etc.): El corazón del proyecto, usadas por miles de aplicaciones (VLC, OBS, Chrome, etc.).</p>
+</li>
+</ul>
+<p>El flujo de procesamiento que siguen los videos es:
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[Archivo de Entrada] → [Demuxer] → [Paquetes Codificados] → [Decoder] → [Frames/Crudos] → [Filtros] → [Frames/Procesados] → [Encoder] → [Paquetes Codificados] → [Muxer] → [Archivo de Salida]
+</span></code></pre></div><p></p>
 
 
 
