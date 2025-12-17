@@ -72,7 +72,8 @@ flowchart LR
         UC5(Gestionar Usuarios)
         UC6(Gestionar Roles)
         UC7(Gestionar Suscripciones)
-        UC8(Asignar Roles a Administradores)
+        UC8(Asignar Roles a 
+        Administradores)
     end
 
     Usuario --> UC1
