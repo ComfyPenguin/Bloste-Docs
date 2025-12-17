@@ -268,6 +268,37 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagramas-de-flujo">
+<span class="md-ellipsis">
+      
+        Diagramas de flujo
+      
+    </span>
+</a>
+<nav aria-label="Diagramas de flujo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reproducir-video">
+<span class="md-ellipsis">
+      
+        Reproducir video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subir-video">
+<span class="md-ellipsis">
+      
+        Subir video
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -279,12 +310,16 @@
 <h3 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">¶</a></h3>
 <p>Servidor express encargado de servir los videos mediante HLS.</p>
 <h3 id="responsabilidades">Responsabilidades<a class="headerlink" href="#responsabilidades" title="Permanent link">¶</a></h3>
-<p>Reproducir videos 
-Gestionar subida de videos</p>
+<ul>
+<li>Comprobar suscripciones</li>
+<li>Reproducir videos </li>
+<li>Guardar y procesar videos</li>
+</ul>
 <h3 id="interacion">Interacion<a class="headerlink" href="#interacion" title="Permanent link">¶</a></h3>
 <p>Este componente interactua con:
 + Video Player
-+ Admin App</p>
++ Admin App
++ Suscripciones odoo (sin implementar)</p>
 <h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
 <h3 id="endpoints-get">Endpoints GET<a class="headerlink" href="#endpoints-get" title="Permanent link">¶</a></h3>
 <p><code>api/hls/:videoid</code> : Envia los videos en formato hls para que el cliente pueda reproducir</p>
@@ -303,6 +338,61 @@ Gestionar subida de videos</p>
     Player --&gt; DescargarSegmentos
     Admin --&gt; SubirVideo
 </div>
+<h2 id="diagramas-de-flujo">Diagramas de flujo<a class="headerlink" href="#diagramas-de-flujo" title="Permanent link">¶</a></h2>
+<h3 id="reproducir-video">Reproducir video<a class="headerlink" href="#reproducir-video" title="Permanent link">¶</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>@startuml
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>participant VideoReproductor
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>participant VideoServer
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>VideoReproductor -&gt; VideoServer : GET /api/hls/:id
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>activate VideoServer
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>VideoServer -&gt; VideoServer : Validar token
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>VideoServer -&gt; VideoServer : Comprobar vídeo disponible
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>VideoServer --&gt; VideoReproductor : master.m3u8
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>alt Acceso no valido o vídeo no disponible
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>else Acceso inválido
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>    VideoServer --&gt; VideoReproductor : 401 Unauthorized
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>else Vídeo no disponible
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>    VideoServer --&gt; VideoReproductor : 404 Not Found
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>end
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>deactivate VideoServer
+</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>VideoReproductor -&gt; VideoServer : GET /api/hls/:id/:segment
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>activate VideoServer
+</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>VideoServer -&gt; VideoServer : Validar token
+</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>VideoServer -&gt; VideoServer : Comprobar segmento existe
+</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a>alt Segmento válido
+</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>    VideoServer --&gt; VideoReproductor : Segmento .ts
+</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>else Segmento no encontrado
+</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>    VideoServer --&gt; VideoReproductor : 404 Not Found
+</span><span id="__span-0-30"><a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>end
+</span><span id="__span-0-31"><a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>
+</span><span id="__span-0-32"><a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a>deactivate VideoServer
+</span><span id="__span-0-33"><a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a>@enduml
+</span></code></pre></div>
+<h3 id="subir-video">Subir video<a class="headerlink" href="#subir-video" title="Permanent link">¶</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>@startuml
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>actor GestorWeb
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>participant VideoServer
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>participant CatalogoServer
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>GestorWeb -&gt; VideoServer : POST /api/videos (archivo de vídeo)
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>VideoServer -&gt; VideoServer : Validar formato
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>VideoServer -&gt; VideoServer : Extraer metadatos técnicos
+</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>VideoServer -&gt; VideoServer : Trocear vídeo,
+</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>VideoServer --&gt; GestorWeb : Metadatos técnicos\n(duración, resolución, codec)
+</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>GestorWeb -&gt; GestorWeb : Añadir metadatos de negocio\n(título, descripción, categoría)
+</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>GestorWeb -&gt; CatalogoServer : POST /api/catalogo/videos\n(metadatos completos)
+</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>CatalogoServer -&gt; CatalogoServer : Guardar información del vídeo
+</span><span id="__span-1-16"><a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>CatalogoServer --&gt; GestorWeb : Confirmación de registro
+</span><span id="__span-1-17"><a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a>@enduml
+</span></code></pre></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

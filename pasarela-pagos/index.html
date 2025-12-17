@@ -348,27 +348,31 @@
     ROL ||--o{ ADMIN_ROL : "incluye"
     ADMIN }o--o{ ROL : "muchos_a_muchos"</div>
 <h1 id="diagrama-cu">Diagrama CU<a class="headerlink" href="#diagrama-cu" title="Permanent link">¶</a></h1>
-<div class="mermaid">graph TD
+<div class="mermaid">flowchart LR
 
-    UC1[Registrarse]
-    UC2[Gestionar Método de Pago]
-    UC3[Gestionar Suscripción]
-    UC4[Iniciar Sesión]
-    UC5[Gestionar Usuarios]
-    UC6[Gestionar Roles]
-    UC7[Gestionar Suscripciones]
-    UC8[Asignar Roles a Administradores]
+    Usuario[👤 Usuario]
+    Admin[🛠️ Administrador]
+    subgraph Sistema Suscripciones
+        UC1(Registrarse)
+        UC2(Gestionar Método de Pago)
+        UC3(Gestionar Suscripción)
+        UC4(Iniciar Sesión)
+        UC5(Gestionar Usuarios)
+        UC6(Gestionar Roles)
+        UC7(Gestionar Suscripciones)
+        UC8(Asignar Roles a Administradores)
+    end
 
     Usuario --&gt; UC1
     Usuario --&gt; UC2
     Usuario --&gt; UC3
     Usuario --&gt; UC4
 
-    Administrador --&gt; UC4
-    Administrador --&gt; UC5
-    Administrador --&gt; UC6
-    Administrador --&gt; UC7
-    Administrador --&gt; UC8</div>
+    Admin --&gt; UC4
+    Admin --&gt; UC5
+    Admin --&gt; UC6
+    Admin --&gt; UC7
+    Admin --&gt; UC8</div>
 <h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
 </article>
 </div>
