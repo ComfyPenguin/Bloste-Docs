@@ -70,6 +70,8 @@ Si necesitas añadir una dependencia al proyecto, sigue uno de estos flujos seg�
 ./.venv/bin/pip freeze > requirements.txt
 ```
 
+Plugins externos añadir una línea con `-e ./plugins` en `requirements.txt`
+
 ## Script de automatización
 
 `scripts/mkdocs_local.sh` automatiza la creación del entorno virtual, la instalación de dependencias, la construcción y el servido local.

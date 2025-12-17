@@ -1,0 +1,8 @@
+setup.py
+mkdocs_jarplantuml/__init__.py
+mkdocs_jarplantuml/plugin.py
+mkdocs_jarplantuml.egg-info/PKG-INFO
+mkdocs_jarplantuml.egg-info/SOURCES.txt
+mkdocs_jarplantuml.egg-info/dependency_links.txt
+mkdocs_jarplantuml.egg-info/entry_points.txt
+mkdocs_jarplantuml.egg-info/top_level.txt

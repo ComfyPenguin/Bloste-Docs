@@ -4,6 +4,7 @@ repo_url: https://github.com/ComfyPenguin/Bloste-Software
 nav:
   - Home: index.md
   - Pasarela: pasarela-pagos.md
+  - Video Backend: video-backend.md
 
 
 theme:
@@ -66,4 +67,7 @@ plugins:
   - glightbox
   - mermaid2:
       version: "10.4.0"
-
+  - mkdocs_jarplantuml:
+      plantuml_jar: plugins/plantuml-1.2025.10.jar
+      output_format: png
+      output_dir: diagramas_UML

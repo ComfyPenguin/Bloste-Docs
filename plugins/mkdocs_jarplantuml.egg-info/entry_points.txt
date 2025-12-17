@@ -1,0 +1,2 @@
+[mkdocs.plugins]
+mkdocs_jarplantuml = mkdocs_jarplantuml.plugin:PlantUMLPlugin
