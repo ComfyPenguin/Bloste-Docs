@@ -2,10 +2,9 @@
 <html class="no-js" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../pasarela-pagos/" rel="prev"/>
 <link href="../assets/logo.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Video Backend - Bloste Software</title>
+<title>Reproductor Móvil - Bloste Software</title>
 <link href="../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -28,7 +27,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#documentacion-del-servidor-hls-de-videos">
+<a class="md-skip" href="#reproductor-movil">
           Saltar a contenido
         </a>
 </div>
@@ -52,7 +51,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Video Backend
+              Reproductor Móvil
             
           </span>
 </div>
@@ -138,8 +137,8 @@
 
       </a>
 </li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="./">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../video-backend/">
         
   
   
@@ -199,20 +198,8 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    
-  
-    Video Backend
-  
-
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../video-backend/">
 <span class="md-ellipsis">
     
   
@@ -222,112 +209,6 @@
     
   </span>
 </a>
-<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#descripcion">
-<span class="md-ellipsis">
-      
-        Descripción
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#responsabilidades">
-<span class="md-ellipsis">
-      
-        Responsabilidades
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#interacion">
-<span class="md-ellipsis">
-      
-        Interacion
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints">
-<span class="md-ellipsis">
-      
-        Endpoints
-      
-    </span>
-</a>
-<nav aria-label="Endpoints" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-get">
-<span class="md-ellipsis">
-      
-        Endpoints GET
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-post">
-<span class="md-ellipsis">
-      
-        Endpoints POST
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#casos-de-uso">
-<span class="md-ellipsis">
-      
-        Casos de uso
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#diagramas-de-flujo">
-<span class="md-ellipsis">
-      
-        Diagramas de flujo
-      
-    </span>
-</a>
-<nav aria-label="Diagramas de flujo" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reproducir-video">
-<span class="md-ellipsis">
-      
-        Reproducir video
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#subir-video">
-<span class="md-ellipsis">
-      
-        Subir video
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -344,28 +225,19 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#descripcion">
+<a class="md-nav__link" href="#que-hace">
 <span class="md-ellipsis">
       
-        Descripción
+        Que hace ?
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#responsabilidades">
+<a class="md-nav__link" href="#interaccion">
 <span class="md-ellipsis">
       
-        Responsabilidades
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#interacion">
-<span class="md-ellipsis">
-      
-        Interacion
+        Interacción
       
     </span>
 </a>
@@ -381,19 +253,19 @@
 <nav aria-label="Endpoints" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-get">
+<a class="md-nav__link" href="#endpoints-catalogo">
 <span class="md-ellipsis">
       
-        Endpoints GET
+        Endpoints catalogo
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-post">
+<a class="md-nav__link" href="#endpoints-video-backend">
 <span class="md-ellipsis">
       
-        Endpoints POST
+        Endpoints video backend
       
     </span>
 </a>
@@ -410,37 +282,6 @@
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#diagramas-de-flujo">
-<span class="md-ellipsis">
-      
-        Diagramas de flujo
-      
-    </span>
-</a>
-<nav aria-label="Diagramas de flujo" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reproducir-video">
-<span class="md-ellipsis">
-      
-        Reproducir video
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#subir-video">
-<span class="md-ellipsis">
-      
-        Subir video
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
 </ul>
 </nav>
 </div>
@@ -448,50 +289,57 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="documentacion-del-servidor-hls-de-videos">Documentación del servidor HLS de videos.<a class="headerlink" href="#documentacion-del-servidor-hls-de-videos" title="Permanent link">¶</a></h1>
-<h3 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">¶</a></h3>
-<p>Servidor express encargado de servir los videos mediante HLS.</p>
-<h3 id="responsabilidades">Responsabilidades<a class="headerlink" href="#responsabilidades" title="Permanent link">¶</a></h3>
+<h1 id="reproductor-movil">Reproductor Móvil<a class="headerlink" href="#reproductor-movil" title="Permanent link">¶</a></h1>
+<p>Este es el reproductor principal de blosteflix una app móvil para consultar el catalogo y reproducir.</p>
+<h3 id="que-hace">Que hace ?<a class="headerlink" href="#que-hace" title="Permanent link">¶</a></h3>
 <ul>
-<li>Comprobar suscripciones</li>
-<li>Reproducir videos </li>
-<li>Guardar y procesar videos</li>
+<li>Login del usuario</li>
+<li>Redirección a la pasarela de pagos</li>
+<li>Muestra catálogo</li>
+<li>Reproduce videos.</li>
 </ul>
-<h3 id="interacion">Interacion<a class="headerlink" href="#interacion" title="Permanent link">¶</a></h3>
+<h3 id="interaccion">Interacción<a class="headerlink" href="#interaccion" title="Permanent link">¶</a></h3>
 <p>Este componente interactua con:
-+ Video Player
-+ Admin App
-+ Suscripciones odoo (sin implementar)</p>
-<h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
-<h3 id="endpoints-get">Endpoints GET<a class="headerlink" href="#endpoints-get" title="Permanent link">¶</a></h3>
++ Catálogo backend
++ Video backend
++ Login Odoo</p>
+<h3 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h3>
+<p>Este reproductor gasta los siguientes endpoints TODOS en get</p>
+<h4 id="endpoints-catalogo">Endpoints catalogo<a class="headerlink" href="#endpoints-catalogo" title="Permanent link">¶</a></h4>
 <ul>
-<li>
-<p><code>api/hls/:videoid</code> : Envia el mapa hls para que el cliente pueda reproducir</p>
-</li>
-<li>
-<p><code>api/hls/:videoid/:segment.ts</code> : Envia los segmentos del video  al cliente</p>
-</li>
+<li><code>api/catalogo</code>: recibe todo el catálogo</li>
+<li><code>api/catalogo/:categoria</code>: recibe las entradas de una categoria o tópico</li>
+<li><code>api/catalogo/:titulo</code>: recibe 1 unico titulo ??? coment: No tiene sentido, esto se va para review xd</li>
 </ul>
-<h3 id="endpoints-post">Endpoints POST<a class="headerlink" href="#endpoints-post" title="Permanent link">¶</a></h3>
-<p><code>api/videoserver/upload</code> : Recibe un video en bruto, devuelve los metadatos técnicos (duracion, resolucion, codec, bitrate, fps, tamaño, audio tracks)</p>
+<h4 id="endpoints-video-backend">Endpoints video backend<a class="headerlink" href="#endpoints-video-backend" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>api/hls/:videoid</code>: recibe el mapa de los segmentos </li>
+<li><code>api/hls/:videoid/:segment.ts</code>:recibe los segmentos para poder reproducirlos.</li>
+</ul>
 <h2 id="casos-de-uso">Casos de uso<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
 <div class="mermaid">flowchart LR
+    User([👤 User])
     Player([🎬 Video Player])
-    Admin([👤 Admin App ])
 
-    subgraph Servidor_HLS
-        DescargarSegmentos((Descargar segmentos))
-        SubirVideo((Subir video original))
+    subgraph Servidor_Catálogo
+       VerCatalogo([Ver catálogo])
     end
 
-    Player --&gt; DescargarSegmentos
-    Admin --&gt; SubirVideo
+    subgraph Servidor_Video
+        ReproducirVideo([Reproducir Video])
+    end
+
+    subgraph Login_Odoo_Web
+        Login([Login])
+        Suscribirse([Suscribirse])
+    end
+
+    User --&gt; Player
+    Player --&gt; VerCatalogo
+    Player --&gt; ReproducirVideo
+    Player --&gt; Login
+    Player --&gt; Suscribirse
 </div>
-<h2 id="diagramas-de-flujo">Diagramas de flujo<a class="headerlink" href="#diagramas-de-flujo" title="Permanent link">¶</a></h2>
-<h3 id="reproducir-video">Reproducir video<a class="headerlink" href="#reproducir-video" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../diagramas_UML/video-backend/diagram_3450527524381411182.png"><img alt="Diagrama UML" src="../diagramas_UML/video-backend/diagram_3450527524381411182.png"/></a></p>
-<h3 id="subir-video">Subir video<a class="headerlink" href="#subir-video" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../diagramas_UML/video-backend/diagram_550516998086640765.png"><img alt="Diagrama UML" src="../diagramas_UML/video-backend/diagram_550516998086640765.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
