@@ -60,27 +60,31 @@ erDiagram
 
 # Diagrama CU
 ```mermaid
-graph TD
+flowchart LR
 
-    UC1[Registrarse]
-    UC2[Gestionar Método de Pago]
-    UC3[Gestionar Suscripción]
-    UC4[Iniciar Sesión]
-    UC5[Gestionar Usuarios]
-    UC6[Gestionar Roles]
-    UC7[Gestionar Suscripciones]
-    UC8[Asignar Roles a Administradores]
+    Usuario[👤 Usuario]
+    Admin[🛠️ Administrador]
+    subgraph Sistema Suscripciones
+        UC1(Registrarse)
+        UC2(Gestionar Método de Pago)
+        UC3(Gestionar Suscripción)
+        UC4(Iniciar Sesión)
+        UC5(Gestionar Usuarios)
+        UC6(Gestionar Roles)
+        UC7(Gestionar Suscripciones)
+        UC8(Asignar Roles a Administradores)
+    end
 
     Usuario --> UC1
     Usuario --> UC2
     Usuario --> UC3
     Usuario --> UC4
 
-    Administrador --> UC4
-    Administrador --> UC5
-    Administrador --> UC6
-    Administrador --> UC7
-    Administrador --> UC8
+    Admin --> UC4
+    Admin --> UC5
+    Admin --> UC6
+    Admin --> UC7
+    Admin --> UC8
 ```
 
 ## Endpoints
