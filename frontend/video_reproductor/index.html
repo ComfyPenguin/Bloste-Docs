@@ -2,17 +2,18 @@
 <html class="no-js" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../pasarela-pagos/" rel="prev"/>
-<link href="../assets/logo.svg" rel="icon"/>
+<link href="../../backend/gestor_suscripciones_odoo/" rel="prev"/>
+<link href="../administrador_contenidos/" rel="next"/>
+<link href="../../assets/logo.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Video Backend - Bloste Software</title>
-<link href="../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<title>Reproductor de Videos - Bloste Software</title>
+<link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -28,7 +29,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#documentacion-del-servidor-hls-de-videos">
+<a class="md-skip" href="#reproductor-movil">
           Saltar a contenido
         </a>
 </div>
@@ -36,8 +37,8 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Cabecera" class="md-header__inner md-grid">
-<a aria-label="Bloste Software" class="md-header__button md-logo" data-md-component="logo" href=".." title="Bloste Software">
-<img alt="logo" src="../assets/logo.svg"/>
+<a aria-label="Bloste Software" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Bloste Software">
+<img alt="logo" src="../../assets/logo.svg"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -52,7 +53,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Video Backend
+              Reproductor de Videos
             
           </span>
 </div>
@@ -117,37 +118,31 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="..">
-        
+<a class="md-tabs__link" href="../..">
+          
   
-  
-    
   
   Home
 
-      </a>
+        </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../pasarela-pagos/">
-        
+<a class="md-tabs__link" href="../../backend/catalogo_contenidos/">
+          
   
   
-    
-  
-  Pasarela
+  Backend
 
-      </a>
+        </a>
 </li>
 <li class="md-tabs__item md-tabs__item--active">
 <a class="md-tabs__link" href="./">
-        
+          
   
   
-    
-  
-  Video Backend
+  Frontend
 
-      </a>
+        </a>
 </li>
 </ul>
 </div>
@@ -159,8 +154,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navegación" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Bloste Software" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Bloste Software">
-<img alt="logo" src="../assets/logo.svg"/>
+<a aria-label="Bloste Software" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Bloste Software">
+<img alt="logo" src="../../assets/logo.svg"/>
 </a>
     Bloste Software
   </label>
@@ -175,8 +170,9 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="..">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -185,27 +181,149 @@
 
     
   </span>
-</a>
-</li>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../pasarela-pagos/">
+<a class="md-nav__link" href="../..">
 <span class="md-ellipsis">
     
   
-    Pasarela
+    Inicio
   
 
     
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../UX_inicial/">
+<span class="md-ellipsis">
+    
+  
+    UX
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../glosario/">
+<span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../backend/catalogo_contenidos/">
+<span class="md-ellipsis">
+    
+  
+    Catalogo
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../backend/servicio_contenidos/">
+<span class="md-ellipsis">
+    
+  
+    Contenido
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../backend/gestor_suscripciones_odoo/">
+<span class="md-ellipsis">
+    
+  
+    Gestor de Suscripciones
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Frontend
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
     
   
-    Video Backend
+    Reproductor de Videos
   
 
     
@@ -216,7 +334,7 @@
 <span class="md-ellipsis">
     
   
-    Video Backend
+    Reproductor de Videos
   
 
     
@@ -229,28 +347,19 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#descripcion">
+<a class="md-nav__link" href="#que-hace">
 <span class="md-ellipsis">
       
-        Descripción
+        Que hace ?
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#responsabilidades">
+<a class="md-nav__link" href="#interaccion">
 <span class="md-ellipsis">
       
-        Responsabilidades
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#interacion">
-<span class="md-ellipsis">
-      
-        Interacion
+        Interacción
       
     </span>
 </a>
@@ -266,19 +375,19 @@
 <nav aria-label="Endpoints" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-get">
+<a class="md-nav__link" href="#endpoints-catalogo">
 <span class="md-ellipsis">
       
-        Endpoints GET
+        Endpoints catalogo
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-post">
+<a class="md-nav__link" href="#endpoints-video-backend">
 <span class="md-ellipsis">
       
-        Endpoints POST
+        Endpoints video backend
       
     </span>
 </a>
@@ -294,7 +403,8 @@
       
     </span>
 </a>
-</li>
+<nav aria-label="Casos de uso" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#diagramas-de-flujo">
 <span class="md-ellipsis">
@@ -306,6 +416,42 @@
 <nav aria-label="Diagramas de flujo" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#explorar-catalogo">
+<span class="md-ellipsis">
+      
+        Explorar catálogo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#buscar-contenidos">
+<span class="md-ellipsis">
+      
+        Buscar contenidos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consultar-detalle-de-un-video">
+<span class="md-ellipsis">
+      
+        Consultar detalle de un video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iniciar-sesion-validar-suscripcion">
+<span class="md-ellipsis">
+      
+        Iniciar sesion / Validar suscripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#reproducir-video">
 <span class="md-ellipsis">
       
@@ -315,16 +461,55 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#subir-video">
+<a class="md-nav__link" href="#gestionar-preferidos">
 <span class="md-ellipsis">
       
-        Subir video
+        Gestionar Preferidos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#continuar-visualizacion">
+<span class="md-ellipsis">
+      
+        Continuar Visualización
       
     </span>
 </a>
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../administrador_contenidos/">
+<span class="md-ellipsis">
+    
+  
+    Administrador de Contenidos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gestor_suscripciones_web/">
+<span class="md-ellipsis">
+    
+  
+    Web de Suscripciones
+  
+
+    
+  </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -344,28 +529,19 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#descripcion">
+<a class="md-nav__link" href="#que-hace">
 <span class="md-ellipsis">
       
-        Descripción
+        Que hace ?
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#responsabilidades">
+<a class="md-nav__link" href="#interaccion">
 <span class="md-ellipsis">
       
-        Responsabilidades
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#interacion">
-<span class="md-ellipsis">
-      
-        Interacion
+        Interacción
       
     </span>
 </a>
@@ -381,19 +557,19 @@
 <nav aria-label="Endpoints" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-get">
+<a class="md-nav__link" href="#endpoints-catalogo">
 <span class="md-ellipsis">
       
-        Endpoints GET
+        Endpoints catalogo
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-post">
+<a class="md-nav__link" href="#endpoints-video-backend">
 <span class="md-ellipsis">
       
-        Endpoints POST
+        Endpoints video backend
       
     </span>
 </a>
@@ -409,7 +585,8 @@
       
     </span>
 </a>
-</li>
+<nav aria-label="Casos de uso" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#diagramas-de-flujo">
 <span class="md-ellipsis">
@@ -421,6 +598,42 @@
 <nav aria-label="Diagramas de flujo" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#explorar-catalogo">
+<span class="md-ellipsis">
+      
+        Explorar catálogo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#buscar-contenidos">
+<span class="md-ellipsis">
+      
+        Buscar contenidos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consultar-detalle-de-un-video">
+<span class="md-ellipsis">
+      
+        Consultar detalle de un video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iniciar-sesion-validar-suscripcion">
+<span class="md-ellipsis">
+      
+        Iniciar sesion / Validar suscripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#reproducir-video">
 <span class="md-ellipsis">
       
@@ -430,13 +643,25 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#subir-video">
+<a class="md-nav__link" href="#gestionar-preferidos">
 <span class="md-ellipsis">
       
-        Subir video
+        Gestionar Preferidos
       
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#continuar-visualizacion">
+<span class="md-ellipsis">
+      
+        Continuar Visualización
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -448,50 +673,78 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="documentacion-del-servidor-hls-de-videos">Documentación del servidor HLS de videos.<a class="headerlink" href="#documentacion-del-servidor-hls-de-videos" title="Permanent link">¶</a></h1>
-<h3 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">¶</a></h3>
-<p>Servidor express encargado de servir los videos mediante HLS.</p>
-<h3 id="responsabilidades">Responsabilidades<a class="headerlink" href="#responsabilidades" title="Permanent link">¶</a></h3>
+<h1 id="reproductor-movil">Reproductor Móvil<a class="headerlink" href="#reproductor-movil" title="Permanent link">¶</a></h1>
+<p>Este es el reproductor principal de blosteflix una app móvil para consultar el catalogo y reproducir.</p>
+<h3 id="que-hace">Que hace ?<a class="headerlink" href="#que-hace" title="Permanent link">¶</a></h3>
 <ul>
-<li>Comprobar suscripciones</li>
-<li>Reproducir videos </li>
-<li>Guardar y procesar videos</li>
+<li>Login del usuario</li>
+<li>Redirección a la pasarela de pagos</li>
+<li>Muestra catálogo</li>
+<li>Reproduce videos.</li>
 </ul>
-<h3 id="interacion">Interacion<a class="headerlink" href="#interacion" title="Permanent link">¶</a></h3>
-<p>Este componente interactua con:
-+ Video Player
-+ Admin App
-+ Suscripciones odoo (sin implementar)</p>
-<h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
-<h3 id="endpoints-get">Endpoints GET<a class="headerlink" href="#endpoints-get" title="Permanent link">¶</a></h3>
+<h3 id="interaccion">Interacción<a class="headerlink" href="#interaccion" title="Permanent link">¶</a></h3>
+<p>Este componente interactua con:</p>
 <ul>
-<li>
-<p><code>api/hls/:videoid</code> : Envia el mapa hls para que el cliente pueda reproducir</p>
-</li>
-<li>
-<p><code>api/hls/:videoid/:segment.ts</code> : Envia los segmentos del video  al cliente</p>
-</li>
+<li>Catálogo backend</li>
+<li>Video backend</li>
+<li>Login Odoo</li>
 </ul>
-<h3 id="endpoints-post">Endpoints POST<a class="headerlink" href="#endpoints-post" title="Permanent link">¶</a></h3>
-<p><code>api/videoserver/upload</code> : Recibe un video en bruto, devuelve los metadatos técnicos (duracion, resolucion, codec, bitrate, fps, tamaño, audio tracks)</p>
+<h3 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h3>
+<p>Este reproductor gasta los siguientes endpoints TODOS en get</p>
+<h4 id="endpoints-catalogo">Endpoints catalogo<a class="headerlink" href="#endpoints-catalogo" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>api/catalogo</code>: recibe todo el catálogo</li>
+<li><code>api/catalogo/:categoria</code>: recibe las entradas de una categoria o tópico</li>
+<li><code>api/catalogo/:titulo</code>: recibe 1 unico titulo.</li>
+</ul>
+<h4 id="endpoints-video-backend">Endpoints video backend<a class="headerlink" href="#endpoints-video-backend" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>api/hls/:videoid</code>: recibe el mapa de los segmentos </li>
+<li><code>api/hls/:videoid/:segment.ts</code>:recibe los segmentos para poder reproducirlos.</li>
+</ul>
 <h2 id="casos-de-uso">Casos de uso<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
 <div class="mermaid">flowchart LR
+    User([👤 User])
     Player([🎬 Video Player])
-    Admin([👤 Admin App ])
 
-    subgraph Servidor_HLS
-        DescargarSegmentos((Descargar segmentos))
-        SubirVideo((Subir video original))
+    subgraph Servidor_Catálogo
+       VerCatalogo([Ver catálogo])
+       Filtrar([Buscar/Filtrar contenido])
+       Detalles([Ver detalles ])
     end
 
-    Player --&gt; DescargarSegmentos
-    Admin --&gt; SubirVideo
+    subgraph Servidor_Video
+        ReproducirVideo([Reproducir Video])
+    end
+
+    subgraph Login_Odoo_Web
+        Login([Login])
+        Suscribirse([Suscribirse])
+    end
+
+    User --&gt; Player
+    Player --&gt; VerCatalogo
+    Player --&gt; ReproducirVideo
+    Player --&gt; Login
+    Player --&gt; Suscribirse
+    Player --&gt; Filtrar
+    Player --&gt; Detalles
 </div>
-<h2 id="diagramas-de-flujo">Diagramas de flujo<a class="headerlink" href="#diagramas-de-flujo" title="Permanent link">¶</a></h2>
-<h3 id="reproducir-video">Reproducir video<a class="headerlink" href="#reproducir-video" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../diagramas_UML/video-backend/diagram_3421390235624653081.png"><img alt="Diagrama UML" src="../diagramas_UML/video-backend/diagram_3421390235624653081.png"/></a></p>
-<h3 id="subir-video">Subir video<a class="headerlink" href="#subir-video" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../diagramas_UML/video-backend/diagram_1353348591282210345.png"><img alt="Diagrama UML" src="../diagramas_UML/video-backend/diagram_1353348591282210345.png"/></a></p>
+<h3 id="diagramas-de-flujo">Diagramas de flujo<a class="headerlink" href="#diagramas-de-flujo" title="Permanent link">¶</a></h3>
+<h4 id="explorar-catalogo">Explorar catálogo<a class="headerlink" href="#explorar-catalogo" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/video_reproductor/diagram_8629682250072960440.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/video_reproductor/diagram_8629682250072960440.png"/></a></p>
+<h4 id="buscar-contenidos">Buscar contenidos<a class="headerlink" href="#buscar-contenidos" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/video_reproductor/diagram_1572529960446397924.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/video_reproductor/diagram_1572529960446397924.png"/></a></p>
+<h4 id="consultar-detalle-de-un-video">Consultar detalle de un video<a class="headerlink" href="#consultar-detalle-de-un-video" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/video_reproductor/diagram_372881444551840786.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/video_reproductor/diagram_372881444551840786.png"/></a></p>
+<h4 id="iniciar-sesion-validar-suscripcion">Iniciar sesion / Validar suscripción<a class="headerlink" href="#iniciar-sesion-validar-suscripcion" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/video_reproductor/diagram_9004598007025617954.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/video_reproductor/diagram_9004598007025617954.png"/></a></p>
+<h4 id="reproducir-video">Reproducir video<a class="headerlink" href="#reproducir-video" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/video_reproductor/diagram_58782055385250040.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/video_reproductor/diagram_58782055385250040.png"/></a></p>
+<h4 id="gestionar-preferidos">Gestionar Preferidos<a class="headerlink" href="#gestionar-preferidos" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/video_reproductor/diagram_4344459526866464246.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/video_reproductor/diagram_4344459526866464246.png"/></a></p>
+<h4 id="continuar-visualizacion">Continuar Visualización<a class="headerlink" href="#continuar-visualizacion" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/video_reproductor/diagram_3435851837696674180.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/video_reproductor/diagram_3435851837696674180.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -519,8 +772,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.tabs.links", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
-<script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.tabs.links", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
