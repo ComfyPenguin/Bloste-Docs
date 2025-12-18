@@ -29,7 +29,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#diagrama-e-r">
+<a class="md-skip" href="#pasarela-pagos">
           Saltar a contenido
         </a>
 </div>
@@ -218,6 +218,42 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#descripcion">
+<span class="md-ellipsis">
+      
+        Descripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#responsabilidades">
+<span class="md-ellipsis">
+      
+        Responsabilidades
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interacion">
+<span class="md-ellipsis">
+      
+        Interacion
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#endpoints">
+<span class="md-ellipsis">
+      
+        Endpoints
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#diagrama-e-r">
 <span class="md-ellipsis">
       
@@ -227,20 +263,38 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#diagrama-cu">
+<a class="md-nav__link" href="#casos-de-uso">
 <span class="md-ellipsis">
       
-        Diagrama CU
+        Casos de uso
       
     </span>
 </a>
-<nav aria-label="Diagrama CU" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints">
+<a class="md-nav__link" href="#diagramas-de-flujo">
 <span class="md-ellipsis">
       
-        Endpoints
+        Diagramas de flujo
+      
+    </span>
+</a>
+<nav aria-label="Diagramas de flujo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autenticacion-y-generacion-de-token">
+<span class="md-ellipsis">
+      
+        Autenticación y Generación de Token
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-suscripcion-y-pago">
+<span class="md-ellipsis">
+      
+        Gestión de Suscripción y Pago
       
     </span>
 </a>
@@ -278,6 +332,42 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#descripcion">
+<span class="md-ellipsis">
+      
+        Descripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#responsabilidades">
+<span class="md-ellipsis">
+      
+        Responsabilidades
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interacion">
+<span class="md-ellipsis">
+      
+        Interacion
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#endpoints">
+<span class="md-ellipsis">
+      
+        Endpoints
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#diagrama-e-r">
 <span class="md-ellipsis">
       
@@ -287,20 +377,38 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#diagrama-cu">
+<a class="md-nav__link" href="#casos-de-uso">
 <span class="md-ellipsis">
       
-        Diagrama CU
+        Casos de uso
       
     </span>
 </a>
-<nav aria-label="Diagrama CU" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints">
+<a class="md-nav__link" href="#diagramas-de-flujo">
 <span class="md-ellipsis">
       
-        Endpoints
+        Diagramas de flujo
+      
+    </span>
+</a>
+<nav aria-label="Diagramas de flujo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autenticacion-y-generacion-de-token">
+<span class="md-ellipsis">
+      
+        Autenticación y Generación de Token
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-suscripcion-y-pago">
+<span class="md-ellipsis">
+      
+        Gestión de Suscripción y Pago
       
     </span>
 </a>
@@ -315,6 +423,23 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
+<h1 id="pasarela-pagos">Pasarela pagos<a class="headerlink" href="#pasarela-pagos" title="Permanent link">¶</a></h1>
+<h3 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">¶</a></h3>
+<p>Servidor de Odoo para gestionar usuarios, suscripciones y metodos de pago </p>
+<h3 id="responsabilidades">Responsabilidades<a class="headerlink" href="#responsabilidades" title="Permanent link">¶</a></h3>
+<ul>
+<li>Crear y enviar tokens de seguridad para la interacción entre servicios</li>
+<li>Gestionar altas, bajas, suspensiones y edición de perfiles</li>
+<li>Validar métodos de pago y gestionar la información de tarjetas o cuentas asociadas a los usuarios</li>
+<li>Registrar nuevos usuarios, autenticar credenciales y manejar el inicio de sesión para distintos roles</li>
+<li>Crear, modificar y renovar planes de suscripción tanto desde la perspectiva del cliente como del administrador</li>
+</ul>
+<h3 id="interacion">Interacion<a class="headerlink" href="#interacion" title="Permanent link">¶</a></h3>
+<p>Este componente interactua con:
++ Admin App
++ Video Player
++ Portal web</p>
+<h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
 <h2 id="diagrama-e-r">Diagrama E-R<a class="headerlink" href="#diagrama-e-r" title="Permanent link">¶</a></h2>
 <div class="mermaid">erDiagram
     PERSONA {
@@ -371,7 +496,7 @@
     ADMIN ||--o{ ADMIN_ROL : "asignado_a"
     ROL ||--o{ ADMIN_ROL : "incluye"
     ADMIN }o--o{ ROL : "muchos_a_muchos"</div>
-<h1 id="diagrama-cu">Diagrama CU<a class="headerlink" href="#diagrama-cu" title="Permanent link">¶</a></h1>
+<h2 id="casos-de-uso">Casos de uso<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
 <div class="mermaid">flowchart LR
 
     Usuario[👤 Usuario]
@@ -398,7 +523,11 @@
     Admin --&gt; UC6
     Admin --&gt; UC7
     Admin --&gt; UC8</div>
-<h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
+<h2 id="diagramas-de-flujo">Diagramas de flujo<a class="headerlink" href="#diagramas-de-flujo" title="Permanent link">¶</a></h2>
+<h3 id="autenticacion-y-generacion-de-token">Autenticación y Generación de Token<a class="headerlink" href="#autenticacion-y-generacion-de-token" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../diagramas_UML/pasarela-pagos/diagram_7471190257528535553.png"><img alt="Diagrama UML" src="../diagramas_UML/pasarela-pagos/diagram_7471190257528535553.png"/></a></p>
+<h3 id="gestion-de-suscripcion-y-pago">Gestión de Suscripción y Pago<a class="headerlink" href="#gestion-de-suscripcion-y-pago" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../diagramas_UML/pasarela-pagos/diagram_7772613384427138815.png"><img alt="Diagrama UML" src="../diagramas_UML/pasarela-pagos/diagram_7772613384427138815.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
