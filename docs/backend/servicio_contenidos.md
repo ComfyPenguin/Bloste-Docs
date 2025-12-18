@@ -8,7 +8,7 @@ Servidor express encargado de servir los videos mediante HLS.
 + Reproducir videos 
 + Guardar y procesar videos
 
-### Interacion
+### Interacción
 Este componente interactua con:
 + Video Player
 + Admin App

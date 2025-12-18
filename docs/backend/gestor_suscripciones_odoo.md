@@ -1,86 +1,137 @@
 # Pasarela pagos
 
-### Descripción
-Servidor de Odoo para gestionar usuarios, suscripciones y metodos de pago 
+## Descripción
 
-### Responsabilidades
+Servidor de Odoo para gestionar usuarios, suscripciones y metodos de pago.
+
+## Responsabilidades
+
 + Crear y enviar tokens de seguridad para la interacción entre servicios
 + Gestionar altas, bajas, suspensiones y edición de perfiles
 + Validar métodos de pago y gestionar la información de tarjetas o cuentas asociadas a los usuarios
 + Registrar nuevos usuarios, autenticar credenciales y manejar el inicio de sesión para distintos roles
 + Crear, modificar y renovar planes de suscripción tanto desde la perspectiva del cliente como del administrador
 
-### Interacion
+## Interacion
+
 Este componente interactua con:
+
 + Admin App
 + Video Player
 + Portal web
 
-
 ## Endpoints
 
+***Por definir***
 
 ## Diagrama E-R
 
-```mermaid
-erDiagram
-    PERSONA {
-        int id PK
-        string username
-        string password
-        string name
-        string surname
-        string address
-        string phone
-        string dni
-    }
+```plantuml
+@startuml
+entity user {
+  +id : int <<PK>>
+  --
+  username : varchar <<U>>
+  password_hash : varchar
+  name : varchar
+  surname : varchar
+  email : varchar
+  is_active : boolean
+  created_at : datetime
+}
 
-    ADMIN {
-        int id PK
-    }
+entity role {
+  +id : int <<PK>>
+  --
+  name : varchar
+  description : varchar
+}
 
-    USUARIO {
-        int id PK
-    }
+entity user_role {
+  +user_id : int <<FK>>
+  +role_id : int <<FK>>
+}
 
-    SUSCRIPCION {
-        int id PK
-        int usuario_id FK
-        string tipo
-        datetime fecha_inicio
-        datetime fecha_fin
-    }
+entity subscription_plan {
+  +id : int <<PK>>
+  --
+  name : varchar
+  price : decimal
+  billing_period : enum
+  description : varchar
+  is_active : boolean
+}
 
-    METODO_PAGO {
-        int id PK
-        int usuario_id FK
-        string tipo
-        string detalles
-    }
+entity subscription {
+  +id : int <<PK>>
+  --
+  start_date : date
+  end_date : date
+  status : enum
+  auto_renew : boolean
+  created_at : datetime
+  --
+  user_id : int <<FK>>
+  plan_id : int <<FK>>
+}
 
-    ROL {
-        int id PK
-        string nombre
-        string descripcion
-    }
+entity payment_method {
+  +id : int <<PK>>
+  --
+  name : varchar
+  description : varchar
+}
 
-    ADMIN_ROL {
-        int admin_id FK
-        int rol_id FK
-    }
+entity payment {
+  +id : int <<PK>>
+  --
+  amount : decimal
+  currency : varchar
+  status : enum
+  paid_at : datetime
+  created_at : datetime
+  --
+  payment_method_id : int <<FK>>
+  subscription_id : int <<FK>>
+}
 
-    PERSONA ||--|| ADMIN : "herencia"
-    PERSONA ||--|| USUARIO : "herencia"
+user ||--o{ subscription : tiene
+subscription }o--|| subscription_plan : usa
+subscription ||--o{ payment : genera
 
-    USUARIO ||--o{ SUSCRIPCION : "tiene"
-    USUARIO ||--o{ METODO_PAGO : "posee"
+user ||--o{ user_role
+role ||--o{ user_role
 
-    ADMIN ||--o{ ADMIN_ROL : "asignado_a"
-    ROL ||--o{ ADMIN_ROL : "incluye"
-    ADMIN }o--o{ ROL : "muchos_a_muchos"
+payment }o--|| payment_method : usa
+
+note right of subscription_plan
+  billing_period:
+  - MONTHLY
+  - YEARLY
+  - LIFETIME
+end note
+
+note right of subscription
+  status:
+  - ACTIVE
+  - PAUSED
+  - CANCELLED
+  - EXPIRED
+end note
+
+note right of payment
+  status:
+  - PENDING
+  - PAID
+  - FAILED
+  - REFUNDED
+end note
+
+@enduml
 ```
 
 ## Casos de uso
+
 ```mermaid
 flowchart LR
 
@@ -113,6 +164,7 @@ flowchart LR
 ## Diagramas de flujo
 
 ### Autenticación y Generación de Token
+
 ```plantuml
 @startuml
 actor Actor
@@ -143,6 +195,7 @@ deactivate PasarelaPagos
 ```
 
 ### Gestión de Suscripción y Pago
+
 ```plantuml
 @startuml
 actor Usuario

@@ -2,9 +2,18 @@ site_name: Bloste Software
 repo_url: https://github.com/ComfyPenguin/Bloste-Software
 
 nav:
-  - Home: index.md
-  - Pasarela: pasarela-pagos.md
-  - Video Backend: video-backend.md
+  - Home: 
+    - Inicio: index.md
+    - UX: UX_inicial.md
+    - Glosario: glosario.md
+  - Backend:
+    - Catalogo: backend/catalogo_contenidos.md
+    - Contenido: backend/servicio_contenidos.md
+    - Gestor de Suscripciones: backend/gestor_suscripciones_odoo.md
+  - Frontend:
+    - Reproductor de Videos: frontend/video_reproductor.md
+    - Administrador de Contenidos: frontend/administrador_contenidos.md
+    - Web de Suscripciones: frontend/gestor_suscripciones_web.md
 
 
 theme:
