@@ -1,3 +1,25 @@
+# Pasarela pagos
+
+### Descripción
+Servidor de Odoo para gestionar usuarios, suscripciones y metodos de pago 
+
+### Responsabilidades
++ Crear y enviar tokens de seguridad para la interacción entre servicios
++ Gestionar altas, bajas, suspensiones y edición de perfiles
++ Validar métodos de pago y gestionar la información de tarjetas o cuentas asociadas a los usuarios
++ Registrar nuevos usuarios, autenticar credenciales y manejar el inicio de sesión para distintos roles
++ Crear, modificar y renovar planes de suscripción tanto desde la perspectiva del cliente como del administrador
+
+### Interacion
+Este componente interactua con:
++ Admin App
++ Video Player
++ Portal web
+
+
+## Endpoints
+
+
 ## Diagrama E-R
 
 ```mermaid
@@ -58,7 +80,7 @@ erDiagram
     ADMIN }o--o{ ROL : "muchos_a_muchos"
 ```
 
-# Diagrama CU
+## Casos de uso
 ```mermaid
 flowchart LR
 
@@ -88,4 +110,68 @@ flowchart LR
     Admin --> UC8
 ```
 
-## Endpoints
+## Diagramas de flujo
+
+### Autenticación y Generación de Token
+```plantuml
+@startuml
+actor Actor
+participant PasarelaPagos
+participant DB_Odoo
+
+Actor -> PasarelaPagos : POST /api/auth/login\n(user, password)
+activate PasarelaPagos
+
+PasarelaPagos -> DB_Odoo : Buscar Persona por username
+activate DB_Odoo
+DB_Odoo --> PasarelaPagos : Datos Persona (hash_password, rol)
+deactivate DB_Odoo
+
+PasarelaPagos -> PasarelaPagos : Validar password
+PasarelaPagos -> PasarelaPagos : Generar Token de Seguridad (JWT)
+
+alt Credenciales válidas
+    PasarelaPagos --> Actor : 200 OK (Token + Rol)
+else Credenciales incorrectas
+    PasarelaPagos --> Actor : 401 Unauthorized
+else Cuenta suspendida
+    PasarelaPagos --> Actor : 403 Forbidden
+end
+
+deactivate PasarelaPagos
+@enduml
+```
+
+### Gestión de Suscripción y Pago
+```plantuml
+@startuml
+actor Usuario
+participant PasarelaPagos
+participant PasarelaExterna as "Pasarela Extrana (Stripe/PayPal)"
+participant DB_Odoo
+
+Usuario -> PasarelaPagos : POST /api/suscripcion/renovar\n(plan_id, token)
+activate PasarelaPagos
+
+PasarelaPagos -> PasarelaPagos : Validar Token
+PasarelaPagos -> DB_Odoo : Obtener METODO_PAGO del usuario
+activate DB_Odoo
+DB_Odoo --> PasarelaPagos : Detalles del pago
+deactivate DB_Odoo
+
+PasarelaPagos -> PasarelaExterna : Procesar cobro (importe, detalles)
+activate PasarelaExterna
+
+alt Cobro exitoso
+    PasarelaExterna --> PasarelaPagos : Confirmación transacción
+    PasarelaPagos -> DB_Odoo : Actualizar SUSCRIPCION\n(fecha_fin)
+    PasarelaPagos --> Usuario : 200 OK (Suscripción actualizada)
+else Fondos insuficientes / Error tarjeta
+    PasarelaExterna --> PasarelaPagos : Error cobro
+    PasarelaPagos --> Usuario : 402 Payment Required
+end
+
+deactivate PasarelaExterna
+deactivate PasarelaPagos
+@enduml
+```
