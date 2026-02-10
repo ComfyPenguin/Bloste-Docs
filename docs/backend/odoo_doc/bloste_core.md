@@ -3,10 +3,6 @@
 ### Descripción
 Servidor de Odoo para gestionar usuarios, suscripciones y métodos de pago. Incluye el módulo personalizado `bloste_core` que extiende la funcionalidad base de Odoo para adaptarla a las necesidades específicas de la plataforma BlosteFlix.
 
-<!-- IMAGEN: Diagrama de arquitectura mostrando la integración de bloste_core con otros componentes -->
-<!-- Ruta sugerida: assets/backend/bloste_core_architecture.png -->
-![Arquitectura Bloste Core](../assets/backend/bloste_core_architecture.png)
-
 ### Responsabilidades
 + Crear y enviar tokens de seguridad (JWT) para la interacción entre servicios
 + Gestionar altas, bajas, suspensiones y edición de perfiles de usuario
@@ -18,10 +14,6 @@ Servidor de Odoo para gestionar usuarios, suscripciones y métodos de pago. Incl
 + Controlar permisos y roles (usuario normal vs administrador)
 
 ### Interacción
-
-<!-- IMAGEN: Diagrama de interacción entre componentes del sistema -->
-<!-- Ruta sugerida: assets/backend/bloste_core_interaction_diagram.png -->
-![Interacción entre Componentes](../assets/backend/bloste_core_interaction_diagram.png)
 
 Este componente interactúa con:
 + App Admin (Administrador de Contenidos)
@@ -65,10 +57,6 @@ Representa los planes de suscripción disponibles en la plataforma.
 
 ##### bloste.user_subscription
 Tabla de relación entre usuarios y sus suscripciones (historial).
-
-<!-- IMAGEN: Vista de historial de suscripciones de usuarios (bloste.user_subscription) -->
-<!-- Ruta sugerida: assets/backend/bloste_user_subscription_list.png -->
-![Historial de Suscripciones](../assets/backend/bloste_user_subscription_list.png)
 
 **Campos:**
 - `user_id`: Usuario que tiene la suscripción
@@ -129,10 +117,6 @@ Extiende el modelo de productos de Odoo.
 
 #### Vistas (views/)
 
-<!-- IMAGEN: Captura mostrando las diferentes vistas XML del módulo en el árbol de archivos -->
-<!-- Ruta sugerida: assets/backend/bloste_core_views_structure.png -->
-![Estructura de Vistas](../assets/backend/bloste_core_views_structure.png)
-
 - **menu_view.xml**: Define el menú principal "Bloste Software" en la interfaz de Odoo
 - **subscriptors.xml**: Vista para gestionar planes de suscripción
 - **user_subscription.xml**: Vista para el historial de suscripciones de usuarios
@@ -140,10 +124,6 @@ Extiende el modelo de productos de Odoo.
 - **product_view.xml**: Vista extendida de productos para marcar planes de suscripción
 
 #### Seguridad (security/)
-
-<!-- IMAGEN: Captura del archivo ir.model.access.csv mostrando los permisos configurados -->
-<!-- Ruta sugerida: assets/backend/bloste_core_security_csv.png -->
-![Configuración de Seguridad](../assets/backend/bloste_core_security_csv.png)
 
 **ir.model.access.csv**: Define los permisos de acceso a los modelos:
 - `access_bloste_subscription`: Permisos completos (CRUD) para usuarios internos
@@ -399,10 +379,6 @@ Planes de suscripción disponibles en la plataforma.
 
 ### bloste.user_subscription
 Historial de suscripciones de usuarios (relación usuario-plan).
-
-<!-- IMAGEN: Captura de la vista de formulario de una relación usuario-suscripción -->
-<!-- Ruta sugerida: assets/backend/bloste_user_subscription_form.png -->
-![Formulario de Suscripción de Usuario](../assets/backend/bloste_user_subscription_form.png)
 
 **Campos:**
 - `id`: Identificador único de la relación
@@ -936,10 +912,6 @@ deactivate API
 ### Seguridad y Permisos
 
 #### Grupos de Odoo
-
-<!-- IMAGEN: Captura de la configuración de grupos en Odoo mostrando los diferentes niveles de acceso -->
-<!-- Ruta sugerida: assets/backend/bloste_core_groups_config.png -->
-![Configuración de Grupos Odoo](../assets/backend/bloste_core_groups_config.png)
 
 - **Portal User** (`base.group_portal`): Usuario básico con acceso limitado
 - **Internal User** (`base.group_user`): Usuario interno con acceso a backend
