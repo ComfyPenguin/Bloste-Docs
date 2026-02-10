@@ -4,9 +4,9 @@
 
 `bloste_web` es el módulo de Odoo que proporciona la interfaz web pública para la plataforma Bloste. Este módulo gestiona las páginas públicas del sitio, el registro de usuarios, la visualización de planes de suscripción y el proceso de contratación.
 
-<!-- IMAGEN: Captura de la página de inicio de Bloste mostrando el hero section -->
-<!-- Ruta sugerida: assets/frontend/bloste_home_page.png -->
-![Página de Inicio BlosteFlix](../assets/frontend/bloste_home_page.png)
+<!-- IMAGEN: Captura de la página de inicio de BlosteFlix -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_home_page.png -->
+![Página de Inicio BlosteFlix](../assets/frontend-odoo/bloste_home_page.png)
 
 **Características principales:**
 - Página de inicio (home) con hero section y características del servicio
@@ -167,9 +167,9 @@ def products(self):
 
 ##### `/info-usuario` - Información del Usuario
 
-<!-- IMAGEN: Captura de la página /info-usuario con formulario de autenticación y plan preseleccionado -->
-<!-- Ruta sugerida: assets/frontend/bloste_info_usuario_form.png -->
-![Formulario de Información de Usuario](../assets/frontend/bloste_info_usuario_form.png)
+<!-- IMAGEN: Formulario de Información de Usuario -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_info_usuario_form.png -->
+![Formulario de Información de Usuario](../assets/frontend-odoo/bloste_info_usuario_form.png)
 
 ```python
 @http.route('/info-usuario', type='http', auth='public', website=True)
@@ -227,9 +227,9 @@ def info_usuario_submit(self, **post):
 
 Template de registro de usuarios con diseño moderno y validación.
 
-<!-- IMAGEN: Captura de pantalla del formulario de registro en /in -->
-<!-- Ruta sugerida: assets/frontend/bloste_register_form.png -->
-![Formulario de Registro](../assets/frontend/bloste_register_form.png)
+<!-- IMAGEN: Formulario de Registro -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_register_form.png -->
+![Formulario de Registro](../assets/frontend-odoo/bloste_register_form.png)
 
 **Características:**
 - Diseño con gradiente de colores Bloste
@@ -269,8 +269,8 @@ Template de registro de usuarios con diseño moderno y validación.
 Template de la página principal con diseño moderno.
 
 <!-- IMAGEN: Vista completa de la página de inicio con hero section y características -->
-<!-- Ruta sugerida: assets/frontend/bloste_home_full.png -->
-![Página de Inicio Completa](../assets/frontend/bloste_home_full.png)
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_home_full.png -->
+![Página de Inicio Completa](../assets/frontend-odoo/bloste_home_full.png)
 
 **Secciones:**
 
@@ -293,8 +293,8 @@ Template de la página principal con diseño moderno.
 Template para mostrar planes de suscripción disponibles.
 
 <!-- IMAGEN: Captura de la página /suscripciones mostrando los planes en cards -->
-<!-- Ruta sugerida: assets/frontend/bloste_subscriptions_page.png -->
-![Página de Planes de Suscripción](../assets/frontend/bloste_subscriptions_page.png)
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_subscriptions_page.png -->
+![Página de Planes de Suscripción](../assets/frontend-odoo/bloste_subscriptions_page.png)
 
 **Elementos:**
 - Título y descripción
@@ -309,8 +309,8 @@ Template para mostrar planes de suscripción disponibles.
 **Condicional:** Muestra alerta si no hay planes disponibles
 
 <!-- IMAGEN: Vista de la alerta cuando no hay planes disponibles -->
-<!-- Ruta sugerida: assets/frontend/bloste_no_plans_alert.png -->
-![Alerta sin Planes Disponibles](../assets/frontend/bloste_no_plans_alert.png)
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_no_plans_alert.png -->
+![Alerta sin Planes Disponibles](../assets/frontend-odoo/bloste_no_plans_alert.png)
 
 #### Templates Adicionales
 
@@ -366,12 +366,6 @@ Hereda del template `website.layout` para incluir CSS personalizado:
 
 ### CSS - bloste_colors.css
 
-Hoja de estilos con variables CSS y clases personalizadas de Bloste.
-
-<!-- IMAGEN: Paleta de colores de Bloste mostrando visualmente los colores principales -->
-<!-- Ruta sugerida: assets/frontend/bloste_color_palette.png -->
-![Paleta de Colores Bloste](../assets/frontend/bloste_color_palette.png)
-
 **Variables CSS:**
 ```css
 :root {
@@ -403,12 +397,6 @@ Hoja de estilos con variables CSS y clases personalizadas de Bloste.
 - Uso de `!important` para sobrescribir estilos de Bootstrap
 
 ### JavaScript - subscription_redirect.js
-
-Script que gestiona la interacción con los botones de suscripción y la preselección de planes.
-
-<!-- IMAGEN: Captura mostrando el código JavaScript con comentarios explicativos -->
-<!-- Ruta sugerida: assets/frontend/bloste_subscription_redirect_code.png -->
-![Código JavaScript subscription_redirect.js](../assets/frontend/bloste_subscription_redirect_code.png)
 
 **Funcionalidad principal:**
 
@@ -472,10 +460,6 @@ document.body.addEventListener('click', handleSubscriptionClick);
 
 ### ir.model.access.csv
 
-<!-- IMAGEN: Captura del archivo CSV de permisos -->
-<!-- Ruta sugerida: assets/backend/bloste_web_security_csv.png -->
-![Permisos de Acceso bloste.web](../assets/backend/bloste_web_security_csv.png)
-
 Define los permisos de acceso al modelo `bloste.web`:
 
 ```csv
@@ -494,8 +478,8 @@ access_bloste_web,access_bloste_web,model_bloste_web,,1,1,1,1
 ## Flujo de Contratación de Suscripción
 
 <!-- IMAGEN: Captura de la página /info-usuario con formulario de autenticación -->
-<!-- Ruta sugerida: assets/frontend/bloste_info_usuario_page.png -->
-![Página de Información de Usuario](../assets/frontend/bloste_info_usuario_page.png)
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_info_usuario_page.png -->
+![Página de Información de Usuario](../assets/frontend-odoo/bloste_info_usuario_page.png)
 
 ```mermaid
 graph TD
@@ -521,10 +505,6 @@ graph TD
 ```
 
 ## Integración con Otros Módulos
-
-<!-- IMAGEN: Diagrama mostrando la integración entre bloste_web, bloste_core y bloste_jwt -->
-<!-- Ruta sugerida: assets/integration/bloste_web_integration_diagram.png -->
-![Integración de Módulos](../assets/integration/bloste_web_integration_diagram.png)
 
 ### bloste_core
 
@@ -674,8 +654,8 @@ request.env['ir.http']._get_routing()
 Para probar el módulo:
 
 <!-- IMAGEN: Captura de pantalla de la página de éxito tras contratar una suscripción -->
-<!-- Ruta sugerida: assets/frontend/bloste_subscription_success.png -->
-![Página de Éxito de Suscripción](../assets/frontend/bloste_subscription_success.png)
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_subscription_success.png -->
+![Página de Éxito de Suscripción](../assets/frontend-odoo/bloste_subscription_success.png)
 
 1. **Página de inicio:**
    ```
