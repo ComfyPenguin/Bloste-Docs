@@ -6,7 +6,7 @@
 <link href="../gestor_suscripciones_odoo/" rel="next"/>
 <link href="../../assets/logo.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Contenido - Bloste Software</title>
+<title>Servidor de contenidos (ExpressJS) - Bloste Software</title>
 <link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -29,7 +29,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#documentacion-del-servidor-hls-de-videos">
+<a class="md-skip" href="#servidor-hls-de-videos-expressjs">
           Saltar a contenido
         </a>
 </div>
@@ -53,7 +53,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Contenido
+              Servidor de contenidos (ExpressJS)
             
           </span>
 </div>
@@ -260,7 +260,7 @@
 <span class="md-ellipsis">
     
   
-    Catalogo
+    Catalogo (SpringBoot)
   
 
     
@@ -273,7 +273,7 @@
 <span class="md-ellipsis">
     
   
-    Contenido
+    Servidor de contenidos (ExpressJS)
   
 
     
@@ -284,7 +284,7 @@
 <span class="md-ellipsis">
     
   
-    Contenido
+    Servidor de contenidos (ExpressJS)
   
 
     
@@ -304,7 +304,8 @@
       
     </span>
 </a>
-</li>
+<nav aria-label="Descripción" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#responsabilidades">
 <span class="md-ellipsis">
@@ -322,6 +323,9 @@
       
     </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#endpoints">
@@ -383,6 +387,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#recibir-miniatura">
+<span class="md-ellipsis">
+      
+        Recibir miniatura
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#subir-video">
 <span class="md-ellipsis">
       
@@ -402,7 +415,7 @@
 <span class="md-ellipsis">
     
   
-    Gestor de Suscripciones
+    Gestor de Suscripciones (Odoo)
   
 
     
@@ -440,7 +453,7 @@
 <span class="md-ellipsis">
     
   
-    Reproductor de Videos
+    Reproductor de videos (Flutter)
   
 
     
@@ -452,7 +465,7 @@
 <span class="md-ellipsis">
     
   
-    Administrador de Contenidos
+    Administrador de contenidos (VUE)
   
 
     
@@ -464,7 +477,7 @@
 <span class="md-ellipsis">
     
   
-    Web de Suscripciones
+    Web de Suscripciones (Odoo)
   
 
     
@@ -496,7 +509,8 @@
       
     </span>
 </a>
-</li>
+<nav aria-label="Descripción" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#responsabilidades">
 <span class="md-ellipsis">
@@ -514,6 +528,9 @@
       
     </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#endpoints">
@@ -575,6 +592,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#recibir-miniatura">
+<span class="md-ellipsis">
+      
+        Recibir miniatura
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#subir-video">
 <span class="md-ellipsis">
       
@@ -593,50 +619,57 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="documentacion-del-servidor-hls-de-videos">Documentación del servidor HLS de videos.<a class="headerlink" href="#documentacion-del-servidor-hls-de-videos" title="Permanent link">¶</a></h1>
-<h3 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">¶</a></h3>
-<p>Servidor express encargado de servir los videos mediante HLS.</p>
+<h1 id="servidor-hls-de-videos-expressjs">Servidor HLS de videos (EXPRESSJS)<a class="headerlink" href="#servidor-hls-de-videos-expressjs" title="Permanent link">¶</a></h1>
+<h2 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">¶</a></h2>
+<p>Servidor express encargado de procesar videos en segmentos y servirlos, además de generar miniaturas y metadatos para los servicios de reproducción.</p>
 <h3 id="responsabilidades">Responsabilidades<a class="headerlink" href="#responsabilidades" title="Permanent link">¶</a></h3>
 <ul>
-<li>Comprobar suscripciones</li>
-<li>Reproducir videos </li>
-<li>Guardar y procesar videos</li>
+<li>Comprobar autenticación y autorización de los clientes</li>
+<li>Generar HLS y segmentos de video en distintas resoluciones</li>
+<li>Generar miniaturas para cada video</li>
+<li>Generar metadatos técnicos de cada video</li>
+<li>Servir los segmentos y miniaturas a los clientes</li>
 </ul>
 <h3 id="interaccion">Interacción<a class="headerlink" href="#interaccion" title="Permanent link">¶</a></h3>
-<p>Este componente interactua con:
-+ Video Player
-+ Admin App
-+ Suscripciones odoo (sin implementar)</p>
+<p>Este componente interactua con:</p>
+<ul>
+<li>Video Player (Flutter)</li>
+<li>Admin App (Vue)</li>
+<li>Autentificaciones (odoo)</li>
+</ul>
 <h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
 <h3 id="endpoints-get">Endpoints GET<a class="headerlink" href="#endpoints-get" title="Permanent link">¶</a></h3>
 <ul>
-<li>
-<p><code>api/hls/:videoid</code> : Envia el mapa hls para que el cliente pueda reproducir</p>
-</li>
-<li>
-<p><code>api/hls/:videoid/:segment.ts</code> : Envia los segmentos del video  al cliente</p>
-</li>
+<li><code>api/hls/:videoid</code> : Sirve el mapa hls para que el cliente pueda reproducir el video</li>
+<li><code>api/thumbnail/:videoid</code> : Sirve la miniatura del video al cliente</li>
 </ul>
 <h3 id="endpoints-post">Endpoints POST<a class="headerlink" href="#endpoints-post" title="Permanent link">¶</a></h3>
-<p><code>api/videoserver/upload</code> : Recibe un video en bruto, devuelve los metadatos técnicos (duracion, resolucion, codec, bitrate, fps, tamaño, audio tracks)</p>
+<ul>
+<li><code>api/upload</code> : Recibe un video en bruto para procesarlo y generar los segmentos, miniaturas y metadatos técnicos. Este endpoint es utilizado por la Admin App para subir nuevos videos al sistema.
+Además, este endpoint se encarga de validar el formato del video, extraer los metadatos técnicos (duración, resolución, codec) y devolverlos.</li>
+</ul>
 <h2 id="casos-de-uso">Casos de uso<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
 <div class="mermaid">flowchart LR
     Player([🎬 Video Player])
-    Admin([👤 Admin App ])
+    Admin([👤 Admin App])
 
-    subgraph Servidor_HLS
-        DescargarSegmentos((Descargar segmentos))
-        SubirVideo((Subir video original))
+    subgraph Servidor HLS
+        DescargarSegmentos((Descargar segmentos HLS))
+        DescargarThumbnails((Descargar miniaturas))
+        SubirVideo((Subir video para procesar))
     end
 
     Player --&gt; DescargarSegmentos
+    Player --&gt; DescargarThumbnails
     Admin --&gt; SubirVideo
 </div>
 <h2 id="diagramas-de-flujo">Diagramas de flujo<a class="headerlink" href="#diagramas-de-flujo" title="Permanent link">¶</a></h2>
 <h3 id="reproducir-video">Reproducir video<a class="headerlink" href="#reproducir-video" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/servicio_contenidos/diagram_5253720749146530969.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/servicio_contenidos/diagram_5253720749146530969.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/servicio_contenidos/diagram_676159149621986231.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/servicio_contenidos/diagram_676159149621986231.png"/></a></p>
+<h3 id="recibir-miniatura">Recibir miniatura<a class="headerlink" href="#recibir-miniatura" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/servicio_contenidos/diagram_6937172995148621915.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/servicio_contenidos/diagram_6937172995148621915.png"/></a></p>
 <h3 id="subir-video">Subir video<a class="headerlink" href="#subir-video" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/servicio_contenidos/diagram_5661320455398876284.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/servicio_contenidos/diagram_5661320455398876284.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/servicio_contenidos/diagram_2049146275520891398.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/servicio_contenidos/diagram_2049146275520891398.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

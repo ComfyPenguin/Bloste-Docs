@@ -6,7 +6,7 @@
 <link href="../gestor_suscripciones_web/" rel="next"/>
 <link href="../../assets/logo.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Administrador de Contenidos - Bloste Software</title>
+<title>Administrador de contenidos (VUE) - Bloste Software</title>
 <link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -29,7 +29,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#administrador-contenidos">
+<a class="md-skip" href="#administrador-contenidos-vue">
           Saltar a contenido
         </a>
 </div>
@@ -53,7 +53,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Administrador de Contenidos
+              Administrador de contenidos (VUE)
             
           </span>
 </div>
@@ -260,7 +260,7 @@
 <span class="md-ellipsis">
     
   
-    Catalogo
+    Catalogo (SpringBoot)
   
 
     
@@ -272,7 +272,7 @@
 <span class="md-ellipsis">
     
   
-    Contenido
+    Servidor de contenidos (ExpressJS)
   
 
     
@@ -284,7 +284,7 @@
 <span class="md-ellipsis">
     
   
-    Gestor de Suscripciones
+    Gestor de Suscripciones (Odoo)
   
 
     
@@ -322,7 +322,7 @@
 <span class="md-ellipsis">
     
   
-    Reproductor de Videos
+    Reproductor de videos (Flutter)
   
 
     
@@ -335,7 +335,7 @@
 <span class="md-ellipsis">
     
   
-    Administrador de Contenidos
+    Administrador de contenidos (VUE)
   
 
     
@@ -346,7 +346,7 @@
 <span class="md-ellipsis">
     
   
-    Administrador de Contenidos
+    Administrador de contenidos (VUE)
   
 
     
@@ -359,10 +359,20 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#que-hace">
+<a class="md-nav__link" href="#descripcion">
 <span class="md-ellipsis">
       
-        Que hace ?
+        Descripción
+      
+    </span>
+</a>
+<nav aria-label="Descripción" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#responsabilidades">
+<span class="md-ellipsis">
+      
+        Responsabilidades
       
     </span>
 </a>
@@ -396,13 +406,16 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-de-servidor-express">
+<a class="md-nav__link" href="#endpoints-del-servidor-de-contenidos">
 <span class="md-ellipsis">
       
-        Endpoints de Servidor Express
+        Endpoints del servidor de contenidos
       
     </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -436,10 +449,77 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#gestion-de-contenido-subida-y-registro">
+<a class="md-nav__link" href="#gestion-de-contenido-subida">
 <span class="md-ellipsis">
       
-        Gestión de Contenido: Subida y Registro
+        Gestión de Contenido: Subida
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-contenido-edicion">
+<span class="md-ellipsis">
+      
+        Gestión de Contenido: Edición
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uiux">
+<span class="md-ellipsis">
+      
+        UI/UX
+      
+    </span>
+</a>
+<nav aria-label="UI/UX" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#login">
+<span class="md-ellipsis">
+      
+        Login
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#registro">
+<span class="md-ellipsis">
+      
+        Registro
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subida-de-video">
+<span class="md-ellipsis">
+      
+        Subida de video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#panel-de-edicion-de-video">
+<span class="md-ellipsis">
+      
+        Panel de edición de video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#popup-de-edicion-de-video">
+<span class="md-ellipsis">
+      
+        Popup de edición de video
       
     </span>
 </a>
@@ -455,7 +535,7 @@
 <span class="md-ellipsis">
     
   
-    Web de Suscripciones
+    Web de Suscripciones (Odoo)
   
 
     
@@ -480,10 +560,20 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#que-hace">
+<a class="md-nav__link" href="#descripcion">
 <span class="md-ellipsis">
       
-        Que hace ?
+        Descripción
+      
+    </span>
+</a>
+<nav aria-label="Descripción" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#responsabilidades">
+<span class="md-ellipsis">
+      
+        Responsabilidades
       
     </span>
 </a>
@@ -517,13 +607,16 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-de-servidor-express">
+<a class="md-nav__link" href="#endpoints-del-servidor-de-contenidos">
 <span class="md-ellipsis">
       
-        Endpoints de Servidor Express
+        Endpoints del servidor de contenidos
       
     </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -557,10 +650,77 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#gestion-de-contenido-subida-y-registro">
+<a class="md-nav__link" href="#gestion-de-contenido-subida">
 <span class="md-ellipsis">
       
-        Gestión de Contenido: Subida y Registro
+        Gestión de Contenido: Subida
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-contenido-edicion">
+<span class="md-ellipsis">
+      
+        Gestión de Contenido: Edición
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uiux">
+<span class="md-ellipsis">
+      
+        UI/UX
+      
+    </span>
+</a>
+<nav aria-label="UI/UX" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#login">
+<span class="md-ellipsis">
+      
+        Login
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#registro">
+<span class="md-ellipsis">
+      
+        Registro
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subida-de-video">
+<span class="md-ellipsis">
+      
+        Subida de video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#panel-de-edicion-de-video">
+<span class="md-ellipsis">
+      
+        Panel de edición de video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#popup-de-edicion-de-video">
+<span class="md-ellipsis">
+      
+        Popup de edición de video
       
     </span>
 </a>
@@ -575,72 +735,93 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="administrador-contenidos">Administrador Contenidos<a class="headerlink" href="#administrador-contenidos" title="Permanent link">¶</a></h1>
-<p>Este es la aplicación de administradores para subir contenido</p>
-<h3 id="que-hace">Que hace ?<a class="headerlink" href="#que-hace" title="Permanent link">¶</a></h3>
+<h1 id="administrador-contenidos-vue">Administrador Contenidos (VUE)<a class="headerlink" href="#administrador-contenidos-vue" title="Permanent link">¶</a></h1>
+<h2 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">¶</a></h2>
+<p>Aplicación web para la gestión de contenidos de video, permitiendo a los administradores subir nuevos videos y gestionar el catálogo de videos disponibles para los usuarios finales.</p>
+<h3 id="responsabilidades">Responsabilidades<a class="headerlink" href="#responsabilidades" title="Permanent link">¶</a></h3>
 <ul>
-<li>Gestión de sesión de administrador</li>
-<li>Subida de archivos de video al servidor de contenidos</li>
-<li>Procesamiento automatico de metadatos</li>
-<li>Edicion y resgistro de metadatos en el catálogo</li>
-<li>Modificación y eliminación de videos existentes</li>
+<li>Subida de  videos al servidor de contenidos</li>
+<li>Edicion de datos del catalogo de videos (título, descripción, categorías)</li>
 </ul>
 <h3 id="interaccion">Interacción<a class="headerlink" href="#interaccion" title="Permanent link">¶</a></h3>
-<p>Este componente interactua con:
-+ Login Odoo
-+ Catálogo backend
-+ Video backend</p>
+<p>Este componente interactua con:</p>
+<ul>
+<li><code>Login/Signin</code> (Backend Odoo)</li>
+<li><code>Catálogo</code> (Backend SpringBoot)</li>
+<li><code>VideoServer</code> (Backend ExpressJS)</li>
+</ul>
 <h3 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h3>
-<p>Segun los casos de uso descritos:</p>
+<p>Endpoint usados por la app de administración:</p>
 <h4 id="endpoints-catalogo">Endpoints catalogo<a class="headerlink" href="#endpoints-catalogo" title="Permanent link">¶</a></h4>
 <ul>
 <li>POST <code>api/catalogo</code>: Registra nueva entrada de video</li>
-<li>PUT <code>api/catalogo/:id</code>: Modificar metadatos de un video existente</li>
-<li>GET <code>api/catalogo</code>: Obtener lista completa para comprobación</li>
-<li>GET <code>api/catalogo/:titulo</code>: Recibe un video del titulo especificado</li>
+<li>PUT <code>api/catalogo/:id</code>: Modificar datos de un video existente</li>
+<li>GET <code>api/catalogo/:id</code>: Obtener datos de un video existente en específico para edición</li>
+<li>GET <code>api/catalogo</code>: Obtener lista completa de videos para mostrar en el panel de administración</li>
+<li>GET <code>api/categorias</code>: Obtener lista de categorías disponibles</li>
 </ul>
-<h4 id="endpoints-de-servidor-express">Endpoints de Servidor Express<a class="headerlink" href="#endpoints-de-servidor-express" title="Permanent link">¶</a></h4>
+<h4 id="endpoints-del-servidor-de-contenidos">Endpoints del servidor de contenidos<a class="headerlink" href="#endpoints-del-servidor-de-contenidos" title="Permanent link">¶</a></h4>
 <ul>
-<li>GET <code>api/hls/:videoid</code>: Envía el mapa HLS para que el administrador pueda verificar que se reproduce</li>
-<li>POST <code>api/videoserver/upload</code>:</li>
+<li>POST <code>api/upload</code>: Subir un video en bruto para procesar y generar los segmentos, miniaturas y metadatos técnicos</li>
 </ul>
 <h2 id="casos-de-uso">Casos de uso<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
 <div class="mermaid">flowchart LR
     Admin([👤 Administrador])
     AppAdmin([🖥️ App Administración])
 
-    subgraph Backend_Express
-        SubirVideo([UC2: Añadir contenido /upload])
-        RecibirMeta([UC3: Recibir metadatos])
+    subgraph Servidor de contenidos ExpressJS
+        SubirVideo([Subir video /api/upload])
+        ConectarWS([Conectar WebSocket])
+        RecibirMeta([Recibir metadatos])
     end
 
-    subgraph Backend_Spring_Hibernate
-        EditarMeta([UC4: Editar metadatos])
-        RegistrarVideo([UC5: Confirmar y registrar])
-        ModificarVideo([UC6: Modificar vídeo])
-        EliminarVideo([UC7: Eliminar vídeo])
+
+    subgraph Catalogo SpringBoot
+        RegistrarVideo([Registrar video al catálogo])
+        ModificarVideo([Editar catálogo])
     end
 
-    subgraph Seguridad_y_Mantenimiento
-        Login([UC1: Iniciar sesión])
-        Inconsistencies([UC8: Comprobar inconsistencias])
+    subgraph Seguridad Odoo
+        Login([Iniciar sesión])
+        Signin([Registrar nuevo administrador])
     end
 
     Admin --&gt; AppAdmin
+
     AppAdmin --&gt; Login
+    AppAdmin --&gt; Signin
+
     AppAdmin --&gt; SubirVideo
     SubirVideo --&gt; RecibirMeta
-    AppAdmin --&gt; EditarMeta
+    RecibirMeta --&gt; AppAdmin
+
+    SubirVideo --&gt; ConectarWS
+
     AppAdmin --&gt; RegistrarVideo
     AppAdmin --&gt; ModificarVideo
-    AppAdmin --&gt; EliminarVideo
-    AppAdmin --&gt; Inconsistencies
 </div>
 <h2 id="diagramas-de-flujo">Diagramas de flujo<a class="headerlink" href="#diagramas-de-flujo" title="Permanent link">¶</a></h2>
 <h3 id="autenticacion-del-administrador">Autenticación del Administrador<a class="headerlink" href="#autenticacion-del-administrador" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/administrador_contenidos/diagram_8577729466051943113.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/administrador_contenidos/diagram_8577729466051943113.png"/></a></p>
-<h3 id="gestion-de-contenido-subida-y-registro">Gestión de Contenido: Subida y Registro<a class="headerlink" href="#gestion-de-contenido-subida-y-registro" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/administrador_contenidos/diagram_2065240692159187803.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/administrador_contenidos/diagram_2065240692159187803.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/administrador_contenidos/diagram_3307128260911721892.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/administrador_contenidos/diagram_3307128260911721892.png"/></a></p>
+<h3 id="gestion-de-contenido-subida">Gestión de Contenido: Subida<a class="headerlink" href="#gestion-de-contenido-subida" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/administrador_contenidos/diagram_6852548254554759353.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/administrador_contenidos/diagram_6852548254554759353.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/administrador_contenidos/diagram_1246848047546962208.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/administrador_contenidos/diagram_1246848047546962208.png"/></a></p>
+<h3 id="gestion-de-contenido-edicion">Gestión de Contenido: Edición<a class="headerlink" href="#gestion-de-contenido-edicion" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/frontend/administrador_contenidos/diagram_3176738997024110735.png"><img alt="Diagrama UML" src="../../diagramas_UML/frontend/administrador_contenidos/diagram_3176738997024110735.png"/></a></p>
+<h2 id="uiux">UI/UX<a class="headerlink" href="#uiux" title="Permanent link">¶</a></h2>
+<h3 id="login">Login<a class="headerlink" href="#login" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/admin-vue/admin-login.png"><img alt="Login" src="../../assets/admin-vue/admin-login.png"/></a></p>
+<h3 id="registro">Registro<a class="headerlink" href="#registro" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/admin-vue/admin-register.png"><img alt="Registro" src="../../assets/admin-vue/admin-register.png"/></a></p>
+<h3 id="subida-de-video">Subida de video<a class="headerlink" href="#subida-de-video" title="Permanent link">¶</a></h3>
+<p>Sin video de seleccionado:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/admin-vue/admin-upload-no-video.png"><img alt="Subida sin video de seleccionado" src="../../assets/admin-vue/admin-upload-no-video.png"/></a></p>
+<p>Con video de seleccionado:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/admin-vue/admin-upload-with-video.png"><img alt="Subida con video de seleccionado" src="../../assets/admin-vue/admin-upload-with-video.png"/></a></p>
+<h3 id="panel-de-edicion-de-video">Panel de edición de video<a class="headerlink" href="#panel-de-edicion-de-video" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/admin-vue/admin-edit-panel.png"><img alt="Panel de edición de video" src="../../assets/admin-vue/admin-edit-panel.png"/></a></p>
+<h3 id="popup-de-edicion-de-video">Popup de edición de video<a class="headerlink" href="#popup-de-edicion-de-video" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/admin-vue/admin-edit-popup.png"><img alt="Popup de edición de video" src="../../assets/admin-vue/admin-edit-popup.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
