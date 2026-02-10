@@ -1,5 +1,4 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: mkdocs-jarplantuml
 Version: 0.1
 Summary: Plugin per renderitzar PlantUML amb el jar a MkDocs
-Dynamic: summary

@@ -43,10 +43,10 @@ Este componente interactúa con:
 + `GET /api/users/me`: Obtener detalles del usuario autenticado (requiere Bearer token)
 
 #### Endpoints catálogo
-+ `GET /api/catalogo`: Recibe videos paginados (params: page, size, categoriaId opcional)
-+ `GET /api/catalogo/search`: Búsqueda de videos por título (params: titulo, page, size)
++ `GET /api/catalogo`: Recibe videos paginados (params: page, size, categoriaId opcional). La paginación es 0-indexed (page=0 para la primera página)
++ `GET /api/catalogo/search`: Búsqueda de videos por título (params: titulo, page, size). La paginación es 0-indexed
 + `GET /api/catalogo/:id`: Recibe detalles de un video específico
-+ `GET /api/categorias`: Recibe categorías paginadas (params: page, size)
++ `GET /api/categorias`: Recibe categorías paginadas (params: page, size). La paginación es 0-indexed
 + `GET /api/categorias/:id`: Recibe una categoría específica
 
 #### Endpoints video backend (Media Server)
@@ -215,7 +215,7 @@ Usuario -> AppCliente : Solicitar reproducción
 AppCliente -> SecureStorage : Obtener access token
 alt Token válido
     SecureStorage --> AppCliente : Access Token
-    AppCliente -> MediaServer : GET /api/hls/:videoid/master.m3u8\n(Authorization: Bearer token)
+    AppCliente -> MediaServer : GET /api/hls/:videoid/master.m3u8<br/>(Authorization: Bearer token)
     alt Autenticación exitosa
         MediaServer --> AppCliente : Playlist HLS adaptativo
         AppCliente -> MediaServer : GET segmentos .ts
