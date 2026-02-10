@@ -913,6 +913,10 @@ deactivate API
 
 #### Grupos de Odoo
 
+<!-- IMAGEN: Captura de la configuración de grupos en Odoo mostrando los diferentes niveles de acceso -->
+<!-- Ruta sugerida: assets/backend/bloste_core_groups_config.png -->
+![Configuración de Grupos Odoo](../assets/backend/bloste_core_groups_config.png)
+
 - **Portal User** (`base.group_portal`): Usuario básico con acceso limitado
 - **Internal User** (`base.group_user`): Usuario interno con acceso a backend
 - **System Administrator** (`base.group_system`): Administrador con acceso completo
