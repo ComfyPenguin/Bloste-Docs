@@ -22,30 +22,32 @@ Este componente interactúa con:
 
 ### Endpoints GET - Videos
 
-+ `GET /api/catalogo/videos` : Obtiene el catálogo completo de videos públicos
-+ `GET /api/catalogo/videos/{id}` : Obtiene un video específico por su ID
-+ `GET /api/catalogo/videos/categoria/{categoriaId}` : Obtiene videos de una categoría específica
-+ `GET /api/catalogo/videos/search?titulo={titulo}` : Busca videos por título
++ `GET /api/catalogo?page={int}&size={int}` : Obtiene el catálogo paginado de videos públicos
++ `GET /api/catalogo/{id}` : Obtiene un video específico por su ID
++ `GET /api/catalogo?categoriaId={int}&page={int}&size={int}` : Obtiene videos de una categoría específica
++ `GET /api/catalogo/search?titulo={titulo}&page={int}&size={int}` : Busca videos por título , paginado
 
 ### Endpoints GET - Categorías
 
-+ `GET /api/catalogo/categorias` : Obtiene todas las categorías disponibles
-+ `GET /api/catalogo/categorias/{id}` : Obtiene una categoría específica por su ID
++ `GET /api/categorias` : Obtiene todas las categorías disponibles
++ `GET /api/categorias/{id}` : Obtiene una categoría específica por su ID
 
 ### Endpoints POST
 
 + `POST /api/catalogo/videos` : Crea un nuevo video en el catálogo (requiere autenticación de administrador)
-+ `POST /api/catalogo/categorias` : Crea una nueva categoría (requiere autenticación de administrador)
++ `POST /api/categorias` : Crea una nueva categoría (requiere autenticación de administrador)
 
 ### Endpoints PUT
 
 + `PUT /api/catalogo/videos/{id}` : Actualiza los datos de un video existente (requiere autenticación de administrador)
-+ `PUT /api/catalogo/categorias/{id}` : Actualiza una categoría existente (requiere autenticación de administrador)
++ `PUT /api/categorias/{id}` : Actualiza una categoría existente (requiere autenticación de administrador)
 
 ### Endpoints DELETE
 
+Delete videos no se usa porque en su lugar se maneja un campo `is_hidden` para ocultar videos sin eliminarlos físicamente.
+
 + `DELETE /api/catalogo/videos/{id}` : Elimina un video del catálogo (requiere autenticación de administrador)
-+ `DELETE /api/catalogo/categorias/{id}` : Elimina una categoría (requiere autenticación de administrador)
++ `DELETE /api/categorias/{id}` : Elimina una categoría (requiere autenticación de administrador)
 
 ## Casos de uso
 
@@ -56,7 +58,6 @@ graph LR
   subgraph Usuarios
     direction TB
     U1[🎬 Video Player]
-    U2[👤 App Usuario]
     U3[🛠️ App Admin]
   end
 
@@ -75,7 +76,7 @@ graph LR
       direction TB
       UC5((⬆️ Crear video))
       UC6((✏️ Modificar video))
-      UC7((🗑️ Eliminar video))
+      UC7((🗑️ Eliminar video\n(no usado — soft delete)))
       UC8((👁️ Ocultar/Mostrar video))
     end
 
@@ -87,25 +88,23 @@ graph LR
     end
   end
 
-  %% Relaciones - Consulta
-  U1 --> UC1
-  U1 --> UC2
-  U2 --> UC1
-  U2 --> UC2
-  U2 --> UC3
-  U2 --> UC4
+  %% Relaciones - Consulta (Video Player usa GET)
+  U1 -->|GET| UC1
+  U1 -->|GET| UC2
+  U1 -->|GET| UC3
+  U1 -->|GET| UC4
 
-  %% Relaciones - Administración
-  U3 --> UC5
-  U3 --> UC6
-  U3 --> UC7
-  U3 --> UC8
-  U3 --> UC9
-  U3 --> UC10
-  U3 --> UC11
+  %% Relaciones - Administración (Admin usa POST/PUT; DELETE raramente por soft delete)
+  U3 -->|POST/PUT| UC5
+  U3 -->|POST/PUT| UC6
+  U3 -->|DELETE (soft)| UC7
+  U3 -->|POST/PUT| UC8
+  U3 -->|POST/PUT| UC9
+  U3 -->|POST/PUT| UC10
+  U3 -->|POST/DELETE| UC11
 
   %% Estilos
-  class U1,U2,U3 usernode
+  class U1,U3 usernode
   class UC1,UC2,UC3,UC4,UC5,UC6,UC7,UC8,UC9,UC10,UC11 usecase
 
   classDef usernode fill:#e0f2fe,stroke:#0369a1,stroke-width:2px,rx:8px;
