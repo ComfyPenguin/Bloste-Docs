@@ -998,30 +998,31 @@
 <h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
 <h3 id="endpoints-get-videos">Endpoints GET - Videos<a class="headerlink" href="#endpoints-get-videos" title="Permanent link">¶</a></h3>
 <ul>
-<li><code>GET /api/catalogo/videos</code> : Obtiene el catálogo completo de videos públicos</li>
-<li><code>GET /api/catalogo/videos/{id}</code> : Obtiene un video específico por su ID</li>
-<li><code>GET /api/catalogo/videos/categoria/{categoriaId}</code> : Obtiene videos de una categoría específica</li>
-<li><code>GET /api/catalogo/videos/search?titulo={titulo}</code> : Busca videos por título</li>
+<li><code>GET /api/catalogo?page={int}&amp;size={int}</code> : Obtiene el catálogo paginado de videos públicos</li>
+<li><code>GET /api/catalogo/{id}</code> : Obtiene un video específico por su ID</li>
+<li><code>GET /api/catalogo?categoriaId={int}&amp;page={int}&amp;size={int}</code> : Obtiene videos de una categoría específica</li>
+<li><code>GET /api/catalogo/search?titulo={titulo}&amp;page={int}&amp;size={int}</code> : Busca videos por título , paginado</li>
 </ul>
 <h3 id="endpoints-get-categorias">Endpoints GET - Categorías<a class="headerlink" href="#endpoints-get-categorias" title="Permanent link">¶</a></h3>
 <ul>
-<li><code>GET /api/catalogo/categorias</code> : Obtiene todas las categorías disponibles</li>
-<li><code>GET /api/catalogo/categorias/{id}</code> : Obtiene una categoría específica por su ID</li>
+<li><code>GET /api/categorias</code> : Obtiene todas las categorías disponibles</li>
+<li><code>GET /api/categorias/{id}</code> : Obtiene una categoría específica por su ID</li>
 </ul>
 <h3 id="endpoints-post">Endpoints POST<a class="headerlink" href="#endpoints-post" title="Permanent link">¶</a></h3>
 <ul>
 <li><code>POST /api/catalogo/videos</code> : Crea un nuevo video en el catálogo (requiere autenticación de administrador)</li>
-<li><code>POST /api/catalogo/categorias</code> : Crea una nueva categoría (requiere autenticación de administrador)</li>
+<li><code>POST /api/categorias</code> : Crea una nueva categoría (requiere autenticación de administrador)</li>
 </ul>
 <h3 id="endpoints-put">Endpoints PUT<a class="headerlink" href="#endpoints-put" title="Permanent link">¶</a></h3>
 <ul>
 <li><code>PUT /api/catalogo/videos/{id}</code> : Actualiza los datos de un video existente (requiere autenticación de administrador)</li>
-<li><code>PUT /api/catalogo/categorias/{id}</code> : Actualiza una categoría existente (requiere autenticación de administrador)</li>
+<li><code>PUT /api/categorias/{id}</code> : Actualiza una categoría existente (requiere autenticación de administrador)</li>
 </ul>
 <h3 id="endpoints-delete">Endpoints DELETE<a class="headerlink" href="#endpoints-delete" title="Permanent link">¶</a></h3>
+<p>Delete videos no se usa porque en su lugar se maneja un campo <code>is_hidden</code> para ocultar videos sin eliminarlos físicamente.</p>
 <ul>
 <li><code>DELETE /api/catalogo/videos/{id}</code> : Elimina un video del catálogo (requiere autenticación de administrador)</li>
-<li><code>DELETE /api/catalogo/categorias/{id}</code> : Elimina una categoría (requiere autenticación de administrador)</li>
+<li><code>DELETE /api/categorias/{id}</code> : Elimina una categoría (requiere autenticación de administrador)</li>
 </ul>
 <h2 id="casos-de-uso">Casos de uso<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
 <div class="mermaid">%%{init: {'theme':'base','themeVariables': {'primaryColor':'#0ea5a4','edgeColor':'#065f46','fontFamily':'"Inter", Arial'}} }%%
@@ -1030,7 +1031,6 @@ graph LR
   subgraph Usuarios
     direction TB
     U1[🎬 Video Player]
-    U2[👤 App Usuario]
     U3[🛠️ App Admin]
   end
 
@@ -1049,7 +1049,7 @@ graph LR
       direction TB
       UC5((⬆️ Crear video))
       UC6((✏️ Modificar video))
-      UC7((🗑️ Eliminar video))
+      UC7((🗑️ Eliminar video\n(no usado — soft delete)))
       UC8((👁️ Ocultar/Mostrar video))
     end
 
@@ -1061,31 +1061,29 @@ graph LR
     end
   end
 
-  %% Relaciones - Consulta
-  U1 --&gt; UC1
-  U1 --&gt; UC2
-  U2 --&gt; UC1
-  U2 --&gt; UC2
-  U2 --&gt; UC3
-  U2 --&gt; UC4
+  %% Relaciones - Consulta (Video Player usa GET)
+  U1 --&gt;|GET| UC1
+  U1 --&gt;|GET| UC2
+  U1 --&gt;|GET| UC3
+  U1 --&gt;|GET| UC4
 
-  %% Relaciones - Administración
-  U3 --&gt; UC5
-  U3 --&gt; UC6
-  U3 --&gt; UC7
-  U3 --&gt; UC8
-  U3 --&gt; UC9
-  U3 --&gt; UC10
-  U3 --&gt; UC11
+  %% Relaciones - Administración (Admin usa POST/PUT; DELETE raramente por soft delete)
+  U3 --&gt;|POST/PUT| UC5
+  U3 --&gt;|POST/PUT| UC6
+  U3 --&gt;|DELETE (soft)| UC7
+  U3 --&gt;|POST/PUT| UC8
+  U3 --&gt;|POST/PUT| UC9
+  U3 --&gt;|POST/PUT| UC10
+  U3 --&gt;|POST/DELETE| UC11
 
   %% Estilos
-  class U1,U2,U3 usernode
+  class U1,U3 usernode
   class UC1,UC2,UC3,UC4,UC5,UC6,UC7,UC8,UC9,UC10,UC11 usecase
 
   classDef usernode fill:#e0f2fe,stroke:#0369a1,stroke-width:2px,rx:8px;
   classDef usecase fill:#ecfccb,stroke:#65a30d,stroke-width:1.5px,rx:20px;</div>
 <h2 id="diagrama-entidad-relacion">Diagrama Entidad-Relación<a class="headerlink" href="#diagrama-entidad-relacion" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_1019070434772845685.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_1019070434772845685.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_2065262074027963012.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_2065262074027963012.png"/></a></p>
 <h2 id="modelo-de-datos">Modelo de datos<a class="headerlink" href="#modelo-de-datos" title="Permanent link">¶</a></h2>
 <h3 id="video">Video<a class="headerlink" href="#video" title="Permanent link">¶</a></h3>
 <p>Representa un video en el catálogo con sus metadatos de negocio.</p>
@@ -1112,17 +1110,17 @@ graph LR
 - <code>categoria_id</code>: Referencia a la categoría</p>
 <h2 id="diagramas-de-flujo">Diagramas de flujo<a class="headerlink" href="#diagramas-de-flujo" title="Permanent link">¶</a></h2>
 <h3 id="consultar-catalogo-de-videos">Consultar catálogo de videos<a class="headerlink" href="#consultar-catalogo-de-videos" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_4485558826883589071.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_4485558826883589071.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_9189934638028739780.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_9189934638028739780.png"/></a></p>
 <h3 id="buscar-videos-por-categoria">Buscar videos por categoría<a class="headerlink" href="#buscar-videos-por-categoria" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_6142502943625614445.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_6142502943625614445.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_268567096281842221.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_268567096281842221.png"/></a></p>
 <h3 id="crear-nuevo-video">Crear nuevo video<a class="headerlink" href="#crear-nuevo-video" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_4555161409326532126.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_4555161409326532126.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_5078691228880366655.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_5078691228880366655.png"/></a></p>
 <h3 id="modificar-video-existente">Modificar video existente<a class="headerlink" href="#modificar-video-existente" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_7426044059950914683.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_7426044059950914683.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_3342908911341659918.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_3342908911341659918.png"/></a></p>
 <h3 id="eliminar-video">Eliminar video<a class="headerlink" href="#eliminar-video" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_8426774893897110081.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_8426774893897110081.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_4680547889558028270.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_4680547889558028270.png"/></a></p>
 <h3 id="gestion-de-categorias">Gestión de categorías<a class="headerlink" href="#gestion-de-categorias" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_2542227876994517044.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_2542227876994517044.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_5717004063951340574.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_5717004063951340574.png"/></a></p>
 <h2 id="arquitectura-y-tecnologias">Arquitectura y Tecnologías<a class="headerlink" href="#arquitectura-y-tecnologias" title="Permanent link">¶</a></h2>
 <h3 id="stack-tecnologico">Stack Tecnológico<a class="headerlink" href="#stack-tecnologico" title="Permanent link">¶</a></h3>
 <ul>
