@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../assets/logo.svg" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
+<title>Bloste Web - Módulo de Sitio Web - Bloste Software</title>
+<link href="../../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#bloste-web-modulo-de-sitio-web">
+          Saltar a contenido
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Cabecera" class="md-header__inner md-grid">
+<a aria-label="Bloste Software" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Bloste Software">
+<img alt="logo" src="../../../assets/logo.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Bloste Software
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Bloste Web - Módulo de Sitio Web
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Búsqueda" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Búsqueda" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Buscar" class="md-search__options">
+<button aria-label="Limpiar" class="md-search__icon md-icon" tabindex="-1" title="Limpiar" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ComfyPenguin/Bloste-Software" title="Ir al repositorio">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Pestañas" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+          
+  
+  
+  Home
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../catalogo_contenidos/">
+          
+  
+  
+  Backend
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../frontend/video_reproductor/">
+          
+  
+  
+  Frontend
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navegación" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Bloste Software" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Bloste Software">
+<img alt="logo" src="../../../assets/logo.svg"/>
+</a>
+    Bloste Software
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ComfyPenguin/Bloste-Software" title="Ir al repositorio">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../UX_inicial/">
+<span class="md-ellipsis">
+    
+  
+    UX
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../glosario/">
+<span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../catalogo_contenidos/">
+<span class="md-ellipsis">
+    
+  
+    Catalogo (SpringBoot)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../servicio_contenidos/">
+<span class="md-ellipsis">
+    
+  
+    Servidor de contenidos (ExpressJS)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gestor_suscripciones_odoo.md">
+<span class="md-ellipsis">
+    
+  
+    Gestor de Suscripciones (Odoo)
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Frontend
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../frontend/video_reproductor/">
+<span class="md-ellipsis">
+    
+  
+    Reproductor de videos (Flutter)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../frontend/administrador_contenidos/">
+<span class="md-ellipsis">
+    
+  
+    Administrador de contenidos (VUE)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../frontend/gestor_suscripciones_web/">
+<span class="md-ellipsis">
+    
+  
+    Web de Suscripciones (Odoo)
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#descripcion-general">
+<span class="md-ellipsis">
+      
+        Descripción General
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estructura-del-modulo">
+<span class="md-ellipsis">
+      
+        Estructura del Módulo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manifest-manifestpy">
+<span class="md-ellipsis">
+      
+        Manifest (manifest.py)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelos">
+<span class="md-ellipsis">
+      
+        Modelos
+      
+    </span>
+</a>
+<nav aria-label="Modelos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blosteweb-blosteweb">
+<span class="md-ellipsis">
+      
+        BlosteWeb (bloste.web)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controladores">
+<span class="md-ellipsis">
+      
+        Controladores
+      
+    </span>
+</a>
+<nav aria-label="Controladores" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blostewebsite-controllersmainpy">
+<span class="md-ellipsis">
+      
+        BlosteWebsite (controllers/main.py)
+      
+    </span>
+</a>
+<nav aria-label="BlosteWebsite (controllers/main.py)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos-principales">
+<span class="md-ellipsis">
+      
+        Métodos Principales
+      
+    </span>
+</a>
+<nav aria-label="Métodos Principales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_render_website_page_with_plansurl">
+<span class="md-ellipsis">
+      
+        _render_website_page_with_plans(url)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rutas-http">
+<span class="md-ellipsis">
+      
+        Rutas HTTP
+      
+    </span>
+</a>
+<nav aria-label="Rutas HTTP" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#in-pagina-de-loginregistro">
+<span class="md-ellipsis">
+      
+        /in - Página de Login/Registro
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#suscripciones-planes-de-suscripcion">
+<span class="md-ellipsis">
+      
+        /suscripciones - Planes de Suscripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#planes-y-productos-alias-de-suscripciones">
+<span class="md-ellipsis">
+      
+        /planes y /productos - Alias de Suscripciones
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#info-usuario-informacion-del-usuario">
+<span class="md-ellipsis">
+      
+        /info-usuario - Información del Usuario
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#info-usuariosubmit-procesamiento-de-contratacion">
+<span class="md-ellipsis">
+      
+        /info-usuario/submit - Procesamiento de Contratación
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vistas-y-templates">
+<span class="md-ellipsis">
+      
+        Vistas y Templates
+      
+    </span>
+</a>
+<nav aria-label="Vistas y Templates" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#templates-viewstemplatesxml">
+<span class="md-ellipsis">
+      
+        Templates (views/templates.xml)
+      
+    </span>
+</a>
+<nav aria-label="Templates (views/templates.xml)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#login_register_template">
+<span class="md-ellipsis">
+      
+        login_register_template
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#paginas-del-sitio-viewswebsite_pagesxml">
+<span class="md-ellipsis">
+      
+        Páginas del Sitio (views/website_pages.xml)
+      
+    </span>
+</a>
+<nav aria-label="Páginas del Sitio (views/website_pages.xml)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracion-del-sitio-web">
+<span class="md-ellipsis">
+      
+        Configuración del Sitio Web
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#home_page_view-pagina-de-inicio">
+<span class="md-ellipsis">
+      
+        home_page_view - Página de Inicio
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#suscripciones_page_view-pagina-de-suscripciones">
+<span class="md-ellipsis">
+      
+        suscripciones_page_view - Página de Suscripciones
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#templates-adicionales">
+<span class="md-ellipsis">
+      
+        Templates Adicionales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#menus-viewsmenusxml">
+<span class="md-ellipsis">
+      
+        Menús (views/menus.xml)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assets-viewsassetsxml">
+<span class="md-ellipsis">
+      
+        Assets (views/assets.xml)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recursos-estaticos">
+<span class="md-ellipsis">
+      
+        Recursos Estáticos
+      
+    </span>
+</a>
+<nav aria-label="Recursos Estáticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#css-bloste_colorscss">
+<span class="md-ellipsis">
+      
+        CSS - bloste_colors.css
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#javascript-subscription_redirectjs">
+<span class="md-ellipsis">
+      
+        JavaScript - subscription_redirect.js
+      
+    </span>
+</a>
+<nav aria-label="JavaScript - subscription_redirect.js" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-preseleccion-de-plan-desde-url">
+<span class="md-ellipsis">
+      
+        1. Preselección de Plan desde URL
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-manejo-de-clics-en-botones-de-suscripcion">
+<span class="md-ellipsis">
+      
+        2. Manejo de Clics en Botones de Suscripción
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#seguridad">
+<span class="md-ellipsis">
+      
+        Seguridad
+      
+    </span>
+</a>
+<nav aria-label="Seguridad" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#irmodelaccesscsv">
+<span class="md-ellipsis">
+      
+        ir.model.access.csv
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-de-contratacion-de-suscripcion">
+<span class="md-ellipsis">
+      
+        Flujo de Contratación de Suscripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integracion-con-otros-modulos">
+<span class="md-ellipsis">
+      
+        Integración con Otros Módulos
+      
+    </span>
+</a>
+<nav aria-label="Integración con Otros Módulos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloste_core">
+<span class="md-ellipsis">
+      
+        bloste_core
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#website-odoo">
+<span class="md-ellipsis">
+      
+        website (Odoo)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloste_jwt">
+<span class="md-ellipsis">
+      
+        bloste_jwt
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consideraciones-de-desarrollo">
+<span class="md-ellipsis">
+      
+        Consideraciones de Desarrollo
+      
+    </span>
+</a>
+<nav aria-label="Consideraciones de Desarrollo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multiidioma">
+<span class="md-ellipsis">
+      
+        Multiidioma
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validacion-de-contrasenas">
+<span class="md-ellipsis">
+      
+        Validación de Contraseñas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uso-de-sudo">
+<span class="md-ellipsis">
+      
+        Uso de sudo()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logging">
+<span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mejoras-futuras">
+<span class="md-ellipsis">
+      
+        Mejoras Futuras
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comandos-utiles">
+<span class="md-ellipsis">
+      
+        Comandos Útiles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#testing">
+<span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="bloste-web-modulo-de-sitio-web">Bloste Web - Módulo de Sitio Web<a class="headerlink" href="#bloste-web-modulo-de-sitio-web" title="Permanent link">¶</a></h1>
+<h2 id="descripcion-general">Descripción General<a class="headerlink" href="#descripcion-general" title="Permanent link">¶</a></h2>
+<p><code>bloste_web</code> es el módulo de Odoo que proporciona la interfaz web pública para la plataforma Bloste. Este módulo gestiona las páginas públicas del sitio, el registro de usuarios, la visualización de planes de suscripción y el proceso de contratación.</p>
+<!-- IMAGEN: Captura de la página de inicio de BlosteFlix -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_home_page.png -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_home_page.png"><img alt="Página de Inicio BlosteFlix" src="../assets/frontend-odoo/bloste_home_page.png"/></a></p>
+<p><strong>Características principales:</strong>
+- Página de inicio (home) con hero section y características del servicio
+- Sistema de registro de usuarios con validación
+- Visualización de planes de suscripción
+- Proceso de contratación de suscripciones
+- Integración con Website Builder de Odoo
+- Sistema de redirección inteligente para selección de planes
+- Estilos personalizados con la paleta de colores de Bloste</p>
+<h2 id="estructura-del-modulo">Estructura del Módulo<a class="headerlink" href="#estructura-del-modulo" title="Permanent link">¶</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>bloste_web/
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>├── __init__.py
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>├── __manifest__.py
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>├── controllers/
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>│   ├── __init__.py
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>│   └── main.py
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>├── models/
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>│   ├── __init__.py
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>│   └── bloste_web.py
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>├── views/
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>│   ├── assets.xml
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>│   ├── menus.xml
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>│   ├── templates.xml
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>│   └── website_pages.xml
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>├── static/
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>│   └── src/
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>│       ├── css/
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>│       │   └── bloste_colors.css
+</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>│       └── js/
+</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>│           └── subscription_redirect.js
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>└── security/
+</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>    └── ir.model.access.csv
+</span></code></pre></div>
+<h2 id="manifest-manifestpy">Manifest (<strong>manifest</strong>.py)<a class="headerlink" href="#manifest-manifestpy" title="Permanent link">¶</a></h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Bloste Website'</span><span class="p">,</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'1.0'</span><span class="p">,</span>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>    <span class="s1">'depends'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'base'</span><span class="p">,</span> <span class="s1">'bloste_core'</span><span class="p">,</span> <span class="s1">'website'</span><span class="p">],</span>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="s1">'author'</span><span class="p">:</span> <span class="s1">'Bloste Software'</span><span class="p">,</span>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="s1">'category'</span><span class="p">:</span> <span class="s1">'Bloste'</span><span class="p">,</span>
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="s1">'license'</span><span class="p">:</span> <span class="s1">'LGPL-3'</span><span class="p">,</span>
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="s1">'installable'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="s1">'application'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>    <span class="s1">'data'</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="s1">'security/ir.model.access.csv'</span><span class="p">,</span>
+</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="s1">'views/menus.xml'</span><span class="p">,</span>
+</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>        <span class="s1">'views/templates.xml'</span><span class="p">,</span>
+</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>        <span class="s1">'views/website_pages.xml'</span><span class="p">,</span>
+</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>        <span class="s1">'views/assets.xml'</span><span class="p">,</span>
+</span><span id="__span-1-16"><a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>    <span class="p">],</span>
+</span><span id="__span-1-17"><a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Dependencias:</strong>
+- <code>base</code>: Módulo base de Odoo
+- <code>bloste_core</code>: Módulo core de Bloste con modelos de suscripción
+- <code>website</code>: Módulo de sitio web de Odoo</p>
+<h2 id="modelos">Modelos<a class="headerlink" href="#modelos" title="Permanent link">¶</a></h2>
+<h3 id="blosteweb-blosteweb">BlosteWeb (<code>bloste.web</code>)<a class="headerlink" href="#blosteweb-blosteweb" title="Permanent link">¶</a></h3>
+<p>Modelo auxiliar para datos relacionados con el sitio web.</p>
+<p><strong>Archivo:</strong> <code>models/bloste_web.py</code></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">BlosteWeb</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="n">_name</span> <span class="o">=</span> <span class="s1">'bloste.web'</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="n">_description</span> <span class="o">=</span> <span class="s1">'Modelo de Bloste Web'</span>
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s1">'Nombre'</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="n">description</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s1">'Descripción'</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Campos:</strong>
+- <code>name</code>: Nombre identificador (requerido)
+- <code>description</code>: Descripción del elemento</p>
+<h2 id="controladores">Controladores<a class="headerlink" href="#controladores" title="Permanent link">¶</a></h2>
+<h3 id="blostewebsite-controllersmainpy">BlosteWebsite (<code>controllers/main.py</code>)<a class="headerlink" href="#blostewebsite-controllersmainpy" title="Permanent link">¶</a></h3>
+<p>Controlador principal que gestiona todas las rutas y páginas públicas del sitio web.</p>
+<h4 id="metodos-principales">Métodos Principales<a class="headerlink" href="#metodos-principales" title="Permanent link">¶</a></h4>
+<h5 id="_render_website_page_with_plansurl"><code>_render_website_page_with_plans(url)</code><a class="headerlink" href="#_render_website_page_with_plansurl" title="Permanent link">¶</a></h5>
+<p>Método privado para renderizar páginas creadas en Website Builder con contexto de planes de suscripción.</p>
+<p><strong>Parámetros:</strong>
+- <code>url</code> (str): URL de la página a renderizar</p>
+<p><strong>Retorna:</strong> Template renderizado con contexto de suscripciones</p>
+<p><strong>Funcionalidad:</strong>
+- Busca todos los planes de suscripción disponibles
+- Busca la página web por URL
+- Renderiza la vista con contexto de suscripciones</p>
+<h4 id="rutas-http">Rutas HTTP<a class="headerlink" href="#rutas-http" title="Permanent link">¶</a></h4>
+<h5 id="in-pagina-de-loginregistro"><code>/in</code> - Página de Login/Registro<a class="headerlink" href="#in-pagina-de-loginregistro" title="Permanent link">¶</a></h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nd">@http</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/in'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'http'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">'public'</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">login_register</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="sd">"""Pagina de login/registre"""</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">'bloste_web.login_register_template'</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Descripción:</strong> Página pública de registro de usuarios con formulario completo y validación.</p>
+<p><strong>Características:</strong>
+- Formulario de registro con validación de contraseña
+- Confirmación de contraseña
+- Validación desde JavaScript
+- Integración con API de autenticación</p>
+<h5 id="suscripciones-planes-de-suscripcion"><code>/suscripciones</code> - Planes de Suscripción<a class="headerlink" href="#suscripciones-planes-de-suscripcion" title="Permanent link">¶</a></h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nd">@http</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/suscripciones'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'http'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">'public'</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">subscription_plans</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="sd">"""Pagina publica de plans de subscripcio"""</span>
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_website_page_with_plans</span><span class="p">(</span><span class="s1">'/suscripciones'</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Descripción:</strong> Página que muestra todos los planes de suscripción disponibles.</p>
+<p><strong>Características:</strong>
+- Listado dinámico de planes desde BD
+- Diseño responsive con cards
+- Botones de suscripción con JavaScript interactivo</p>
+<h5 id="planes-y-productos-alias-de-suscripciones"><code>/planes</code> y <code>/productos</code> - Alias de Suscripciones<a class="headerlink" href="#planes-y-productos-alias-de-suscripciones" title="Permanent link">¶</a></h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nd">@http</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/planes'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'http'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">'public'</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">subscription_plans_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="sd">"""Alias: planes = suscripciones"""</span>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="s1">'/suscripciones'</span><span class="p">)</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="nd">@http</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/productos'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'http'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">'public'</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">products</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="sd">"""Alias: productos = planes"""</span>
+</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>    <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="s1">'/suscripciones'</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Descripción:</strong> Rutas alternativas que redirigen a <code>/suscripciones</code>.</p>
+<h5 id="info-usuario-informacion-del-usuario"><code>/info-usuario</code> - Información del Usuario<a class="headerlink" href="#info-usuario-informacion-del-usuario" title="Permanent link">¶</a></h5>
+<!-- IMAGEN: Formulario de Información de Usuario -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_info_usuario_form.png -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_info_usuario_form.png"><img alt="Formulario de Información de Usuario" src="../assets/frontend-odoo/bloste_info_usuario_form.png"/></a></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nd">@http</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/info-usuario'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'http'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">'public'</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">info_usuario</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plan</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="sd">"""Pagina d'informacio de l'usuari amb pla preseleccionat"""</span>
+</span></code></pre></div>
+<p><strong>Descripción:</strong> Página con formulario para que el usuario ingrese sus credenciales y confirme la contratación de un plan.</p>
+<p><strong>Parámetros GET:</strong>
+- <code>plan</code> (opcional): Nombre del plan preseleccionado</p>
+<p><strong>Características:</strong>
+- Preselección del plan desde URL
+- Formulario de autenticación
+- Vista renderizada desde BD o template</p>
+<h5 id="info-usuariosubmit-procesamiento-de-contratacion"><code>/info-usuario/submit</code> - Procesamiento de Contratación<a class="headerlink" href="#info-usuariosubmit-procesamiento-de-contratacion" title="Permanent link">¶</a></h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nd">@http</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/info-usuario/submit'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'http'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">'public'</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">],</span> <span class="n">csrf</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">info_usuario_submit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">post</span><span class="p">):</span>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="sd">"""Processa l'enviament del formulari: autentica usuari i assigna subscripcio"""</span>
+</span></code></pre></div>
+<p><strong>Descripción:</strong> Endpoint POST que procesa la contratación de suscripciones.</p>
+<p><strong>Parámetros POST:</strong>
+- <code>email</code>: Email del usuario
+- <code>password</code>: Contraseña del usuario
+- <code>subscription_plan</code>: Nombre del plan a contratar</p>
+<p><strong>Flujo:</strong>
+1. Validación de email y contraseña
+2. Búsqueda del usuario en BD
+3. Verificación de credenciales con <code>_check_credentials()</code>
+4. Búsqueda del plan de suscripción
+5. Verificación de suscripción existente
+6. Creación de nueva suscripción si no existe
+7. Redirección a página de éxito</p>
+<p><strong>Manejo de Errores:</strong>
+- Usuario no encontrado
+- Contraseña incorrecta
+- Plan de suscripción no encontrado
+- Errores de BD</p>
+<p><strong>Logging:</strong> Registra todas las operaciones importantes con <code>_logger</code></p>
+<h2 id="vistas-y-templates">Vistas y Templates<a class="headerlink" href="#vistas-y-templates" title="Permanent link">¶</a></h2>
+<h3 id="templates-viewstemplatesxml">Templates (views/templates.xml)<a class="headerlink" href="#templates-viewstemplatesxml" title="Permanent link">¶</a></h3>
+<h4 id="login_register_template"><code>login_register_template</code><a class="headerlink" href="#login_register_template" title="Permanent link">¶</a></h4>
+<p>Template de registro de usuarios con diseño moderno y validación.</p>
+<!-- IMAGEN: Formulario de Registro -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_register_form.png -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_register_form.png"><img alt="Formulario de Registro" src="../assets/frontend-odoo/bloste_register_form.png"/></a></p>
+<p><strong>Características:</strong>
+- Diseño con gradiente de colores Bloste
+- Card con sombra y bordes redondeados
+- Formulario con validación de campos:
+  - Nombre completo
+  - Email
+  - Contraseña (mínimo 6 caracteres)
+  - Confirmación de contraseña
+- JavaScript para validación y envío asíncrono
+- Spinner de carga durante el registro
+- Mensajes de éxito/error con Bootstrap alerts
+- Redirección automática tras éxito</p>
+<p><strong>Endpoint de API:</strong> <code>/api/auth/register</code> (POST)</p>
+<p><strong>Estilos personalizados:</strong>
+- Bordes redondeados (15px)
+- Gradiente en header
+- Inputs con tamaño grande (form-control-lg)
+- Botón con gradiente y animación</p>
+<h3 id="paginas-del-sitio-viewswebsite_pagesxml">Páginas del Sitio (views/website_pages.xml)<a class="headerlink" href="#paginas-del-sitio-viewswebsite_pagesxml" title="Permanent link">¶</a></h3>
+<h4 id="configuracion-del-sitio-web">Configuración del Sitio Web<a class="headerlink" href="#configuracion-del-sitio-web" title="Permanent link">¶</a></h4>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"bloste_website"</span><span class="w"> </span><span class="na">model=</span><span class="s">"website"</span><span class="nt">&gt;</span>
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>Bloste<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-8-3"><a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"domain"</span><span class="w"> </span><span class="na">eval=</span><span class="s">"False"</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-4"><a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"company_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"base.main_company"</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-5"><a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="nt">&lt;/record&gt;</span>
+</span></code></pre></div>
+<h4 id="home_page_view-pagina-de-inicio"><code>home_page_view</code> - Página de Inicio<a class="headerlink" href="#home_page_view-pagina-de-inicio" title="Permanent link">¶</a></h4>
+<p>Template de la página principal con diseño moderno.</p>
+<!-- IMAGEN: Vista completa de la página de inicio con hero section y características -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_home_full.png -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_home_full.png"><img alt="Página de Inicio Completa" src="../assets/frontend-odoo/bloste_home_full.png"/></a></p>
+<p><strong>Secciones:</strong></p>
+<ol>
+<li><strong>Hero Section:</strong></li>
+<li>Gradiente naranja a morado</li>
+<li>Título principal "Bienvenido a BlosteFlix"</li>
+<li>Subtítulo descriptivo</li>
+<li>
+<p>Botones CTA: "Ver Planes" y "Registrarse"</p>
+</li>
+<li>
+<p><strong>Características:</strong></p>
+</li>
+<li>Grid responsive de 3 columnas</li>
+<li>Iconos con emojis</li>
+<li>Títulos y descripciones:<ul>
+<li>💻 Multiplataforma</li>
+<li>✓ Sin Compromisos</li>
+<li>★ Alta Calidad</li>
+</ul>
+</li>
+</ol>
+<h4 id="suscripciones_page_view-pagina-de-suscripciones"><code>suscripciones_page_view</code> - Página de Suscripciones<a class="headerlink" href="#suscripciones_page_view-pagina-de-suscripciones" title="Permanent link">¶</a></h4>
+<p>Template para mostrar planes de suscripción disponibles.</p>
+<!-- IMAGEN: Captura de la página /suscripciones mostrando los planes en cards -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_subscriptions_page.png -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_subscriptions_page.png"><img alt="Página de Planes de Suscripción" src="../assets/frontend-odoo/bloste_subscriptions_page.png"/></a></p>
+<p><strong>Elementos:</strong>
+- Título y descripción
+- Grid responsive de cards
+- Iteración sobre <code>subscriptions</code> (contexto del controlador)
+- Para cada suscripción muestra:
+  - Nombre del plan
+  - Precio con formato ($XX.XX/mes)
+  - Duración en días
+  - Botón "Suscribirse" con data-plan</p>
+<p><strong>Condicional:</strong> Muestra alerta si no hay planes disponibles</p>
+<!-- IMAGEN: Vista de la alerta cuando no hay planes disponibles -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_no_plans_alert.png -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_no_plans_alert.png"><img alt="Alerta sin Planes Disponibles" src="../assets/frontend-odoo/bloste_no_plans_alert.png"/></a></p>
+<h4 id="templates-adicionales">Templates Adicionales<a class="headerlink" href="#templates-adicionales" title="Permanent link">¶</a></h4>
+<p>El archivo contiene más templates incluyendo:
+- <code>info_usuario_page_view</code>: Formulario de información del usuario
+- <code>subscription_success_page_view</code>: Página de éxito tras contratación
+- <code>payment_page_view</code>: Página de procesamiento de pago</p>
+<h3 id="menus-viewsmenusxml">Menús (views/menus.xml)<a class="headerlink" href="#menus-viewsmenusxml" title="Permanent link">¶</a></h3>
+<!-- IMAGEN: Captura del menú Bloste Website en el backend de Odoo -->
+<!-- Ruta sugerida: assets/backend/bloste_web_backend_menu.png -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend/bloste_web_backend_menu.png"><img alt="Menú Backend Bloste Website" src="../assets/backend/bloste_web_backend_menu.png"/></a></p>
+<p>Estructura de menús en el backend de Odoo:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">&lt;menuitem</span><span class="w"> </span><span class="na">id=</span><span class="s">"bloste_website_menu"</span><span class="w"> </span>
+</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">          </span><span class="na">name=</span><span class="s">"Bloste Website"</span><span class="w"> </span>
+</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">          </span><span class="na">sequence=</span><span class="s">"10"</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-4"><a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="nt">&lt;menuitem</span><span class="w"> </span><span class="na">id=</span><span class="s">"bloste_pages_menu"</span><span class="w"> </span>
+</span><span id="__span-9-6"><a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">          </span><span class="na">name=</span><span class="s">"Páginas"</span><span class="w"> </span>
+</span><span id="__span-9-7"><a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">          </span><span class="na">parent=</span><span class="s">"bloste_website_menu"</span><span class="w"> </span>
+</span><span id="__span-9-8"><a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">          </span><span class="na">action=</span><span class="s">"website.action_website_pages_list"</span><span class="nt">/&gt;</span>
+</span><span id="__span-9-9"><a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="nt">&lt;menuitem</span><span class="w"> </span><span class="na">id=</span><span class="s">"bloste_subscriptions_menu"</span><span class="w"> </span>
+</span><span id="__span-9-11"><a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">          </span><span class="na">name=</span><span class="s">"Suscripciones"</span><span class="w"> </span>
+</span><span id="__span-9-12"><a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">          </span><span class="na">parent=</span><span class="s">"bloste_website_menu"</span><span class="w"> </span>
+</span><span id="__span-9-13"><a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">          </span><span class="na">action=</span><span class="s">"bloste_core.action_bloste_subscription"</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><strong>Menús:</strong>
+1. <strong>Bloste Website</strong> (raíz): Menú principal con icono personalizado
+2. <strong>Páginas</strong>: Acceso al gestor de páginas web
+3. <strong>Suscripciones</strong>: Acceso a gestión de planes de suscripción</p>
+<h3 id="assets-viewsassetsxml">Assets (views/assets.xml)<a class="headerlink" href="#assets-viewsassetsxml" title="Permanent link">¶</a></h3>
+<p>Hereda del template <code>website.layout</code> para incluir CSS personalizado:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">&lt;template</span><span class="w"> </span><span class="na">id=</span><span class="s">"bloste_assets"</span><span class="w"> </span><span class="na">inherit_id=</span><span class="s">"website.layout"</span><span class="nt">&gt;</span>
+</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nt">&lt;xpath</span><span class="w"> </span><span class="na">expr=</span><span class="s">"//head"</span><span class="w"> </span><span class="na">position=</span><span class="s">"inside"</span><span class="nt">&gt;</span>
+</span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">        </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">rel=</span><span class="s">"stylesheet"</span><span class="w"> </span><span class="na">href=</span><span class="s">"/bloste_web/static/src/css/bloste_colors.css"</span><span class="nt">/&gt;</span>
+</span><span id="__span-10-4"><a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="nt">&lt;/xpath&gt;</span>
+</span><span id="__span-10-5"><a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="nt">&lt;/template&gt;</span>
+</span></code></pre></div>
+<p><strong>Funcionalidad:</strong> Inyecta la hoja de estilos de colores Bloste en todas las páginas del sitio.</p>
+<h2 id="recursos-estaticos">Recursos Estáticos<a class="headerlink" href="#recursos-estaticos" title="Permanent link">¶</a></h2>
+<h3 id="css-bloste_colorscss">CSS - bloste_colors.css<a class="headerlink" href="#css-bloste_colorscss" title="Permanent link">¶</a></h3>
+<p><strong>Variables CSS:</strong>
+</p><div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="nv">--bloste-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#FC7D1C</span><span class="p">;</span><span class="w">      </span><span class="c">/* Naranja */</span>
+</span><span id="__span-11-3"><a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">    </span><span class="nv">--bloste-secondary</span><span class="p">:</span><span class="w"> </span><span class="mh">#9A48D0</span><span class="p">;</span><span class="w">    </span><span class="c">/* Morado */</span>
+</span><span id="__span-11-4"><a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="nv">--bloste-white</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFFFFF</span><span class="p">;</span>
+</span><span id="__span-11-5"><a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="nv">--bloste-dark</span><span class="p">:</span><span class="w"> </span><span class="mh">#383E45</span><span class="p">;</span>
+</span><span id="__span-11-6"><a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">    </span><span class="nv">--bloste-success</span><span class="p">:</span><span class="w"> </span><span class="mh">#10b981</span><span class="p">;</span>
+</span><span id="__span-11-7"><a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">    </span><span class="nv">--bloste-info</span><span class="p">:</span><span class="w"> </span><span class="mh">#06b6d4</span><span class="p">;</span>
+</span><span id="__span-11-8"><a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">    </span><span class="nv">--bloste-warning</span><span class="p">:</span><span class="w"> </span><span class="mh">#f59e0b</span><span class="p">;</span>
+</span><span id="__span-11-9"><a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">    </span><span class="nv">--bloste-danger</span><span class="p">:</span><span class="w"> </span><span class="mh">#ef4444</span><span class="p">;</span>
+</span><span id="__span-11-10"><a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="p">}</span>
+</span></code></pre></div><p></p>
+<p><strong>Clases personalizadas:</strong></p>
+<ol>
+<li><strong>Botones:</strong></li>
+<li><code>.btn-primary</code>: Color naranja con hover</li>
+<li>
+<p><code>.btn-secondary</code>: Color morado con hover</p>
+</li>
+<li>
+<p><strong>Textos:</strong></p>
+</li>
+<li><code>.text-primary</code>: Color naranja</li>
+<li><code>.text-secondary</code>: Color morado</li>
+<li><code>.text-success</code>: Verde</li>
+<li><code>.text-info</code>: Cyan</li>
+</ol>
+<p><strong>Efectos:</strong>
+- Estados hover con colores ligeramente más oscuros
+- Uso de <code>!important</code> para sobrescribir estilos de Bootstrap</p>
+<h3 id="javascript-subscription_redirectjs">JavaScript - subscription_redirect.js<a class="headerlink" href="#javascript-subscription_redirectjs" title="Permanent link">¶</a></h3>
+<p><strong>Funcionalidad principal:</strong></p>
+<h4 id="1-preseleccion-de-plan-desde-url">1. Preselección de Plan desde URL<a class="headerlink" href="#1-preseleccion-de-plan-desde-url" title="Permanent link">¶</a></h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">urlParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">plan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">urlParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'plan'</span><span class="p">);</span>
+</span><span id="__span-12-3"><a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">plan</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-5"><a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">planInputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'input[name="plan"], ...'</span><span class="p">);</span>
+</span><span id="__span-12-6"><a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">    </span><span class="nx">planInputs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-7"><a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">''</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-8"><a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="w">            </span><span class="nx">input</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">plan</span><span class="p">);</span>
+</span><span id="__span-12-9"><a href="#__codelineno-12-9" id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-12-10"><a href="#__codelineno-12-10" id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="w">    </span><span class="p">});</span>
+</span><span id="__span-12-11"><a href="#__codelineno-12-11" id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Descripción:</strong> Captura el parámetro <code>plan</code> de la URL y lo asigna automáticamente a los inputs del formulario.</p>
+<h4 id="2-manejo-de-clics-en-botones-de-suscripcion">2. Manejo de Clics en Botones de Suscripción<a class="headerlink" href="#2-manejo-de-clics-en-botones-de-suscripcion" title="Permanent link">¶</a></h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">handleSubscriptionClick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">'a, button'</span><span class="p">);</span>
+</span><span id="__span-13-3"><a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="c1">// ... validaciones ...</span>
+</span><span id="__span-13-4"><a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">buttonText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">button</span><span class="p">.</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">toLowerCase</span><span class="p">();</span>
+</span><span id="__span-13-6"><a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">buttonText</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'suscrib'</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>
+</span><span id="__span-13-7"><a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">        </span><span class="nx">buttonText</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'contratar'</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>
+</span><span id="__span-13-8"><a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">        </span><span class="nx">buttonText</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'elegir'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-9"><a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">        </span><span class="c1">// Extraer nombre del plan</span>
+</span><span id="__span-13-10"><a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">planName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'...'</span><span class="p">;</span><span class="w"> </span><span class="c1">// desde card parent</span>
+</span><span id="__span-13-11"><a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a>
+</span><span id="__span-13-12"><a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">planName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-13"><a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">            </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span id="__span-13-14"><a href="#__codelineno-13-14" id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="w">            </span><span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+</span><span id="__span-13-15"><a href="#__codelineno-13-15" id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">            </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'/info-usuario?plan='</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">planName</span><span class="p">);</span>
+</span><span id="__span-13-16"><a href="#__codelineno-13-16" id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-13-17"><a href="#__codelineno-13-17" id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-18"><a href="#__codelineno-13-18" id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="p">}</span>
+</span><span id="__span-13-19"><a href="#__codelineno-13-19" id="__codelineno-13-19" name="__codelineno-13-19"></a>
+</span><span id="__span-13-20"><a href="#__codelineno-13-20" id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span><span class="w"> </span><span class="nx">handleSubscriptionClick</span><span class="p">);</span>
+</span></code></pre></div>
+<p><strong>Descripción:</strong>
+- Event listener en todo el body
+- Detecta clics en botones con texto "suscrib", "contratar" o "elegir"
+- Excluye botones dentro de formularios de pago
+- Busca el nombre del plan en el card parent
+- Redirige a <code>/info-usuario</code> con el plan en la URL</p>
+<p><strong>Selectores de búsqueda de plan:</strong>
+- Cards: <code>.card</code>, <code>.col-md-4</code>, <code>.s_text_block</code>
+- Títulos: <code>h1-h6</code>, <code>.card-title</code>, <code>.title</code>, <code>[class*="title"]</code></p>
+<p><strong>Logging:</strong> Console.log para debug de clics y extracción de planes</p>
+<h2 id="seguridad">Seguridad<a class="headerlink" href="#seguridad" title="Permanent link">¶</a></h2>
+<h3 id="irmodelaccesscsv">ir.model.access.csv<a class="headerlink" href="#irmodelaccesscsv" title="Permanent link">¶</a></h3>
+<p>Define los permisos de acceso al modelo <code>bloste.web</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+</span><span id="__span-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>access_bloste_web,access_bloste_web,model_bloste_web,,1,1,1,1
+</span></code></pre></div>
+<p><strong>Permisos:</strong>
+- <strong>Read:</strong> ✓ Lectura permitida
+- <strong>Write:</strong> ✓ Escritura permitida
+- <strong>Create:</strong> ✓ Creación permitida
+- <strong>Unlink:</strong> ✓ Eliminación permitida</p>
+<p><strong>Grupo:</strong> Sin grupo específico (todos los usuarios)</p>
+<h2 id="flujo-de-contratacion-de-suscripcion">Flujo de Contratación de Suscripción<a class="headerlink" href="#flujo-de-contratacion-de-suscripcion" title="Permanent link">¶</a></h2>
+<!-- IMAGEN: Captura de la página /info-usuario con formulario de autenticación -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_info_usuario_page.png -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_info_usuario_page.png"><img alt="Página de Información de Usuario" src="../assets/frontend-odoo/bloste_info_usuario_page.png"/></a></p>
+<div class="mermaid">graph TD
+    A[Usuario visita /suscripciones] --&gt; B[Ve planes disponibles]
+    B --&gt; C[Clic en botón Suscribirse]
+    C --&gt; D[subscription_redirect.js captura clic]
+    D --&gt; E[Extrae nombre del plan]
+    E --&gt; F[Redirige a /info-usuario?plan=X]
+    F --&gt; G[Formulario precargado con plan]
+    G --&gt; H[Usuario ingresa email y password]
+    H --&gt; I[Submit a /info-usuario/submit]
+    I --&gt; J{¿Usuario existe?}
+    J --&gt;|No| K[Error: usuario no encontrado]
+    J --&gt;|Sí| L{¿Password correcto?}
+    L --&gt;|No| M[Error: password incorrecta]
+    L --&gt;|Sí| N{¿Usuario ya tiene este plan?}
+    N --&gt;|Sí| O[Log: ya tiene suscripción]
+    N --&gt;|No| P[Crear bloste.user_subscription]
+    P --&gt; Q[Redirigir a /subscription-success]
+    O --&gt; Q
+    K --&gt; G
+    M --&gt; G</div>
+<h2 id="integracion-con-otros-modulos">Integración con Otros Módulos<a class="headerlink" href="#integracion-con-otros-modulos" title="Permanent link">¶</a></h2>
+<h3 id="bloste_core">bloste_core<a class="headerlink" href="#bloste_core" title="Permanent link">¶</a></h3>
+<p>El módulo <code>bloste_web</code> depende de <code>bloste_core</code> para:</p>
+<ol>
+<li><strong>Modelos de suscripción:</strong></li>
+<li><code>bloste.subscription</code>: Planes de suscripción</li>
+<li>
+<p><code>bloste.user_subscription</code>: Relación usuario-suscripción</p>
+</li>
+<li>
+<p><strong>Acciones y vistas:</strong></p>
+</li>
+<li><code>bloste_core.action_bloste_subscription</code>: Acción del menú de suscripciones</li>
+</ol>
+<p><strong>Ejemplo de uso:</strong>
+</p><div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># Buscar planes disponibles</span>
+</span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">subscriptions</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'bloste.subscription'</span><span class="p">]</span><span class="o">.</span><span class="n">sudo</span><span class="p">()</span><span class="o">.</span><span class="n">search</span><span class="p">([])</span>
+</span><span id="__span-15-3"><a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="c1"># Crear suscripción de usuario</span>
+</span><span id="__span-15-5"><a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="n">new_subscription</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'bloste.user_subscription'</span><span class="p">]</span><span class="o">.</span><span class="n">sudo</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">({</span>
+</span><span id="__span-15-6"><a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a>    <span class="s1">'user_id'</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span><span id="__span-15-7"><a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a>    <span class="s1">'subscription_id'</span><span class="p">:</span> <span class="n">subscription</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span><span id="__span-15-8"><a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a>    <span class="s1">'start_date'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">today</span><span class="p">(),</span>
+</span><span id="__span-15-9"><a href="#__codelineno-15-9" id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="p">})</span>
+</span></code></pre></div><p></p>
+<h3 id="website-odoo">website (Odoo)<a class="headerlink" href="#website-odoo" title="Permanent link">¶</a></h3>
+<p>Integración con el módulo Website Builder de Odoo:</p>
+<ol>
+<li><strong>Layout base:</strong></li>
+<li>Usa <code>website.layout</code> como template padre</li>
+<li>
+<p>Hereda estilos y estructura de Odoo</p>
+</li>
+<li>
+<p><strong>Gestión de páginas:</strong></p>
+</li>
+<li>Acceso a <code>website.page</code> para páginas dinámicas</li>
+<li>
+<p>Menú de gestión de páginas</p>
+</li>
+<li>
+<p><strong>Website context:</strong></p>
+</li>
+<li>Variable <code>website</code> disponible en templates</li>
+<li>Configuración de dominio y compañía</li>
+</ol>
+<h3 id="bloste_jwt">bloste_jwt<a class="headerlink" href="#bloste_jwt" title="Permanent link">¶</a></h3>
+<p>Aunque no es una dependencia directa, el registro de usuarios se integra con <code>bloste_jwt</code> a través del endpoint <code>/api/auth/register</code> mencionado en el JavaScript.</p>
+<h2 id="consideraciones-de-desarrollo">Consideraciones de Desarrollo<a class="headerlink" href="#consideraciones-de-desarrollo" title="Permanent link">¶</a></h2>
+<h3 id="multiidioma">Multiidioma<a class="headerlink" href="#multiidioma" title="Permanent link">¶</a></h3>
+<p>El código contiene comentarios mezclando catalán y castellano:
+- Comentarios: Mayormente en catalán
+- Contenido visible: En castellano
+- Mensajes de log: En catalán</p>
+<p><strong>Recomendación:</strong> Unificar el idioma o implementar sistema i18n de Odoo.</p>
+<h3 id="validacion-de-contrasenas">Validación de Contraseñas<a class="headerlink" href="#validacion-de-contrasenas" title="Permanent link">¶</a></h3>
+<p>La validación de contraseñas se hace en varios niveles:</p>
+<ol>
+<li><strong>HTML5:</strong> <code>minlength="6"</code> en inputs</li>
+<li><strong>JavaScript:</strong> Validación antes de enviar</li>
+<li><strong>Backend:</strong> <code>_check_credentials()</code> de Odoo</li>
+</ol>
+<h3 id="uso-de-sudo">Uso de sudo()<a class="headerlink" href="#uso-de-sudo" title="Permanent link">¶</a></h3>
+<p>El código usa <code>.sudo()</code> frecuentemente para operaciones de BD:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">subscriptions</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'bloste.subscription'</span><span class="p">]</span><span class="o">.</span><span class="n">sudo</span><span class="p">()</span><span class="o">.</span><span class="n">search</span><span class="p">([])</span>
+</span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'res.users'</span><span class="p">]</span><span class="o">.</span><span class="n">sudo</span><span class="p">()</span><span class="o">.</span><span class="n">search</span><span class="p">([(</span><span class="s1">'login'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="n">email</span><span class="p">)])</span>
+</span></code></pre></div>
+<p><strong>Propósito:</strong> Permitir acceso a modelos desde contexto público sin permisos específicos.</p>
+<p><strong>Precaución:</strong> Usar con cuidado para evitar bypasses de seguridad.</p>
+<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">¶</a></h3>
+<p>El controlador implementa logging completo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+</span><span id="__span-17-2"><a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-17-3"><a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="n">_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Intent de contractacio - Email: </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-17-5"><a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="n">_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Usuari no trobat: </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-17-6"><a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="n">_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error al verificar credencials: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Niveles:</strong>
+- <strong>INFO:</strong> Operaciones normales
+- <strong>WARNING:</strong> Situaciones sospechosas
+- <strong>ERROR:</strong> Errores de sistema</p>
+<h2 id="mejoras-futuras">Mejoras Futuras<a class="headerlink" href="#mejoras-futuras" title="Permanent link">¶</a></h2>
+<ol>
+<li><strong>Internacionalización:</strong></li>
+<li>Implementar módulo i18n de Odoo</li>
+<li>
+<p>Traducir todos los textos a múltiples idiomas</p>
+</li>
+<li>
+<p><strong>Validación mejorada:</strong></p>
+</li>
+<li>Validación de formato de email en backend</li>
+<li>Validación de complejidad de contraseña</li>
+<li>
+<p>Rate limiting para prevenir ataques</p>
+</li>
+<li>
+<p><strong>UX:</strong></p>
+</li>
+<li>Confirmación por email tras registro</li>
+<li>Recuperación de contraseña</li>
+<li>
+<p>Login social (OAuth)</p>
+</li>
+<li>
+<p><strong>SEO:</strong></p>
+</li>
+<li>Meta tags personalizados</li>
+<li>Schema.org markup</li>
+<li>
+<p>Sitemap dinámico</p>
+</li>
+<li>
+<p><strong>Analytics:</strong></p>
+</li>
+<li>Tracking de conversiones</li>
+<li>Análisis de embudos</li>
+<li>
+<p>A/B testing de páginas</p>
+</li>
+<li>
+<p><strong>Seguridad:</strong></p>
+</li>
+<li>Captcha en formularios</li>
+<li>Rate limiting</li>
+<li>HTTPS obligatorio</li>
+<li>Content Security Policy</li>
+</ol>
+<h2 id="comandos-utiles">Comandos Útiles<a class="headerlink" href="#comandos-utiles" title="Permanent link">¶</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="c1"># Actualizar módulo</span>
+</span><span id="__span-18-2"><a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>odoo-bin<span class="w"> </span>-u<span class="w"> </span>bloste_web<span class="w"> </span>-d<span class="w"> </span>bloste_db
+</span><span id="__span-18-3"><a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="c1"># Instalar módulo</span>
+</span><span id="__span-18-5"><a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a>odoo-bin<span class="w"> </span>-i<span class="w"> </span>bloste_web<span class="w"> </span>-d<span class="w"> </span>bloste_db
+</span><span id="__span-18-6"><a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="c1"># Ver logs en tiempo real</span>
+</span><span id="__span-18-8"><a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/odoo/odoo.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>bloste_web
+</span><span id="__span-18-9"><a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a>
+</span><span id="__span-18-10"><a href="#__codelineno-18-10" id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="c1"># Verificar rutas registradas</span>
+</span><span id="__span-18-11"><a href="#__codelineno-18-11" id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="c1"># En Odoo shell:</span>
+</span><span id="__span-18-12"><a href="#__codelineno-18-12" id="__codelineno-18-12" name="__codelineno-18-12"></a>request.env<span class="o">[</span><span class="s1">'ir.http'</span><span class="o">]</span>._get_routing<span class="o">()</span>
+</span></code></pre></div>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">¶</a></h2>
+<p>Para probar el módulo:</p>
+<!-- IMAGEN: Captura de pantalla de la página de éxito tras contratar una suscripción -->
+<!-- Ruta sugerida: assets/frontend-odoo/bloste_subscription_success.png -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_subscription_success.png"><img alt="Página de Éxito de Suscripción" src="../assets/frontend-odoo/bloste_subscription_success.png"/></a></p>
+<ol>
+<li>
+<p><strong>Página de inicio:</strong>
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>http://localhost:8069/
+</span></code></pre></div><p></p>
+</li>
+<li>
+<p><strong>Registro:</strong>
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>http://localhost:8069/in
+</span></code></pre></div><p></p>
+</li>
+<li>
+<p><strong>Planes:</strong>
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>http://localhost:8069/suscripciones
+</span></code></pre></div><p></p>
+</li>
+<li>
+<p><strong>Contratación:</strong>
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>http://localhost:8069/info-usuario?plan=Premium
+</span></code></pre></div><p></p>
+</li>
+<li>
+<p><strong>Backend:</strong>
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a>http://localhost:8069/web
+</span><span id="__span-23-2"><a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a>→ Menú: Bloste Website
+</span></code></pre></div><p></p>
+</li>
+</ol>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.tabs.links", "content.code.annotation", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body></html>
