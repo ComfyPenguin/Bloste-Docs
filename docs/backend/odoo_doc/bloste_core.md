@@ -14,7 +14,6 @@ Servidor de Odoo para gestionar usuarios, suscripciones y métodos de pago. Incl
 + Controlar permisos y roles (usuario normal vs administrador)
 
 ### Interacción
-
 Este componente interactúa con:
 + App Admin (Administrador de Contenidos)
 + Video Player (Reproductor de Videos)
@@ -912,7 +911,6 @@ deactivate API
 ### Seguridad y Permisos
 
 #### Grupos de Odoo
-
 - **Portal User** (`base.group_portal`): Usuario básico con acceso limitado
 - **Internal User** (`base.group_user`): Usuario interno con acceso a backend
 - **System Administrator** (`base.group_system`): Administrador con acceso completo
