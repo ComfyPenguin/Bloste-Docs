@@ -7,13 +7,13 @@ nav:
     - UX: UX_inicial.md
     - Glosario: glosario.md
   - Backend:
-    - Catalogo: backend/catalogo_contenidos.md
-    - Contenido: backend/servicio_contenidos.md
-    - Gestor de Suscripciones: backend/gestor_suscripciones_odoo.md
+    - Catalogo (SpringBoot): backend/catalogo_contenidos.md
+    - Servidor de contenidos (ExpressJS): backend/servicio_contenidos.md
+    - Gestor de Suscripciones (Odoo): backend/gestor_suscripciones_odoo.md
   - Frontend:
-    - Reproductor de Videos: frontend/video_reproductor.md
-    - Administrador de Contenidos: frontend/administrador_contenidos.md
-    - Web de Suscripciones: frontend/gestor_suscripciones_web.md
+    - Reproductor de videos (Flutter): frontend/video_reproductor.md
+    - Administrador de contenidos (VUE): frontend/administrador_contenidos.md
+    - Web de Suscripciones (Odoo): frontend/gestor_suscripciones_web.md
 
 
 theme:

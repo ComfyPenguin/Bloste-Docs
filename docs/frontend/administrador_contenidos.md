@@ -1,30 +1,37 @@
-# Administrador Contenidos
-Este es la aplicación de administradores para subir contenido
+# Administrador Contenidos (VUE)
 
-### Que hace ?
-+ Gestión de sesión de administrador
-+ Subida de archivos de video al servidor de contenidos
-+ Procesamiento automatico de metadatos
-+ Edicion y resgistro de metadatos en el catálogo
-+ Modificación y eliminación de videos existentes
+## Descripción
+
+Aplicación web para la gestión de contenidos de video, permitiendo a los administradores subir nuevos videos y gestionar el catálogo de videos disponibles para los usuarios finales.
+
+### Responsabilidades
+
++ Subida de  videos al servidor de contenidos
++ Edicion de datos del catalogo de videos (título, descripción, categorías)
 
 ### Interacción
+
 Este componente interactua con:
-+ Login Odoo
-+ Catálogo backend
-+ Video backend
+
++ `Login/Signin` (Backend Odoo)
++ `Catálogo` (Backend SpringBoot)
++ `VideoServer` (Backend ExpressJS)
 
 ### Endpoints
-Segun los casos de uso descritos:
-#### Endpoints catalogo
-+ POST `api/catalogo`: Registra nueva entrada de video
-+ PUT `api/catalogo/:id`: Modificar metadatos de un video existente
-+ GET `api/catalogo`: Obtener lista completa para comprobación
-+ GET `api/catalogo/:titulo`: Recibe un video del titulo especificado
-#### Endpoints de Servidor Express
-+ GET `api/hls/:videoid`: Envía el mapa HLS para que el administrador pueda verificar que se reproduce
-+ POST `api/videoserver/upload`:
 
+Endpoint usados por la app de administración:
+
+#### Endpoints catalogo
+
++ POST `api/catalogo`: Registra nueva entrada de video
++ PUT `api/catalogo/:id`: Modificar datos de un video existente
++ GET `api/catalogo/:id`: Obtener datos de un video existente en específico para edición
++ GET `api/catalogo`: Obtener lista completa de videos para mostrar en el panel de administración
++ GET `api/categorias`: Obtener lista de categorías disponibles
+
+#### Endpoints del servidor de contenidos
+
++ POST `api/upload`: Subir un video en bruto para procesar y generar los segmentos, miniaturas y metadatos técnicos
 
 ## Casos de uso
 
@@ -32,33 +39,37 @@ Segun los casos de uso descritos:
 flowchart LR
     Admin([👤 Administrador])
     AppAdmin([🖥️ App Administración])
-
-    subgraph Backend_Express
-        SubirVideo([UC2: Añadir contenido /upload])
-        RecibirMeta([UC3: Recibir metadatos])
+    
+    subgraph Servidor de contenidos ExpressJS
+        SubirVideo([Subir video /api/upload])
+        ConectarWS([Conectar WebSocket])
+        RecibirMeta([Recibir metadatos])
     end
 
-    subgraph Backend_Spring_Hibernate
-        EditarMeta([UC4: Editar metadatos])
-        RegistrarVideo([UC5: Confirmar y registrar])
-        ModificarVideo([UC6: Modificar vídeo])
-        EliminarVideo([UC7: Eliminar vídeo])
+
+    subgraph Catalogo SpringBoot
+        RegistrarVideo([Registrar video al catálogo])
+        ModificarVideo([Editar catálogo])
     end
 
-    subgraph Seguridad_y_Mantenimiento
-        Login([UC1: Iniciar sesión])
-        Inconsistencies([UC8: Comprobar inconsistencias])
+    subgraph Seguridad Odoo
+        Login([Iniciar sesión])
+        Signin([Registrar nuevo administrador])
     end
 
     Admin --> AppAdmin
+
     AppAdmin --> Login
+    AppAdmin --> Signin
+
     AppAdmin --> SubirVideo
     SubirVideo --> RecibirMeta
-    AppAdmin --> EditarMeta
+    RecibirMeta --> AppAdmin
+
+    SubirVideo --> ConectarWS
+
     AppAdmin --> RegistrarVideo
     AppAdmin --> ModificarVideo
-    AppAdmin --> EliminarVideo
-    AppAdmin --> Inconsistencies
 
 ```
 
@@ -69,26 +80,29 @@ flowchart LR
 ```plantuml
 @startuml
 actor Administrador
-participant AppEscritorio as "App Escritorio"
-participant Backend as "Servicio Autenticación\n(Spring/Odoo)"
+participant AppEscritorio as "App Vue\n(Frontend)"
+participant Backend as "Servicio Autenticación\n(Odoo)"
 
-Administrador -> AppEscritorio : Iniciar sesión (usuario, password)
+Administrador -> AppEscritorio : Introducir credenciales\n(email, password)
 activate AppEscritorio
 
-AppEscritorio -> Backend : POST /api/auth/admin\n(credenciales)
+AppEscritorio -> Backend : POST /api/auth/token\n(credenciales)
 activate Backend
 
-Backend -> Backend : Validar credenciales y permisos
+Backend -> Backend : Validar credenciales
+Backend -> Backend : Verificar permisos de administrador
 
 alt Autenticación exitosa
-    Backend --> AppEscritorio : 200 OK (JWT Token + Permisos Admin)
-    AppEscritorio --> Administrador : Acceso concedido al panel
+    Backend --> AppEscritorio : 200 OK\n(JWT + permisos)
+    AppEscritorio -> AppEscritorio : Guardar token (storage)
+    AppEscritorio -> AppEscritorio : Actualizar estado auth
+    AppEscritorio --> Administrador : Redirección al panel de administración
 else Credenciales incorrectas
     Backend --> AppEscritorio : 401 Unauthorized
-    AppEscritorio --> Administrador : Error: Usuario o contraseña incorrectos
-else Error de conexión
+    AppEscritorio --> Administrador : Mostrar error de autenticación
+else Error de servicio
     Backend --> AppEscritorio : 503 Service Unavailable
-    AppEscritorio --> Administrador : Error: No se pudo conectar con el servidor
+    AppEscritorio --> Administrador : Mostrar error de conexión
 end
 
 deactivate Backend
@@ -96,27 +110,27 @@ deactivate AppEscritorio
 @enduml
 ```
 
-### Gestión de Contenido: Subida y Registro
+### Gestión de Contenido: Subida
 
 ```plantuml
 @startuml
 actor Administrador
-participant AppEscritorio as "App Escritorio"
+participant AppEscritorio as "App Vue\n(Frontend)"
 participant VideoServer as "Video Server\n(ExpressJS)"
 participant Catalogo as "Servicio Catálogo\n(SpringBoot)"
 
 Administrador -> AppEscritorio : Seleccionar video local
 activate AppEscritorio
 
-AppEscritorio -> VideoServer : POST /api/videoserver/upload\n(archivo bruto)
+AppEscritorio -> VideoServer : POST /api/upload\n(archivo de vídeo)
 activate VideoServer
 
 note over VideoServer : El servidor procesa el video\n(FFmpeg) y genera metadatos
 
-VideoServer --> AppEscritorio : 200 OK (duración, resolución, miniaturas)
+VideoServer --> AppEscritorio : 200 OK (metadatos técnicos + endpoints)
 deactivate VideoServer
 
-Administrador -> AppEscritorio : Editar metadatos catálogo\n(título, descripción, categorías)
+Administrador -> AppEscritorio : Editar metadatos catálogo\n(título, descripción, etiquetas)
 
 AppEscritorio -> Catalogo : POST /api/catalogo\n(datos técnicos + datos editados)
 activate Catalogo
@@ -133,3 +147,133 @@ deactivate Catalogo
 deactivate AppEscritorio
 @enduml
 ```
+
+```plantuml
+@startuml
+actor Administrador
+participant AppEscritorio as "App Vue\n(Frontend)"
+participant VideoServer as "Video Server\n(ExpressJS)"
+participant WS as "WebSocket\n(ExpressJS)"
+participant Catalogo as "Servicio Catálogo\n(Spring Boot)"
+
+== Subida de vídeo ==
+Administrador -> AppEscritorio : Seleccionar vídeo local
+activate AppEscritorio
+
+AppEscritorio -> WS : Conectar WebSocket
+WS --> AppEscritorio : Conexión establecida
+
+AppEscritorio -> VideoServer : POST /api/upload\n(archivo de vídeo)
+activate VideoServer
+
+VideoServer -> VideoServer : Procesar vídeo (FFmpeg)
+VideoServer -> VideoServer : Extraer metadatos técnicos
+VideoServer -> VideoServer : Generar recursos (HLS, miniaturas)
+
+== Notificaciones asíncronas ==
+VideoServer -> WS : Evento progreso / finalización\n(metadatos + endpoints)
+WS --> AppEscritorio : Notificación procesado completado
+deactivate VideoServer
+
+== Completar información ==
+Administrador -> AppEscritorio : Introducir metadatos funcionales\n(título, descripción, etiquetas)
+
+== Registro en catálogo ==
+AppEscritorio -> Catalogo : POST /api/catalogo\n(metadatos técnicos + funcionales)
+activate Catalogo
+
+alt Registro exitoso
+    Catalogo --> AppEscritorio : 201 Created
+    AppEscritorio --> Administrador : Vídeo registrado correctamente
+else Error de validación
+    Catalogo --> AppEscritorio : 400 Bad Request
+    AppEscritorio --> Administrador : Mostrar error de validación
+end
+
+deactivate Catalogo
+deactivate AppEscritorio
+@enduml
+
+@enduml
+```
+
+### Gestión de Contenido: Edición
+
+```plantuml
+@startuml
+actor Administrador
+participant AppEscritorio as "App Vue\n(Frontend)"
+participant Catalogo as "Servicio Catálogo\n(Spring Boot)"
+
+== Carga del contenido ==
+Administrador -> AppEscritorio : Acceder a edición de vídeo
+activate AppEscritorio
+
+AppEscritorio -> Catalogo : GET /api/catalogo/{videoId}
+activate Catalogo
+
+Catalogo -> Catalogo : Validar permisos admin
+Catalogo -> Catalogo : Obtener datos del vídeo
+
+alt Vídeo encontrado
+    Catalogo --> AppEscritorio : 200 OK\n(metadatos funcionales)
+else Vídeo no existe
+    Catalogo --> AppEscritorio : 404 Not Found
+    AppEscritorio --> Administrador : Mostrar error de recurso inexistente
+    deactivate Catalogo
+    deactivate AppEscritorio
+    return
+end
+
+deactivate Catalogo
+
+== Edición ==
+Administrador -> AppEscritorio : Modificar metadatos\n(título, descripción, etiquetas, visibilidad)
+
+== Guardado de cambios ==
+AppEscritorio -> Catalogo : PUT /api/catalogo/{videoId}\n(metadatos actualizados)
+activate Catalogo
+
+Catalogo -> Catalogo : Validar datos
+Catalogo -> Catalogo : Actualizar registro
+
+alt Actualización exitosa
+    Catalogo --> AppEscritorio : 200 OK\n(confirmación)
+    AppEscritorio --> Administrador : Cambios guardados correctamente
+else Error de validación
+    Catalogo --> AppEscritorio : 400 Bad Request\n(datos inválidos)
+    AppEscritorio --> Administrador : Mostrar errores de validación
+end
+
+deactivate Catalogo
+deactivate AppEscritorio
+@enduml
+```
+
+## UI/UX
+
+### Login
+
+![Login](../assets/admin-vue/admin-login.png)
+
+### Registro
+
+![Registro](../assets/admin-vue/admin-register.png)
+
+### Subida de video
+
+Sin video de seleccionado:
+
+![Subida sin video de seleccionado](../assets/admin-vue/admin-upload-no-video.png)
+
+Con video de seleccionado:
+
+![Subida con video de seleccionado](../assets/admin-vue/admin-upload-with-video.png)
+
+### Panel de edición de video
+
+![Panel de edición de video](../assets/admin-vue/admin-edit-panel.png)
+
+### Popup de edición de video
+
+![Popup de edición de video](../assets/admin-vue/admin-edit-popup.png)
