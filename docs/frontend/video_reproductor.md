@@ -1,29 +1,61 @@
 # Reproductor Móvil
-Este es el reproductor principal de blosteflix una app móvil para consultar el catalogo y reproducir.
+Este es el reproductor principal de blosteflix, una app móvil multiplataforma desarrollada con Flutter para consultar el catálogo y reproducir contenido.
+
+## Arquitectura
+
+La aplicación está construida siguiendo los principios de **Clean Architecture**, dividida en tres capas principales:
+
+- **Domain**: Entidades, repositorios abstractos y casos de uso
+- **Infrastructure**: Implementación de repositorios, APIs y mappers de datos
+- **Presentation**: Interfaces de usuario, providers de estado y servicios
+
+### Tecnologías principales
+
++ **Flutter** (SDK 3.10.7+): Framework multiplataforma
++ **Riverpod**: Gestión de estado reactiva
++ **Chewie + Video Player**: Reproducción de video HLS
++ **Flutter Secure Storage**: Almacenamiento seguro de tokens
++ **HTTP**: Comunicación con APIs REST
 
 ### Que hace ?
 
-+ Login del usuario
-+ Redirección a la pasarela de pagos
-+ Muestra catálogo
-+ Reproduce videos.
++ Login y registro de usuarios con JWT
++ Autenticación con tokens de acceso y refresh
++ Muestra catálogo de videos con scroll infinito
++ Búsqueda y filtrado de contenido por categorías
++ Reproduce videos en formato HLS con selección de calidad (Auto, 480p, 720p, 1080p)
++ Visualización de videos relacionados
++ Gestión de cuenta de usuario
 
 ### Interacción
-Este componente interactua con:
+Este componente interactúa con:
 
-+ Catálogo backend
-+ Video backend
-+ Login Odoo
++ **Catálogo Backend**: Gestión de videos y categorías
++ **Auth Backend**: Autenticación y gestión de usuarios
++ **Media Backend**: Streaming HLS de videos
 
 ### Endpoints
-Este reproductor gasta los siguientes endpoints TODOS en get
-#### Endpoints catalogo
-+ `api/catalogo`: recibe todo el catálogo
-+ `api/catalogo/:categoria`: recibe las entradas de una categoria o tópico
-+ `api/catalogo/:titulo`: recibe 1 unico titulo.
-#### Endpoints video backend
-+ `api/hls/:videoid`: recibe el mapa de los segmentos 
-+ `api/hls/:videoid/:segment.ts`:recibe los segmentos para poder reproducirlos.
+
+#### Endpoints de autenticación
++ `POST /api/auth/token`: Login de usuario (retorna access y refresh tokens)
++ `POST /api/auth/register`: Registro de nuevo usuario
++ `POST /api/auth/refresh`: Renovación de access token usando refresh token
++ `GET /api/users/me`: Obtener detalles del usuario autenticado (requiere Bearer token)
+
+#### Endpoints catálogo
++ `GET /api/catalogo`: Recibe videos paginados (params: page, size, categoriaId opcional)
++ `GET /api/catalogo/search`: Búsqueda de videos por título (params: titulo, page, size)
++ `GET /api/catalogo/:id`: Recibe detalles de un video específico
++ `GET /api/categorias`: Recibe categorías paginadas (params: page, size)
++ `GET /api/categorias/:id`: Recibe una categoría específica
+
+#### Endpoints video backend (Media Server)
+Todos los endpoints de media requieren autenticación Bearer token en el header:
++ `GET /api/hls/:videoid/master.m3u8`: Playlist HLS adaptativo (Auto)
++ `GET /api/hls/:videoid/480/playlist.m3u8`: Playlist para calidad 480p
++ `GET /api/hls/:videoid/720/playlist.m3u8`: Playlist para calidad 720p
++ `GET /api/hls/:videoid/1080/playlist.m3u8`: Playlist para calidad 1080p
++ `GET /api/hls/:videoid/:segment.ts`: Recibe los segmentos de video para reproducción
 
 ## Casos de uso
 
@@ -35,25 +67,35 @@ flowchart LR
     subgraph Servidor_Catálogo
        VerCatalogo([Ver catálogo])
        Filtrar([Buscar/Filtrar contenido])
-       Detalles([Ver detalles ])
+       Detalles([Ver detalles])
+       Categorias([Ver categorías])
     end
 
     subgraph Servidor_Video
         ReproducirVideo([Reproducir Video])
+        SeleccionarCalidad([Seleccionar calidad])
+        VideosRelacionados([Ver relacionados])
     end
 
-    subgraph Login_Odoo_Web
+    subgraph Servidor_Auth
         Login([Login])
-        Suscribirse([Suscribirse])
+        Registro([Registro])
+        RefreshToken([Renovar sesión])
+        GestionCuenta([Gestión de cuenta])
     end
 
     User --> Player
     Player --> VerCatalogo
     Player --> ReproducirVideo
     Player --> Login
-    Player --> Suscribirse
+    Player --> Registro
     Player --> Filtrar
     Player --> Detalles
+    Player --> Categorias
+    Player --> SeleccionarCalidad
+    Player --> VideosRelacionados
+    Player --> RefreshToken
+    Player --> GestionCuenta
 
 ```
 
@@ -68,10 +110,10 @@ participant AppCliente
 participant CatalogoServer
 
 Usuario -> AppCliente : Acceder a catálogo
-AppCliente -> CatalogoServer : GET /catalogo/home
+AppCliente -> CatalogoServer : GET /api/catalogo?page=0&size=30
 alt Servicio responde
-    CatalogoServer --> AppCliente : Categorías, tendencias, recomendaciones
-    AppCliente --> Usuario : Mostrar catálogo
+    CatalogoServer --> AppCliente : Lista paginada de videos
+    AppCliente --> Usuario : Mostrar catálogo con scroll infinito
 else Servicio no responde
     CatalogoServer --> AppCliente : Error
     AppCliente --> Usuario : Mostrar error general
@@ -89,9 +131,9 @@ participant AppCliente
 participant CatalogoServer
 
 Usuario -> AppCliente : Introducir término de búsqueda
-AppCliente -> CatalogoServer : GET /catalogo/search?q=...
+AppCliente -> CatalogoServer : GET /api/catalogo/search?titulo=...&page=0&size=30
 alt Hay resultados
-    CatalogoServer --> AppCliente : Lista de títulos
+    CatalogoServer --> AppCliente : Lista paginada de videos
     AppCliente --> Usuario : Mostrar resultados
 else Sin resultados
     CatalogoServer --> AppCliente : Lista vacía
@@ -110,9 +152,9 @@ participant AppCliente
 participant CatalogoServer
 
 Usuario -> AppCliente : Seleccionar vídeo
-AppCliente -> CatalogoServer : GET /catalogo/videos/{id}
+AppCliente -> CatalogoServer : GET /api/catalogo/{id}
 alt Vídeo encontrado
-    CatalogoServer --> AppCliente : Metadatos completos
+    CatalogoServer --> AppCliente : Metadatos completos del video
     AppCliente --> Usuario : Mostrar ficha del vídeo
 else Vídeo no encontrado
     CatalogoServer --> AppCliente : Error 404
@@ -122,7 +164,7 @@ end
 
 ```
 
-#### Iniciar sesion / Validar suscripción
+#### Iniciar sesión / Registro
 
 ```plantuml
 
@@ -130,22 +172,29 @@ end
 actor Usuario
 participant AppCliente
 participant AuthService
-participant Odoo
+participant SecureStorage
 
 Usuario -> AppCliente : Introducir credenciales
-AppCliente -> AuthService : Validar credenciales
+AppCliente -> AuthService : POST /api/auth/token
 alt Credenciales válidas
-    AuthService --> AppCliente : Usuario autenticado
-    AppCliente -> Odoo : Consultar estado de suscripción
-    alt Suscripción activa
-        Odoo --> AppCliente : Suscripción válida
-        AppCliente --> Usuario : Acceso completo
-    else Suscripción caducada
-        Odoo --> AppCliente : Suscripción no válida
-        AppCliente --> Usuario : Acceso limitado
-    end
+    AuthService --> AppCliente : Access Token + Refresh Token (JWT)
+    AppCliente -> SecureStorage : Guardar tokens
+    AppCliente -> AuthService : GET /api/users/me (Bearer token)
+    AuthService --> AppCliente : Datos del usuario
+    AppCliente --> Usuario : Acceso completo al catálogo
 else Credenciales incorrectas
-    AuthService --> AppCliente : Error autenticación
+    AuthService --> AppCliente : Error 401/403
+    AppCliente --> Usuario : Mostrar error de autenticación
+end
+
+Usuario -> AppCliente : Registrarse
+AppCliente -> AuthService : POST /api/auth/register
+alt Registro exitoso
+    AuthService --> AppCliente : Access Token + Refresh Token
+    AppCliente -> SecureStorage : Guardar tokens
+    AppCliente --> Usuario : Cuenta creada, acceso completo
+else Error en registro
+    AuthService --> AppCliente : Error (usuario existente, etc.)
     AppCliente --> Usuario : Mostrar error
 end
 @enduml
@@ -159,34 +208,68 @@ end
 @startuml
 actor Usuario
 participant AppCliente
-participant Odoo
-participant CatalogoServer
+participant SecureStorage
 participant MediaServer
 
 Usuario -> AppCliente : Solicitar reproducción
-AppCliente -> Odoo : Validar suscripción
-alt Suscripción válida
-    Odoo --> AppCliente : OK
-    AppCliente -> CatalogoServer : Obtener URL HLS
-    CatalogoServer --> AppCliente : URL manifest.m3u8
-    AppCliente -> MediaServer : GET manifest.m3u8
-    alt Segmentos disponibles
-        MediaServer --> AppCliente : Segmentos HLS
+AppCliente -> SecureStorage : Obtener access token
+alt Token válido
+    SecureStorage --> AppCliente : Access Token
+    AppCliente -> MediaServer : GET /api/hls/:videoid/master.m3u8\n(Authorization: Bearer token)
+    alt Autenticación exitosa
+        MediaServer --> AppCliente : Playlist HLS adaptativo
+        AppCliente -> MediaServer : GET segmentos .ts
+        MediaServer --> AppCliente : Segmentos de video
         AppCliente --> Usuario : Iniciar reproducción
-        AppCliente -> AppCliente : Guardar progreso
-    else Error en segmentos
-        MediaServer --> AppCliente : Error
-        AppCliente --> Usuario : Error de reproducción
+        
+        Usuario -> AppCliente : Cambiar calidad (480p/720p/1080p)
+        AppCliente -> MediaServer : GET /api/hls/:videoid/{calidad}/playlist.m3u8
+        MediaServer --> AppCliente : Playlist calidad específica
+        AppCliente --> Usuario : Continuar reproducción en nueva calidad
+    else Error de autenticación
+        MediaServer --> AppCliente : Error 401/403
+        AppCliente -> SecureStorage : Intentar refresh token
+        AppCliente --> Usuario : Renovar sesión o error
     end
-else Suscripción no válida
-    Odoo --> AppCliente : No autorizado
-    AppCliente --> Usuario : Reproducción no permitida
+else Token no disponible
+    SecureStorage --> AppCliente : No hay token
+    AppCliente --> Usuario : Redirigir a login
 end
 @enduml
 
 ```
 
-#### Gestionar Preferidos
+#### Renovar token de acceso
+
+```plantuml
+@startuml
+actor Usuario
+participant AppCliente
+participant SecureStorage
+participant AuthService
+
+AppCliente -> AppCliente : Access token expirado
+AppCliente -> SecureStorage : Obtener refresh token
+alt Refresh token disponible
+    SecureStorage --> AppCliente : Refresh Token
+    AppCliente -> AuthService : POST /api/auth/refresh
+    alt Refresh exitoso
+        AuthService --> AppCliente : Nuevo Access Token + Refresh Token
+        AppCliente -> SecureStorage : Actualizar tokens
+        AppCliente --> Usuario : Sesión renovada (transparente)
+    else Refresh token inválido
+        AuthService --> AppCliente : Error 401
+        AppCliente -> SecureStorage : Limpiar tokens
+        AppCliente --> Usuario : Redirigir a login
+    end
+else No hay refresh token
+    AppCliente --> Usuario : Redirigir a login
+end
+@enduml
+
+```
+
+#### Ver videos relacionados
 
 ```plantuml
 @startuml
@@ -194,38 +277,44 @@ actor Usuario
 participant AppCliente
 participant CatalogoServer
 
-Usuario -> AppCliente : Añadir / eliminar de lista
-AppCliente -> CatalogoServer : PUT /usuario/listas
-alt Actualización correcta
-    CatalogoServer --> AppCliente : OK
-    AppCliente --> Usuario : Mostrar lista actualizada
-else Error de persistencia
+Usuario -> AppCliente : Reproduciendo video
+AppCliente -> CatalogoServer : GET /api/catalogo?page=0&size=30
+alt Videos disponibles
+    CatalogoServer --> AppCliente : Lista de videos
+    AppCliente -> AppCliente : Filtrar video actual
+    AppCliente --> Usuario : Mostrar videos relacionados (máx 20)
+    
+    Usuario -> AppCliente : Seleccionar video relacionado
+    AppCliente --> Usuario : Reproducir nuevo video
+else Error al cargar
     CatalogoServer --> AppCliente : Error
-    AppCliente --> Usuario : Acción no guardada
+    AppCliente --> Usuario : Mensaje sin videos relacionados
 end
 @enduml
+
 ```
 
-#### Continuar Visualización
+#### Filtrar por categorías
 
 ```plantuml
 @startuml
 actor Usuario
 participant AppCliente
 participant CatalogoServer
-participant MediaServer
 
-Usuario -> AppCliente : Seleccionar vídeo comenzado
-AppCliente -> CatalogoServer : Consultar progreso
-alt Progreso disponible
-    CatalogoServer --> AppCliente : Tiempo guardado
-    AppCliente -> MediaServer : Reproducir desde punto guardado
-    AppCliente --> Usuario : Reproducción continua
-else Progreso no disponible
-    CatalogoServer --> AppCliente : Sin progreso
-    AppCliente -> MediaServer : Reproducir desde inicio
-    AppCliente --> Usuario : Reproducción desde inicio
+Usuario -> AppCliente : Seleccionar categoría
+AppCliente -> CatalogoServer : GET /api/categorias?page=0&size=20
+CatalogoServer --> AppCliente : Lista de categorías
+AppCliente --> Usuario : Mostrar categorías
+
+Usuario -> AppCliente : Filtrar por categoría
+AppCliente -> CatalogoServer : GET /api/catalogo?page=0&size=30&categoriaId={id}
+alt Videos en categoría
+    CatalogoServer --> AppCliente : Videos filtrados
+    AppCliente --> Usuario : Mostrar videos de la categoría
+else Sin videos
+    CatalogoServer --> AppCliente : Lista vacía
+    AppCliente --> Usuario : Mensaje sin contenido
 end
 @enduml
-
 ```
