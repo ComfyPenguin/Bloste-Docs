@@ -29,7 +29,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#backend-catalogo">
+<a class="md-skip" href="#documentacion-del-microservicio-catalogo">
           Saltar a contenido
         </a>
 </div>
@@ -285,6 +285,33 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#descripcion">
+<span class="md-ellipsis">
+      
+        Descripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#responsabilidades">
+<span class="md-ellipsis">
+      
+        Responsabilidades
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interaccion">
+<span class="md-ellipsis">
+      
+        Interacción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#endpoints">
 <span class="md-ellipsis">
       
@@ -295,10 +322,19 @@
 <nav aria-label="Endpoints" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-get">
+<a class="md-nav__link" href="#endpoints-get-videos">
 <span class="md-ellipsis">
       
-        Endpoints GET
+        Endpoints GET - Videos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#endpoints-get-categorias">
+<span class="md-ellipsis">
+      
+        Endpoints GET - Categorías
       
     </span>
 </a>
@@ -321,6 +357,15 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#endpoints-delete">
+<span class="md-ellipsis">
+      
+        Endpoints DELETE
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -328,7 +373,7 @@
 <a class="md-nav__link" href="#casos-de-uso">
 <span class="md-ellipsis">
       
-        CASOS DE USO
+        Casos de uso
       
     </span>
 </a>
@@ -337,10 +382,197 @@
 <a class="md-nav__link" href="#diagrama-entidad-relacion">
 <span class="md-ellipsis">
       
-        Diagrama Entidad Relación
+        Diagrama Entidad-Relación
       
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelo-de-datos">
+<span class="md-ellipsis">
+      
+        Modelo de datos
+      
+    </span>
+</a>
+<nav aria-label="Modelo de datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#video">
+<span class="md-ellipsis">
+      
+        Video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#categoria">
+<span class="md-ellipsis">
+      
+        Categoria
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#video_categoria">
+<span class="md-ellipsis">
+      
+        Video_Categoria
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagramas-de-flujo">
+<span class="md-ellipsis">
+      
+        Diagramas de flujo
+      
+    </span>
+</a>
+<nav aria-label="Diagramas de flujo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consultar-catalogo-de-videos">
+<span class="md-ellipsis">
+      
+        Consultar catálogo de videos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#buscar-videos-por-categoria">
+<span class="md-ellipsis">
+      
+        Buscar videos por categoría
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-nuevo-video">
+<span class="md-ellipsis">
+      
+        Crear nuevo video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modificar-video-existente">
+<span class="md-ellipsis">
+      
+        Modificar video existente
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eliminar-video">
+<span class="md-ellipsis">
+      
+        Eliminar video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-categorias">
+<span class="md-ellipsis">
+      
+        Gestión de categorías
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitectura-y-tecnologias">
+<span class="md-ellipsis">
+      
+        Arquitectura y Tecnologías
+      
+    </span>
+</a>
+<nav aria-label="Arquitectura y Tecnologías" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stack-tecnologico">
+<span class="md-ellipsis">
+      
+        Stack Tecnológico
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componentes-principales">
+<span class="md-ellipsis">
+      
+        Componentes principales
+      
+    </span>
+</a>
+<nav aria-label="Componentes principales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controllers">
+<span class="md-ellipsis">
+      
+        Controllers
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#services">
+<span class="md-ellipsis">
+      
+        Services
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repositories">
+<span class="md-ellipsis">
+      
+        Repositories
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security">
+<span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dtos">
+<span class="md-ellipsis">
+      
+        DTOs
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -449,6 +681,33 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#descripcion">
+<span class="md-ellipsis">
+      
+        Descripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#responsabilidades">
+<span class="md-ellipsis">
+      
+        Responsabilidades
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interaccion">
+<span class="md-ellipsis">
+      
+        Interacción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#endpoints">
 <span class="md-ellipsis">
       
@@ -459,10 +718,19 @@
 <nav aria-label="Endpoints" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#endpoints-get">
+<a class="md-nav__link" href="#endpoints-get-videos">
 <span class="md-ellipsis">
       
-        Endpoints GET
+        Endpoints GET - Videos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#endpoints-get-categorias">
+<span class="md-ellipsis">
+      
+        Endpoints GET - Categorías
       
     </span>
 </a>
@@ -485,6 +753,15 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#endpoints-delete">
+<span class="md-ellipsis">
+      
+        Endpoints DELETE
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -492,7 +769,7 @@
 <a class="md-nav__link" href="#casos-de-uso">
 <span class="md-ellipsis">
       
-        CASOS DE USO
+        Casos de uso
       
     </span>
 </a>
@@ -501,10 +778,197 @@
 <a class="md-nav__link" href="#diagrama-entidad-relacion">
 <span class="md-ellipsis">
       
-        Diagrama Entidad Relación
+        Diagrama Entidad-Relación
       
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelo-de-datos">
+<span class="md-ellipsis">
+      
+        Modelo de datos
+      
+    </span>
+</a>
+<nav aria-label="Modelo de datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#video">
+<span class="md-ellipsis">
+      
+        Video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#categoria">
+<span class="md-ellipsis">
+      
+        Categoria
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#video_categoria">
+<span class="md-ellipsis">
+      
+        Video_Categoria
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagramas-de-flujo">
+<span class="md-ellipsis">
+      
+        Diagramas de flujo
+      
+    </span>
+</a>
+<nav aria-label="Diagramas de flujo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consultar-catalogo-de-videos">
+<span class="md-ellipsis">
+      
+        Consultar catálogo de videos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#buscar-videos-por-categoria">
+<span class="md-ellipsis">
+      
+        Buscar videos por categoría
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-nuevo-video">
+<span class="md-ellipsis">
+      
+        Crear nuevo video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modificar-video-existente">
+<span class="md-ellipsis">
+      
+        Modificar video existente
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eliminar-video">
+<span class="md-ellipsis">
+      
+        Eliminar video
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-categorias">
+<span class="md-ellipsis">
+      
+        Gestión de categorías
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitectura-y-tecnologias">
+<span class="md-ellipsis">
+      
+        Arquitectura y Tecnologías
+      
+    </span>
+</a>
+<nav aria-label="Arquitectura y Tecnologías" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stack-tecnologico">
+<span class="md-ellipsis">
+      
+        Stack Tecnológico
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componentes-principales">
+<span class="md-ellipsis">
+      
+        Componentes principales
+      
+    </span>
+</a>
+<nav aria-label="Componentes principales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controllers">
+<span class="md-ellipsis">
+      
+        Controllers
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#services">
+<span class="md-ellipsis">
+      
+        Services
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repositories">
+<span class="md-ellipsis">
+      
+        Repositories
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security">
+<span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dtos">
+<span class="md-ellipsis">
+      
+        DTOs
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -513,30 +977,59 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="backend-catalogo">Backend catálogo<a class="headerlink" href="#backend-catalogo" title="Permanent link">¶</a></h1>
-<p>Documentación del backend catálogo.</p>
-<h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
-<h3 id="endpoints-get">Endpoints GET<a class="headerlink" href="#endpoints-get" title="Permanent link">¶</a></h3>
+<h1 id="documentacion-del-microservicio-catalogo">Documentación del microservicio Catálogo<a class="headerlink" href="#documentacion-del-microservicio-catalogo" title="Permanent link">¶</a></h1>
+<h3 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">¶</a></h3>
+<p>Microservicio Spring Boot encargado de gestionar el catálogo de videos y categorías de la plataforma. Proporciona una API REST para el almacenamiento, consulta y administración de metadatos de videos y sus clasificaciones por categorías.</p>
+<h3 id="responsabilidades">Responsabilidades<a class="headerlink" href="#responsabilidades" title="Permanent link">¶</a></h3>
 <ul>
-<li><code>api/catalogo</code> : Recibe todo el catálogo de vídeos</li>
-<li><code>api/catalogo/:id</code> : Recibe todo el catálogo de vídeos</li>
-<li><code>api/catalogo/:categoria</code> : Recibe una lista de videos de la categoría especificada</li>
-<li><code>api/catalogo/:titulo</code> : Recibe un vídeo del título especificado</li>
+<li>Gestionar el catálogo completo de videos</li>
+<li>Administrar categorías de contenido</li>
+<li>Proporcionar búsqueda y filtrado de videos</li>
+<li>Gestionar metadatos de videos (título, descripción, miniaturas)</li>
+<li>Controlar la visibilidad de contenido (videos ocultos)</li>
+<li>Autenticar y autorizar operaciones mediante JWT</li>
+</ul>
+<h3 id="interaccion">Interacción<a class="headerlink" href="#interaccion" title="Permanent link">¶</a></h3>
+<p>Este componente interactúa con:
++ Administrador de Contenidos (Admin App)
++ Reproductor de Videos (Video Player)
++ Servidor HLS de Videos
++ Gestor de Suscripciones</p>
+<h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">¶</a></h2>
+<h3 id="endpoints-get-videos">Endpoints GET - Videos<a class="headerlink" href="#endpoints-get-videos" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>GET /api/catalogo/videos</code> : Obtiene el catálogo completo de videos públicos</li>
+<li><code>GET /api/catalogo/videos/{id}</code> : Obtiene un video específico por su ID</li>
+<li><code>GET /api/catalogo/videos/categoria/{categoriaId}</code> : Obtiene videos de una categoría específica</li>
+<li><code>GET /api/catalogo/videos/search?titulo={titulo}</code> : Busca videos por título</li>
+</ul>
+<h3 id="endpoints-get-categorias">Endpoints GET - Categorías<a class="headerlink" href="#endpoints-get-categorias" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>GET /api/catalogo/categorias</code> : Obtiene todas las categorías disponibles</li>
+<li><code>GET /api/catalogo/categorias/{id}</code> : Obtiene una categoría específica por su ID</li>
 </ul>
 <h3 id="endpoints-post">Endpoints POST<a class="headerlink" href="#endpoints-post" title="Permanent link">¶</a></h3>
 <ul>
-<li><code>api/catalogo/:id</code> : Sube los datos de un video al catálogo</li>
+<li><code>POST /api/catalogo/videos</code> : Crea un nuevo video en el catálogo (requiere autenticación de administrador)</li>
+<li><code>POST /api/catalogo/categorias</code> : Crea una nueva categoría (requiere autenticación de administrador)</li>
 </ul>
 <h3 id="endpoints-put">Endpoints PUT<a class="headerlink" href="#endpoints-put" title="Permanent link">¶</a></h3>
 <ul>
-<li><code>api/catalogo/:id</code> : Modifica los datos de un vídeo</li>
+<li><code>PUT /api/catalogo/videos/{id}</code> : Actualiza los datos de un video existente (requiere autenticación de administrador)</li>
+<li><code>PUT /api/catalogo/categorias/{id}</code> : Actualiza una categoría existente (requiere autenticación de administrador)</li>
 </ul>
-<h2 id="casos-de-uso">CASOS DE USO<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
+<h3 id="endpoints-delete">Endpoints DELETE<a class="headerlink" href="#endpoints-delete" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>DELETE /api/catalogo/videos/{id}</code> : Elimina un video del catálogo (requiere autenticación de administrador)</li>
+<li><code>DELETE /api/catalogo/categorias/{id}</code> : Elimina una categoría (requiere autenticación de administrador)</li>
+</ul>
+<h2 id="casos-de-uso">Casos de uso<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
 <div class="mermaid">%%{init: {'theme':'base','themeVariables': {'primaryColor':'#0ea5a4','edgeColor':'#065f46','fontFamily':'"Inter", Arial'}} }%%
 graph LR
   %% Agrupación de usuarios
   subgraph Usuarios
     direction TB
+    U1[🎬 Video Player]
     U2[👤 App Usuario]
     U3[🛠️ App Admin]
   end
@@ -544,38 +1037,131 @@ graph LR
   %% Casos de uso divididos en dos áreas
   subgraph "Casos de uso"
     direction LR
-    subgraph Consulta
+    subgraph "Consulta Pública"
       direction TB
-      UC2((🔎 Consultar catálogo completo))
-      UC3((📂 Consultar por categoría))
-      UC4((🔤 Consultar por título))
+      UC1((🔎 Consultar catálogo completo))
+      UC2((📂 Consultar por categoría))
+      UC3((🔤 Buscar por título))
+      UC4((📋 Listar categorías))
     end
 
-    subgraph "Administración"
+    subgraph "Gestión de Videos"
       direction TB
-      UC5((⬆️ Subir video))
+      UC5((⬆️ Crear video))
       UC6((✏️ Modificar video))
       UC7((🗑️ Eliminar video))
+      UC8((👁️ Ocultar/Mostrar video))
+    end
+
+    subgraph "Gestión de Categorías"
+      direction TB
+      UC9((➕ Crear categoría))
+      UC10((✏️ Modificar categoría))
+      UC11((🗑️ Eliminar categoría))
     end
   end
 
-  %% Relaciones
+  %% Relaciones - Consulta
+  U1 --&gt; UC1
+  U1 --&gt; UC2
+  U2 --&gt; UC1
   U2 --&gt; UC2
   U2 --&gt; UC3
   U2 --&gt; UC4
 
+  %% Relaciones - Administración
   U3 --&gt; UC5
   U3 --&gt; UC6
   U3 --&gt; UC7
+  U3 --&gt; UC8
+  U3 --&gt; UC9
+  U3 --&gt; UC10
+  U3 --&gt; UC11
 
   %% Estilos
-  class U2,U3 usernode
-  class UC2,UC3,UC4,UC5,UC6,UC7 usecase
+  class U1,U2,U3 usernode
+  class UC1,UC2,UC3,UC4,UC5,UC6,UC7,UC8,UC9,UC10,UC11 usecase
 
   classDef usernode fill:#e0f2fe,stroke:#0369a1,stroke-width:2px,rx:8px;
   classDef usecase fill:#ecfccb,stroke:#65a30d,stroke-width:1.5px,rx:20px;</div>
-<h2 id="diagrama-entidad-relacion">Diagrama Entidad Relación<a class="headerlink" href="#diagrama-entidad-relacion" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_7959222394898307601.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_7959222394898307601.png"/></a></p>
+<h2 id="diagrama-entidad-relacion">Diagrama Entidad-Relación<a class="headerlink" href="#diagrama-entidad-relacion" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_1019070434772845685.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_1019070434772845685.png"/></a></p>
+<h2 id="modelo-de-datos">Modelo de datos<a class="headerlink" href="#modelo-de-datos" title="Permanent link">¶</a></h2>
+<h3 id="video">Video<a class="headerlink" href="#video" title="Permanent link">¶</a></h3>
+<p>Representa un video en el catálogo con sus metadatos de negocio.</p>
+<p><strong>Campos:</strong>
+- <code>id</code>: Identificador único del video
+- <code>creator</code>: Usuario o entidad que creó el video
+- <code>title</code>: Título del video
+- <code>description</code>: Descripción detallada del contenido
+- <code>duration_seconds</code>: Duración del video en segundos
+- <code>url_video</code>: URL del archivo de video procesado (HLS)
+- <code>url_thumbnail</code>: URL de la miniatura/thumbnail del video
+- <code>upload_date</code>: Fecha y hora de subida
+- <code>is_hidden</code>: Indica si el video está oculto o visible públicamente</p>
+<h3 id="categoria">Categoria<a class="headerlink" href="#categoria" title="Permanent link">¶</a></h3>
+<p>Agrupa videos por temática o tipo de contenido.</p>
+<p><strong>Campos:</strong>
+- <code>id</code>: Identificador único de la categoría
+- <code>name</code>: Nombre de la categoría
+- <code>description</code>: Descripción de la categoría</p>
+<h3 id="video_categoria">Video_Categoria<a class="headerlink" href="#video_categoria" title="Permanent link">¶</a></h3>
+<p>Tabla de relación muchos-a-muchos entre videos y categorías.</p>
+<p><strong>Campos:</strong>
+- <code>video_id</code>: Referencia al video
+- <code>categoria_id</code>: Referencia a la categoría</p>
+<h2 id="diagramas-de-flujo">Diagramas de flujo<a class="headerlink" href="#diagramas-de-flujo" title="Permanent link">¶</a></h2>
+<h3 id="consultar-catalogo-de-videos">Consultar catálogo de videos<a class="headerlink" href="#consultar-catalogo-de-videos" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_4485558826883589071.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_4485558826883589071.png"/></a></p>
+<h3 id="buscar-videos-por-categoria">Buscar videos por categoría<a class="headerlink" href="#buscar-videos-por-categoria" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_6142502943625614445.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_6142502943625614445.png"/></a></p>
+<h3 id="crear-nuevo-video">Crear nuevo video<a class="headerlink" href="#crear-nuevo-video" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_4555161409326532126.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_4555161409326532126.png"/></a></p>
+<h3 id="modificar-video-existente">Modificar video existente<a class="headerlink" href="#modificar-video-existente" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_7426044059950914683.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_7426044059950914683.png"/></a></p>
+<h3 id="eliminar-video">Eliminar video<a class="headerlink" href="#eliminar-video" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_8426774893897110081.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_8426774893897110081.png"/></a></p>
+<h3 id="gestion-de-categorias">Gestión de categorías<a class="headerlink" href="#gestion-de-categorias" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../diagramas_UML/backend/catalogo_contenidos/diagram_2542227876994517044.png"><img alt="Diagrama UML" src="../../diagramas_UML/backend/catalogo_contenidos/diagram_2542227876994517044.png"/></a></p>
+<h2 id="arquitectura-y-tecnologias">Arquitectura y Tecnologías<a class="headerlink" href="#arquitectura-y-tecnologias" title="Permanent link">¶</a></h2>
+<h3 id="stack-tecnologico">Stack Tecnológico<a class="headerlink" href="#stack-tecnologico" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Framework</strong>: Spring Boot 3.x</li>
+<li><strong>Lenguaje</strong>: Java 17+</li>
+<li><strong>Base de Datos</strong>: MySQL/PostgreSQL (JPA/Hibernate)</li>
+<li><strong>Seguridad</strong>: Spring Security con JWT</li>
+<li><strong>API</strong>: RESTful API con Jackson</li>
+<li><strong>Build</strong>: Maven</li>
+</ul>
+<h3 id="componentes-principales">Componentes principales<a class="headerlink" href="#componentes-principales" title="Permanent link">¶</a></h3>
+<h4 id="controllers">Controllers<a class="headerlink" href="#controllers" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>VideoController</code>: Gestiona endpoints de videos</li>
+<li><code>CategoriaController</code>: Gestiona endpoints de categorías</li>
+</ul>
+<h4 id="services">Services<a class="headerlink" href="#services" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>VideoService</code>: Lógica de negocio para videos</li>
+<li><code>CategoriaService</code>: Lógica de negocio para categorías</li>
+</ul>
+<h4 id="repositories">Repositories<a class="headerlink" href="#repositories" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>VideoRepository</code>: Acceso a datos de videos (Spring Data JPA)</li>
+<li><code>CategoriaRepository</code>: Acceso a datos de categorías (Spring Data JPA)</li>
+</ul>
+<h4 id="security">Security<a class="headerlink" href="#security" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>JwtAuthenticationFilter</code>: Filtro de autenticación JWT</li>
+<li><code>JwtTokenProvider</code>: Generación y validación de tokens</li>
+<li><code>SecurityConfig</code>: Configuración de seguridad</li>
+<li><code>CorsConfig</code>: Configuración de CORS</li>
+</ul>
+<h4 id="dtos">DTOs<a class="headerlink" href="#dtos" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Public DTOs</strong>: Información expuesta a usuarios no autenticados</li>
+<li><strong>Private DTOs</strong>: Información completa para administradores</li>
+<li><strong>Post DTOs</strong>: Datos para creación/actualización de recursos</li>
+</ul>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
