@@ -26,3 +26,8 @@ __pycache__/
 # Environment files
 .env
 .env.*
+
+# Plugin build artifacts
+plugins/build/
+plugins/dist/
+plugins/*.egg-info/
