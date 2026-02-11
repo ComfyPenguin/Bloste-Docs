@@ -418,77 +418,44 @@ Historial de pagos realizados.
 ```plantuml
 @startuml
 left to right direction
+skinparam actorStyle awesome
 
 actor Usuario
 actor Administrador
 actor "Portal Web" as Portal
 actor "Video Player" as Player
 
-package "Gestión de Usuarios" {
-  usecase "Crear usuario" as UC1
-  usecase "Autenticar usuario" as UC2
-  usecase "Editar perfil" as UC3
-  usecase "Cambiar contraseña" as UC4
-  usecase "Activar/Desactivar" as UC5
+' Simplificación clave: El Admin hereda del Usuario (no necesita flechas duplicadas)
+Usuario <|-- Administrador
+
+package "Módulo Identidad" {
+  usecase "Gestión de Cuenta\n(Auth, Perfil, Password)" as UC_Cuenta
+  usecase "Gestión Admin\n(Roles y Usuarios)" as UC_Adm_Users
 }
 
-package "Gestión de Suscripciones" {
-  usecase "Crear plan suscripción" as UC6
-  usecase "Asignar suscripción" as UC7
-  usecase "Renovar suscripción" as UC8
-  usecase "Consultar estado" as UC9
-  usecase "Ver historial" as UC10
-  usecase "Cancelar suscripción" as UC11
-}
-
-package "Gestión de Roles" {
-  usecase "Asignar admin" as UC12
-  usecase "Revocar admin" as UC13
-  usecase "Gestionar permisos" as UC14
-}
-
-package "Gestión de Pagos" {
-  usecase "Registrar método pago" as UC15
-  usecase "Procesar pago" as UC16
-  usecase "Consultar pagos" as UC17
-  usecase "Reembolsar" as UC18
+package "Módulo Comercial" {
+  usecase "Suscripciones\n(Planes y Estado)" as UC_Susc
+  usecase "Pagos\n(Métodos y Reembolsos)" as UC_Pagos
 }
 
 package "Integración API" {
-  usecase "Generar JWT" as UC19
-  usecase "Validar token" as UC20
-  usecase "Consultar suscripción activa" as UC21
+  usecase "Seguridad JWT" as UC_JWT
+  usecase "Validar Acceso" as UC_Acceso
 }
 
-Usuario --> UC1
-Usuario --> UC2
-Usuario --> UC3
-Usuario --> UC4
-Usuario --> UC9
-Usuario --> UC15
-Usuario --> UC17
+' Relaciones Humanas
+Usuario --> UC_Cuenta
+Usuario --> UC_Susc
+Usuario --> UC_Pagos
+Administrador --> UC_Adm_Users
 
-Administrador --> UC1
-Administrador --> UC5
-Administrador --> UC6
-Administrador --> UC7
-Administrador --> UC10
-Administrador --> UC12
-Administrador --> UC13
-Administrador --> UC14
-Administrador --> UC16
-Administrador --> UC17
-Administrador --> UC18
+' Relaciones de Sistemas
+Portal --> UC_Cuenta
+Portal --> UC_Susc
+Portal --> UC_Pagos
 
-Portal --> UC2
-Portal --> UC8
-Portal --> UC16
-Portal --> UC9
-
-Player --> UC19
-Player --> UC20
-Player --> UC21
-
+Player --> UC_JWT
+Player --> UC_Acceso
 @enduml
 ```
 
