@@ -2,9 +2,11 @@
 <html class="no-js" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../servicio_contenidos/" rel="prev"/>
+<link href="../bloste_web/" rel="next"/>
 <link href="../../../assets/logo.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Pasarela pagos - Bloste Software</title>
+<title>Núcleo (bloste_core) - Bloste Software</title>
 <link href="../../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -51,7 +53,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Pasarela pagos
+              Núcleo (bloste_core)
             
           </span>
 </div>
@@ -124,7 +126,7 @@
 
         </a>
 </li>
-<li class="md-tabs__item">
+<li class="md-tabs__item md-tabs__item--active">
 <a class="md-tabs__link" href="../../catalogo_contenidos/">
           
   
@@ -230,9 +232,9 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
 <span class="md-ellipsis">
     
   
@@ -243,7 +245,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
             
@@ -277,17 +279,546 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../gestor_suscripciones_odoo.md">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
 <span class="md-ellipsis">
     
   
-    Gestor de Suscripciones (Odoo)
+    Odoo
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Odoo
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Núcleo (bloste_core)
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Núcleo (bloste_core)
   
 
     
   </span>
 </a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#descripcion">
+<span class="md-ellipsis">
+      
+        Descripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#responsabilidades">
+<span class="md-ellipsis">
+      
+        Responsabilidades
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interaccion">
+<span class="md-ellipsis">
+      
+        Interacción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modulo-bloste-core">
+<span class="md-ellipsis">
+      
+        Módulo Bloste Core
+      
+    </span>
+</a>
+<nav aria-label="Módulo Bloste Core" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#descripcion-del-modulo">
+<span class="md-ellipsis">
+      
+        Descripción del Módulo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componentes-del-modulo">
+<span class="md-ellipsis">
+      
+        Componentes del Módulo
+      
+    </span>
+</a>
+<nav aria-label="Componentes del Módulo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelos-models">
+<span class="md-ellipsis">
+      
+        Modelos (models/)
+      
+    </span>
+</a>
+<nav aria-label="Modelos (models/)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blostesubscription">
+<span class="md-ellipsis">
+      
+        bloste.subscription
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blosteuser_subscription">
+<span class="md-ellipsis">
+      
+        bloste.user_subscription
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resusers-extension">
+<span class="md-ellipsis">
+      
+        res.users (extensión)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#producttemplate-extension">
+<span class="md-ellipsis">
+      
+        product.template (extensión)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vistas-views">
+<span class="md-ellipsis">
+      
+        Vistas (views/)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#seguridad-security">
+<span class="md-ellipsis">
+      
+        Seguridad (security/)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dependencias">
+<span class="md-ellipsis">
+      
+        Dependencias
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracion-del-manifiesto">
+<span class="md-ellipsis">
+      
+        Configuración del Manifiesto
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-e-r">
+<span class="md-ellipsis">
+      
+        Diagrama E-R
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelo-de-datos">
+<span class="md-ellipsis">
+      
+        Modelo de Datos
+      
+    </span>
+</a>
+<nav aria-label="Modelo de Datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resusers-extendido">
+<span class="md-ellipsis">
+      
+        res.users (extendido)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blostesubscription_1">
+<span class="md-ellipsis">
+      
+        bloste.subscription
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blosteuser_subscription_1">
+<span class="md-ellipsis">
+      
+        bloste.user_subscription
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#productproduct-extendido">
+<span class="md-ellipsis">
+      
+        product.product (extendido)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#payment_method">
+<span class="md-ellipsis">
+      
+        payment_method
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#payment">
+<span class="md-ellipsis">
+      
+        payment
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#casos-de-uso">
+<span class="md-ellipsis">
+      
+        Casos de uso
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagramas-de-flujo">
+<span class="md-ellipsis">
+      
+        Diagramas de flujo
+      
+    </span>
+</a>
+<nav aria-label="Diagramas de flujo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autenticacion-y-generacion-de-token">
+<span class="md-ellipsis">
+      
+        Autenticación y Generación de Token
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-suscripcion-y-pago">
+<span class="md-ellipsis">
+      
+        Gestión de Suscripción y Pago
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#asignar-suscripcion-a-usuario-modulo-bloste-core">
+<span class="md-ellipsis">
+      
+        Asignar Suscripción a Usuario (Módulo Bloste Core)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#calcular-suscripcion-activa">
+<span class="md-ellipsis">
+      
+        Calcular Suscripción Activa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cambiar-rol-de-usuario-user-a-admin">
+<span class="md-ellipsis">
+      
+        Cambiar Rol de Usuario (User a Admin)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-usuario-nuevo">
+<span class="md-ellipsis">
+      
+        Crear Usuario Nuevo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consultar-estado-de-suscripcion-api-externa">
+<span class="md-ellipsis">
+      
+        Consultar Estado de Suscripción (API Externa)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitectura-y-tecnologias">
+<span class="md-ellipsis">
+      
+        Arquitectura y Tecnologías
+      
+    </span>
+</a>
+<nav aria-label="Arquitectura y Tecnologías" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stack-tecnologico">
+<span class="md-ellipsis">
+      
+        Stack Tecnológico
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modulos-de-odoo-utilizados">
+<span class="md-ellipsis">
+      
+        Módulos de Odoo Utilizados
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componentes-del-modulo-bloste-core">
+<span class="md-ellipsis">
+      
+        Componentes del Módulo Bloste Core
+      
+    </span>
+</a>
+<nav aria-label="Componentes del Módulo Bloste Core" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#models-logica-de-negocio">
+<span class="md-ellipsis">
+      
+        Models (Lógica de negocio)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#views-interfaz-de-usuario">
+<span class="md-ellipsis">
+      
+        Views (Interfaz de usuario)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security-control-de-acceso">
+<span class="md-ellipsis">
+      
+        Security (Control de acceso)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#computed-fields">
+<span class="md-ellipsis">
+      
+        Computed Fields
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-de-datos">
+<span class="md-ellipsis">
+      
+        Flujo de Datos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#seguridad-y-permisos">
+<span class="md-ellipsis">
+      
+        Seguridad y Permisos
+      
+    </span>
+</a>
+<nav aria-label="Seguridad y Permisos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grupos-de-odoo">
+<span class="md-ellipsis">
+      
+        Grupos de Odoo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sincronizacion-de-roles">
+<span class="md-ellipsis">
+      
+        Sincronización de Roles
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integraciones">
+<span class="md-ellipsis">
+      
+        Integraciones
+      
+    </span>
+</a>
+<nav aria-label="Integraciones" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api-restjson-rpc">
+<span class="md-ellipsis">
+      
+        API REST/JSON-RPC
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sistema-de-ventas">
+<span class="md-ellipsis">
+      
+        Sistema de Ventas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bloste_web/">
+<span class="md-ellipsis">
+    
+  
+    Sitio web (bloste_web)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bloste_jwt/">
+<span class="md-ellipsis">
+    
+  
+    Gestor de tokens (bloste_jwt)
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -333,18 +864,6 @@
     
   
     Administrador de contenidos (VUE)
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../frontend/gestor_suscripciones_web/">
-<span class="md-ellipsis">
-    
-  
-    Web de Suscripciones (Odoo)
   
 
     
@@ -833,13 +1352,28 @@
 </div>
 </div>
 <div class="md-content" data-md-component="content">
+<nav aria-label="Navegación" class="md-path">
+<ol class="md-path__list">
+<li class="md-path__item">
+<a class="md-path__link" href="../../catalogo_contenidos/">
+<span class="md-ellipsis">
+    Backend
+  </span>
+</a>
+</li>
+<li class="md-path__item">
+<a class="md-path__link" href="./">
+<span class="md-ellipsis">
+    Odoo
+  </span>
+</a>
+</li>
+</ol>
+</nav>
 <article class="md-content__inner md-typeset">
 <h1 id="pasarela-pagos">Pasarela pagos<a class="headerlink" href="#pasarela-pagos" title="Permanent link">¶</a></h1>
 <h3 id="descripcion">Descripción<a class="headerlink" href="#descripcion" title="Permanent link">¶</a></h3>
 <p>Servidor de Odoo para gestionar usuarios, suscripciones y métodos de pago. Incluye el módulo personalizado <code>bloste_core</code> que extiende la funcionalidad base de Odoo para adaptarla a las necesidades específicas de la plataforma BlosteFlix.</p>
-<!-- IMAGEN: Diagrama de arquitectura mostrando la integración de bloste_core con otros componentes -->
-<!-- Ruta sugerida: assets/backend/bloste_core_architecture.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend/bloste_core_architecture.png"><img alt="Arquitectura Bloste Core" src="../assets/backend/bloste_core_architecture.png"/></a></p>
 <h3 id="responsabilidades">Responsabilidades<a class="headerlink" href="#responsabilidades" title="Permanent link">¶</a></h3>
 <ul>
 <li>Crear y enviar tokens de seguridad (JWT) para la interacción entre servicios</li>
@@ -852,9 +1386,6 @@
 <li>Controlar permisos y roles (usuario normal vs administrador)</li>
 </ul>
 <h3 id="interaccion">Interacción<a class="headerlink" href="#interaccion" title="Permanent link">¶</a></h3>
-<!-- IMAGEN: Diagrama de interacción entre componentes del sistema -->
-<!-- Ruta sugerida: assets/backend/bloste_core_interaction_diagram.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend/bloste_core_interaction_diagram.png"><img alt="Interacción entre Componentes" src="../assets/backend/bloste_core_interaction_diagram.png"/></a></p>
 <p>Este componente interactúa con:
 + App Admin (Administrador de Contenidos)
 + Video Player (Reproductor de Videos)
@@ -863,16 +1394,12 @@
 <h2 id="modulo-bloste-core">Módulo Bloste Core<a class="headerlink" href="#modulo-bloste-core" title="Permanent link">¶</a></h2>
 <h3 id="descripcion-del-modulo">Descripción del Módulo<a class="headerlink" href="#descripcion-del-modulo" title="Permanent link">¶</a></h3>
 <p><code>bloste_core</code> es un módulo personalizado de Odoo que extiende la funcionalidad base del sistema para implementar la lógica de negocio específica de BlosteFlix. Este módulo gestiona usuarios, planes de suscripción y la relación entre ambos.</p>
-<!-- IMAGEN: Captura de pantalla del menú "Bloste Software" en Odoo mostrando las opciones principales -->
-<!-- Ruta sugerida: assets/backend-odoo/bloste_core_menu.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend-odoo/bloste_core_menu.png"><img alt="Menú Bloste Software" src="../assets/backend-odoo/bloste_core_menu.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/backend-odoo/bloste_core_menu.png"><img alt="Menú Bloste Software" src="../../../assets/backend-odoo/bloste_core_menu.png"/></a></p>
 <h3 id="componentes-del-modulo">Componentes del Módulo<a class="headerlink" href="#componentes-del-modulo" title="Permanent link">¶</a></h3>
 <h4 id="modelos-models">Modelos (models/)<a class="headerlink" href="#modelos-models" title="Permanent link">¶</a></h4>
 <h5 id="blostesubscription">bloste.subscription<a class="headerlink" href="#blostesubscription" title="Permanent link">¶</a></h5>
 <p>Representa los planes de suscripción disponibles en la plataforma.</p>
-<!-- IMAGEN: Vista de lista de planes de suscripción en Odoo (bloste.subscription) -->
-<!-- Ruta sugerida: assets/backend-odoo/bloste_subscription_list.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend-odoo/bloste_subscription_list.png"><img alt="Lista de Planes de Suscripción" src="../assets/backend-odoo/bloste_subscription_list.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/backend-odoo/bloste_subscription_list.png"><img alt="Lista de Planes de Suscripción" src="../../../assets/backend-odoo/bloste_subscription_list.png"/></a></p>
 <p><strong>Campos:</strong>
 - <code>name</code>: Nombre del plan (ej: "Plan Básico", "Plan Premium")
 - <code>price</code>: Precio del plan de suscripción
@@ -887,9 +1414,8 @@
 - Vincular con el sistema de ventas de Odoo</p>
 <h5 id="blosteuser_subscription">bloste.user_subscription<a class="headerlink" href="#blosteuser_subscription" title="Permanent link">¶</a></h5>
 <p>Tabla de relación entre usuarios y sus suscripciones (historial).</p>
-<!-- IMAGEN: Vista de historial de suscripciones de usuarios (bloste.user_subscription) -->
-<!-- Ruta sugerida: assets/backend/bloste_user_subscription_list.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend/bloste_user_subscription_list.png"><img alt="Historial de Suscripciones" src="../assets/backend/bloste_user_subscription_list.png"/></a></p>
+<!-- TODO: Imagen -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/backend-odoo/bloste_user_subscription_list.png"><img alt="Historial de Suscripciones" src="../../assets/backend-odoo/bloste_user_subscription_list.png"/></a></p>
 <p><strong>Campos:</strong>
 - <code>user_id</code>: Usuario que tiene la suscripción
 - <code>subscription_id</code>: Plan de suscripción asociado
@@ -903,9 +1429,7 @@
 - Permitir múltiples suscripciones por usuario (historial)</p>
 <h5 id="resusers-extension">res.users (extensión)<a class="headerlink" href="#resusers-extension" title="Permanent link">¶</a></h5>
 <p>Extiende el modelo de usuarios estándar de Odoo con funcionalidad específica de BlosteFlix.</p>
-<!-- IMAGEN: Vista de formulario de usuario con campos personalizados de Bloste -->
-<!-- Ruta sugerida: assets/backend-odoo/bloste_user_form.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend-odoo/bloste_user_form.png"><img alt="Formulario de Usuario Bloste" src="../assets/backend-odoo/bloste_user_form.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/backend-odoo/bloste_user_form.png"><img alt="Formulario de Usuario Bloste" src="../../../assets/backend-odoo/bloste_user_form.png"/></a></p>
 <p><strong>Campos añadidos:</strong>
 - <code>user_subscription_ids</code>: Relación con todas las suscripciones del usuario
 - <code>bloste_api_uuid</code>: UUID único para identificación en API
@@ -937,9 +1461,8 @@
 - Diferenciar productos de suscripción de otros productos
 - Integrar suscripciones con el módulo de ventas de Odoo</p>
 <h4 id="vistas-views">Vistas (views/)<a class="headerlink" href="#vistas-views" title="Permanent link">¶</a></h4>
-<!-- IMAGEN: Captura mostrando las diferentes vistas XML del módulo en el árbol de archivos -->
-<!-- Ruta sugerida: assets/backend/bloste_core_views_structure.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend/bloste_core_views_structure.png"><img alt="Estructura de Vistas" src="../assets/backend/bloste_core_views_structure.png"/></a></p>
+<!-- TODO: Imagen -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/backend-odoo/bloste_core_views_structure.png"><img alt="Estructura de Vistas" src="../../assets/backend-odoo/bloste_core_views_structure.png"/></a></p>
 <ul>
 <li><strong>menu_view.xml</strong>: Define el menú principal "Bloste Software" en la interfaz de Odoo</li>
 <li><strong>subscriptors.xml</strong>: Vista para gestionar planes de suscripción</li>
@@ -948,9 +1471,8 @@
 <li><strong>product_view.xml</strong>: Vista extendida de productos para marcar planes de suscripción</li>
 </ul>
 <h4 id="seguridad-security">Seguridad (security/)<a class="headerlink" href="#seguridad-security" title="Permanent link">¶</a></h4>
-<!-- IMAGEN: Captura del archivo ir.model.access.csv mostrando los permisos configurados -->
-<!-- Ruta sugerida: assets/backend/bloste_core_security_csv.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend/bloste_core_security_csv.png"><img alt="Configuración de Seguridad" src="../assets/backend/bloste_core_security_csv.png"/></a></p>
+<!-- TODO: Imagen -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/backend-odoo/bloste_core_security_csv.png"><img alt="Configuración de Seguridad" src="../../assets/backend-odoo/bloste_core_security_csv.png"/></a></p>
 <p><strong>ir.model.access.csv</strong>: Define los permisos de acceso a los modelos:
 - <code>access_bloste_subscription</code>: Permisos completos (CRUD) para usuarios internos
 - <code>access_bloste_user_subscription</code>: Permisos completos (CRUD) para usuarios internos
@@ -976,7 +1498,7 @@
 </span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="diagrama-e-r">Diagrama E-R<a class="headerlink" href="#diagrama-e-r" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_9138058256251556401.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_9138058256251556401.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_4118140655472666706.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_4118140655472666706.png"/></a></p>
 <h2 id="modelo-de-datos">Modelo de Datos<a class="headerlink" href="#modelo-de-datos" title="Permanent link">¶</a></h2>
 <h3 id="resusers-extendido">res.users (extendido)<a class="headerlink" href="#resusers-extendido" title="Permanent link">¶</a></h3>
 <p>Usuarios del sistema con funcionalidad específica de BlosteFlix.</p>
@@ -996,9 +1518,7 @@
 - <code>user_subscription_ids</code>: Historial completo de suscripciones</p>
 <h3 id="blostesubscription_1">bloste.subscription<a class="headerlink" href="#blostesubscription_1" title="Permanent link">¶</a></h3>
 <p>Planes de suscripción disponibles en la plataforma.</p>
-<!-- IMAGEN: Captura del formulario de creación/edición de un plan de suscripción -->
-<!-- Ruta sugerida: assets/backend-odoo/bloste_subscription_form.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend-odoo/bloste_subscription_form.png"><img alt="Formulario de Plan de Suscripción" src="../assets/backend-odoo/bloste_subscription_form.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/backend-odoo/bloste_subscription_form.png"><img alt="Formulario de Plan de Suscripción" src="../../../assets/backend-odoo/bloste_subscription_form.png"/></a></p>
 <p><strong>Campos:</strong>
 - <code>id</code>: Identificador único del plan
 - <code>name</code>: Nombre del plan (ej: "Plan Mensual", "Plan Anual")
@@ -1010,9 +1530,8 @@
 - <code>user_subscription_ids</code>: Usuarios que tienen/tuvieron este plan</p>
 <h3 id="blosteuser_subscription_1">bloste.user_subscription<a class="headerlink" href="#blosteuser_subscription_1" title="Permanent link">¶</a></h3>
 <p>Historial de suscripciones de usuarios (relación usuario-plan).</p>
-<!-- IMAGEN: Captura de la vista de formulario de una relación usuario-suscripción -->
-<!-- Ruta sugerida: assets/backend/bloste_user_subscription_form.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend/bloste_user_subscription_form.png"><img alt="Formulario de Suscripción de Usuario" src="../assets/backend/bloste_user_subscription_form.png"/></a></p>
+<!-- TODO: Imagen -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/backend-odoo/bloste_user_subscription_form.png"><img alt="Formulario de Suscripción de Usuario" src="../../assets/backend-odoo/bloste_user_subscription_form.png"/></a></p>
 <p><strong>Campos:</strong>
 - <code>id</code>: Identificador único de la relación
 - <code>user_id</code>: Usuario asociado
@@ -1041,6 +1560,7 @@
 - <code>paid_at</code>: Fecha y hora del pago
 - <code>payment_method_id</code>: Método de pago utilizado
 - <code>subscription_id</code>: Suscripción asociada</p>
+<!-- TODO: Revisar casos de uso, no se entiende nada, igual con plantuml es mejor -->
 <h2 id="casos-de-uso">Casos de uso<a class="headerlink" href="#casos-de-uso" title="Permanent link">¶</a></h2>
 <div class="mermaid">%%{init: {'theme':'base','themeVariables': {'primaryColor':'#0ea5a4','edgeColor':'#065f46','fontFamily':'"Inter", Arial'}} }%%
 graph LR
@@ -1140,19 +1660,19 @@ graph LR
   classDef usecase fill:#ecfccb,stroke:#65a30d,stroke-width:1.5px,rx:20px;</div>
 <h2 id="diagramas-de-flujo">Diagramas de flujo<a class="headerlink" href="#diagramas-de-flujo" title="Permanent link">¶</a></h2>
 <h3 id="autenticacion-y-generacion-de-token">Autenticación y Generación de Token<a class="headerlink" href="#autenticacion-y-generacion-de-token" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_5451504042538011267.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_5451504042538011267.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_4878387755283716582.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_4878387755283716582.png"/></a></p>
 <h3 id="gestion-de-suscripcion-y-pago">Gestión de Suscripción y Pago<a class="headerlink" href="#gestion-de-suscripcion-y-pago" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_3627534856331540717.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_3627534856331540717.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_6867050986657701860.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_6867050986657701860.png"/></a></p>
 <h3 id="asignar-suscripcion-a-usuario-modulo-bloste-core">Asignar Suscripción a Usuario (Módulo Bloste Core)<a class="headerlink" href="#asignar-suscripcion-a-usuario-modulo-bloste-core" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_2274650629810805076.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_2274650629810805076.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_6666846712817954520.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_6666846712817954520.png"/></a></p>
 <h3 id="calcular-suscripcion-activa">Calcular Suscripción Activa<a class="headerlink" href="#calcular-suscripcion-activa" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_6013821376897672646.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_6013821376897672646.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_7698052413255570245.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_7698052413255570245.png"/></a></p>
 <h3 id="cambiar-rol-de-usuario-user-a-admin">Cambiar Rol de Usuario (User a Admin)<a class="headerlink" href="#cambiar-rol-de-usuario-user-a-admin" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_5091091504487428806.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_5091091504487428806.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_120032118050940351.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_120032118050940351.png"/></a></p>
 <h3 id="crear-usuario-nuevo">Crear Usuario Nuevo<a class="headerlink" href="#crear-usuario-nuevo" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_8190152644297181576.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_8190152644297181576.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_5699739749856608799.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_5699739749856608799.png"/></a></p>
 <h3 id="consultar-estado-de-suscripcion-api-externa">Consultar Estado de Suscripción (API Externa)<a class="headerlink" href="#consultar-estado-de-suscripcion-api-externa" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_7956237266828962273.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_7956237266828962273.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_7765573668910986614.png"><img alt="Diagrama UML" src="../../../diagramas_UML/backend/odoo_doc/bloste_core/diagram_7765573668910986614.png"/></a></p>
 <h2 id="arquitectura-y-tecnologias">Arquitectura y Tecnologías<a class="headerlink" href="#arquitectura-y-tecnologias" title="Permanent link">¶</a></h2>
 <h3 id="stack-tecnologico">Stack Tecnológico<a class="headerlink" href="#stack-tecnologico" title="Permanent link">¶</a></h3>
 <ul>
@@ -1206,9 +1726,8 @@ graph LR
 </ol>
 <h3 id="seguridad-y-permisos">Seguridad y Permisos<a class="headerlink" href="#seguridad-y-permisos" title="Permanent link">¶</a></h3>
 <h4 id="grupos-de-odoo">Grupos de Odoo<a class="headerlink" href="#grupos-de-odoo" title="Permanent link">¶</a></h4>
-<!-- IMAGEN: Captura de la configuración de grupos en Odoo mostrando los diferentes niveles de acceso -->
-<!-- Ruta sugerida: assets/backend/bloste_core_groups_config.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend/bloste_core_groups_config.png"><img alt="Configuración de Grupos Odoo" src="../assets/backend/bloste_core_groups_config.png"/></a></p>
+<!-- TODO: Imagen -->
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/backend-odoo/bloste_core_groups_config.png"><img alt="Configuración de Grupos Odoo" src="../../assets/backend-odoo/bloste_core_groups_config.png"/></a></p>
 <ul>
 <li><strong>Portal User</strong> (<code>base.group_portal</code>): Usuario básico con acceso limitado</li>
 <li><strong>Internal User</strong> (<code>base.group_user</code>): Usuario interno con acceso a backend</li>

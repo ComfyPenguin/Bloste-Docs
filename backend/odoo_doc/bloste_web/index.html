@@ -2,9 +2,11 @@
 <html class="no-js" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../bloste_core/" rel="prev"/>
+<link href="../bloste_jwt/" rel="next"/>
 <link href="../../../assets/logo.svg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Bloste Web - Módulo de Sitio Web - Bloste Software</title>
+<title>Sitio web (bloste_web) - Bloste Software</title>
 <link href="../../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -51,7 +53,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Bloste Web - Módulo de Sitio Web
+              Sitio web (bloste_web)
             
           </span>
 </div>
@@ -124,7 +126,7 @@
 
         </a>
 </li>
-<li class="md-tabs__item">
+<li class="md-tabs__item md-tabs__item--active">
 <a class="md-tabs__link" href="../../catalogo_contenidos/">
           
   
@@ -230,9 +232,9 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
 <span class="md-ellipsis">
     
   
@@ -243,7 +245,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
             
@@ -277,17 +279,544 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../gestor_suscripciones_odoo.md">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
 <span class="md-ellipsis">
     
   
-    Gestor de Suscripciones (Odoo)
+    Odoo
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Odoo
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bloste_core/">
+<span class="md-ellipsis">
+    
+  
+    Núcleo (bloste_core)
   
 
     
   </span>
 </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Sitio web (bloste_web)
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Sitio web (bloste_web)
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Tabla de contenidos" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#descripcion-general">
+<span class="md-ellipsis">
+      
+        Descripción General
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estructura-del-modulo">
+<span class="md-ellipsis">
+      
+        Estructura del Módulo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manifest-manifestpy">
+<span class="md-ellipsis">
+      
+        Manifest (manifest.py)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelos">
+<span class="md-ellipsis">
+      
+        Modelos
+      
+    </span>
+</a>
+<nav aria-label="Modelos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blosteweb-blosteweb">
+<span class="md-ellipsis">
+      
+        BlosteWeb (bloste.web)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controladores">
+<span class="md-ellipsis">
+      
+        Controladores
+      
+    </span>
+</a>
+<nav aria-label="Controladores" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#blostewebsite-controllersmainpy">
+<span class="md-ellipsis">
+      
+        BlosteWebsite (controllers/main.py)
+      
+    </span>
+</a>
+<nav aria-label="BlosteWebsite (controllers/main.py)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos-principales">
+<span class="md-ellipsis">
+      
+        Métodos Principales
+      
+    </span>
+</a>
+<nav aria-label="Métodos Principales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_render_website_page_with_plansurl">
+<span class="md-ellipsis">
+      
+        _render_website_page_with_plans(url)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rutas-http">
+<span class="md-ellipsis">
+      
+        Rutas HTTP
+      
+    </span>
+</a>
+<nav aria-label="Rutas HTTP" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#in-pagina-de-loginregistro">
+<span class="md-ellipsis">
+      
+        /in - Página de Login/Registro
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#suscripciones-planes-de-suscripcion">
+<span class="md-ellipsis">
+      
+        /suscripciones - Planes de Suscripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#planes-y-productos-alias-de-suscripciones">
+<span class="md-ellipsis">
+      
+        /planes y /productos - Alias de Suscripciones
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#info-usuario-informacion-del-usuario">
+<span class="md-ellipsis">
+      
+        /info-usuario - Información del Usuario
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#info-usuariosubmit-procesamiento-de-contratacion">
+<span class="md-ellipsis">
+      
+        /info-usuario/submit - Procesamiento de Contratación
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vistas-y-templates">
+<span class="md-ellipsis">
+      
+        Vistas y Templates
+      
+    </span>
+</a>
+<nav aria-label="Vistas y Templates" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#templates-viewstemplatesxml">
+<span class="md-ellipsis">
+      
+        Templates (views/templates.xml)
+      
+    </span>
+</a>
+<nav aria-label="Templates (views/templates.xml)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#login_register_template">
+<span class="md-ellipsis">
+      
+        login_register_template
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#paginas-del-sitio-viewswebsite_pagesxml">
+<span class="md-ellipsis">
+      
+        Páginas del Sitio (views/website_pages.xml)
+      
+    </span>
+</a>
+<nav aria-label="Páginas del Sitio (views/website_pages.xml)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracion-del-sitio-web">
+<span class="md-ellipsis">
+      
+        Configuración del Sitio Web
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#home_page_view-pagina-de-inicio">
+<span class="md-ellipsis">
+      
+        home_page_view - Página de Inicio
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#suscripciones_page_view-pagina-de-suscripciones">
+<span class="md-ellipsis">
+      
+        suscripciones_page_view - Página de Suscripciones
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#templates-adicionales">
+<span class="md-ellipsis">
+      
+        Templates Adicionales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#menus-viewsmenusxml">
+<span class="md-ellipsis">
+      
+        Menús (views/menus.xml)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assets-viewsassetsxml">
+<span class="md-ellipsis">
+      
+        Assets (views/assets.xml)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recursos-estaticos">
+<span class="md-ellipsis">
+      
+        Recursos Estáticos
+      
+    </span>
+</a>
+<nav aria-label="Recursos Estáticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#css-bloste_colorscss">
+<span class="md-ellipsis">
+      
+        CSS - bloste_colors.css
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#javascript-subscription_redirectjs">
+<span class="md-ellipsis">
+      
+        JavaScript - subscription_redirect.js
+      
+    </span>
+</a>
+<nav aria-label="JavaScript - subscription_redirect.js" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-preseleccion-de-plan-desde-url">
+<span class="md-ellipsis">
+      
+        1. Preselección de Plan desde URL
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-manejo-de-clics-en-botones-de-suscripcion">
+<span class="md-ellipsis">
+      
+        2. Manejo de Clics en Botones de Suscripción
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#seguridad">
+<span class="md-ellipsis">
+      
+        Seguridad
+      
+    </span>
+</a>
+<nav aria-label="Seguridad" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#irmodelaccesscsv">
+<span class="md-ellipsis">
+      
+        ir.model.access.csv
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-de-contratacion-de-suscripcion">
+<span class="md-ellipsis">
+      
+        Flujo de Contratación de Suscripción
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integracion-con-otros-modulos">
+<span class="md-ellipsis">
+      
+        Integración con Otros Módulos
+      
+    </span>
+</a>
+<nav aria-label="Integración con Otros Módulos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloste_core">
+<span class="md-ellipsis">
+      
+        bloste_core
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#website-odoo">
+<span class="md-ellipsis">
+      
+        website (Odoo)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloste_jwt">
+<span class="md-ellipsis">
+      
+        bloste_jwt
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consideraciones-de-desarrollo">
+<span class="md-ellipsis">
+      
+        Consideraciones de Desarrollo
+      
+    </span>
+</a>
+<nav aria-label="Consideraciones de Desarrollo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multiidioma">
+<span class="md-ellipsis">
+      
+        Multiidioma
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validacion-de-contrasenas">
+<span class="md-ellipsis">
+      
+        Validación de Contraseñas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uso-de-sudo">
+<span class="md-ellipsis">
+      
+        Uso de sudo()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logging">
+<span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mejoras-futuras">
+<span class="md-ellipsis">
+      
+        Mejoras Futuras
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comandos-utiles">
+<span class="md-ellipsis">
+      
+        Comandos Útiles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#testing">
+<span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bloste_jwt/">
+<span class="md-ellipsis">
+    
+  
+    Gestor de tokens (bloste_jwt)
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -333,18 +862,6 @@
     
   
     Administrador de contenidos (VUE)
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../frontend/gestor_suscripciones_web/">
-<span class="md-ellipsis">
-    
-  
-    Web de Suscripciones (Odoo)
   
 
     
@@ -831,13 +1348,29 @@
 </div>
 </div>
 <div class="md-content" data-md-component="content">
+<nav aria-label="Navegación" class="md-path">
+<ol class="md-path__list">
+<li class="md-path__item">
+<a class="md-path__link" href="../../catalogo_contenidos/">
+<span class="md-ellipsis">
+    Backend
+  </span>
+</a>
+</li>
+<li class="md-path__item">
+<a class="md-path__link" href="../bloste_core/">
+<span class="md-ellipsis">
+    Odoo
+  </span>
+</a>
+</li>
+</ol>
+</nav>
 <article class="md-content__inner md-typeset">
 <h1 id="bloste-web-modulo-de-sitio-web">Bloste Web - Módulo de Sitio Web<a class="headerlink" href="#bloste-web-modulo-de-sitio-web" title="Permanent link">¶</a></h1>
 <h2 id="descripcion-general">Descripción General<a class="headerlink" href="#descripcion-general" title="Permanent link">¶</a></h2>
 <p><code>bloste_web</code> es el módulo de Odoo que proporciona la interfaz web pública para la plataforma Bloste. Este módulo gestiona las páginas públicas del sitio, el registro de usuarios, la visualización de planes de suscripción y el proceso de contratación.</p>
-<!-- IMAGEN: Captura de la página de inicio de BlosteFlix -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_home_page.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_home_page.png"><img alt="Página de Inicio BlosteFlix" src="../assets/frontend-odoo/bloste_home_page.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/frontend-odoo/bloste_home_page.png"><img alt="Página de Inicio BlosteFlix" src="../../../assets/frontend-odoo/bloste_home_page.png"/></a></p>
 <p><strong>Características principales:</strong>
 - Página de inicio (home) con hero section y características del servicio
 - Sistema de registro de usuarios con validación
@@ -957,9 +1490,7 @@
 </span></code></pre></div>
 <p><strong>Descripción:</strong> Rutas alternativas que redirigen a <code>/suscripciones</code>.</p>
 <h5 id="info-usuario-informacion-del-usuario"><code>/info-usuario</code> - Información del Usuario<a class="headerlink" href="#info-usuario-informacion-del-usuario" title="Permanent link">¶</a></h5>
-<!-- IMAGEN: Formulario de Información de Usuario -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_info_usuario_form.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_info_usuario_form.png"><img alt="Formulario de Información de Usuario" src="../assets/frontend-odoo/bloste_info_usuario_form.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/frontend-odoo/bloste_info_usuario_form.png"><img alt="Formulario de Información de Usuario" src="../../../assets/frontend-odoo/bloste_info_usuario_form.png"/></a></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nd">@http</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/info-usuario'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'http'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">'public'</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">info_usuario</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plan</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 </span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="sd">"""Pagina d'informacio de l'usuari amb pla preseleccionat"""</span>
@@ -999,9 +1530,7 @@
 <h3 id="templates-viewstemplatesxml">Templates (views/templates.xml)<a class="headerlink" href="#templates-viewstemplatesxml" title="Permanent link">¶</a></h3>
 <h4 id="login_register_template"><code>login_register_template</code><a class="headerlink" href="#login_register_template" title="Permanent link">¶</a></h4>
 <p>Template de registro de usuarios con diseño moderno y validación.</p>
-<!-- IMAGEN: Formulario de Registro -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_register_form.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_register_form.png"><img alt="Formulario de Registro" src="../assets/frontend-odoo/bloste_register_form.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/frontend-odoo/bloste_register_form.png"><img alt="Formulario de Registro" src="../../../assets/frontend-odoo/bloste_register_form.png"/></a></p>
 <p><strong>Características:</strong>
 - Diseño con gradiente de colores Bloste
 - Card con sombra y bordes redondeados
@@ -1030,9 +1559,7 @@
 </span></code></pre></div>
 <h4 id="home_page_view-pagina-de-inicio"><code>home_page_view</code> - Página de Inicio<a class="headerlink" href="#home_page_view-pagina-de-inicio" title="Permanent link">¶</a></h4>
 <p>Template de la página principal con diseño moderno.</p>
-<!-- IMAGEN: Vista completa de la página de inicio con hero section y características -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_home_full.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_home_full.png"><img alt="Página de Inicio Completa" src="../assets/frontend-odoo/bloste_home_full.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/frontend-odoo/bloste_home_full.png"><img alt="Página de Inicio Completa" src="../../../assets/frontend-odoo/bloste_home_full.png"/></a></p>
 <p><strong>Secciones:</strong></p>
 <ol>
 <li><strong>Hero Section:</strong></li>
@@ -1056,9 +1583,7 @@
 </ol>
 <h4 id="suscripciones_page_view-pagina-de-suscripciones"><code>suscripciones_page_view</code> - Página de Suscripciones<a class="headerlink" href="#suscripciones_page_view-pagina-de-suscripciones" title="Permanent link">¶</a></h4>
 <p>Template para mostrar planes de suscripción disponibles.</p>
-<!-- IMAGEN: Captura de la página /suscripciones mostrando los planes en cards -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_subscriptions_page.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_subscriptions_page.png"><img alt="Página de Planes de Suscripción" src="../assets/frontend-odoo/bloste_subscriptions_page.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/frontend-odoo/bloste_subscriptions_page.png"><img alt="Página de Planes de Suscripción" src="../../../assets/frontend-odoo/bloste_subscriptions_page.png"/></a></p>
 <p><strong>Elementos:</strong>
 - Título y descripción
 - Grid responsive de cards
@@ -1069,18 +1594,14 @@
   - Duración en días
   - Botón "Suscribirse" con data-plan</p>
 <p><strong>Condicional:</strong> Muestra alerta si no hay planes disponibles</p>
-<!-- IMAGEN: Vista de la alerta cuando no hay planes disponibles -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_no_plans_alert.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_no_plans_alert.png"><img alt="Alerta sin Planes Disponibles" src="../assets/frontend-odoo/bloste_no_plans_alert.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/frontend-odoo/bloste_no_plans_alert.png"><img alt="Alerta sin Planes Disponibles" src="../../../assets/frontend-odoo/bloste_no_plans_alert.png"/></a></p>
 <h4 id="templates-adicionales">Templates Adicionales<a class="headerlink" href="#templates-adicionales" title="Permanent link">¶</a></h4>
 <p>El archivo contiene más templates incluyendo:
 - <code>info_usuario_page_view</code>: Formulario de información del usuario
 - <code>subscription_success_page_view</code>: Página de éxito tras contratación
 - <code>payment_page_view</code>: Página de procesamiento de pago</p>
 <h3 id="menus-viewsmenusxml">Menús (views/menus.xml)<a class="headerlink" href="#menus-viewsmenusxml" title="Permanent link">¶</a></h3>
-<!-- IMAGEN: Captura del menú Bloste Website en el backend de Odoo -->
-<!-- Ruta sugerida: assets/backend/bloste_web_backend_menu.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/backend/bloste_web_backend_menu.png"><img alt="Menú Backend Bloste Website" src="../assets/backend/bloste_web_backend_menu.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/backend-odoo/bloste_web_backend_menu.png"><img alt="Menú Backend Bloste Website" src="../../../assets/backend-odoo/bloste_web_backend_menu.png"/></a></p>
 <p>Estructura de menús en el backend de Odoo:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">&lt;menuitem</span><span class="w"> </span><span class="na">id=</span><span class="s">"bloste_website_menu"</span><span class="w"> </span>
 </span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">          </span><span class="na">name=</span><span class="s">"Bloste Website"</span><span class="w"> </span>
@@ -1202,9 +1723,7 @@
 - <strong>Unlink:</strong> ✓ Eliminación permitida</p>
 <p><strong>Grupo:</strong> Sin grupo específico (todos los usuarios)</p>
 <h2 id="flujo-de-contratacion-de-suscripcion">Flujo de Contratación de Suscripción<a class="headerlink" href="#flujo-de-contratacion-de-suscripcion" title="Permanent link">¶</a></h2>
-<!-- IMAGEN: Captura de la página /info-usuario con formulario de autenticación -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_info_usuario_page.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_info_usuario_page.png"><img alt="Página de Información de Usuario" src="../assets/frontend-odoo/bloste_info_usuario_page.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/frontend-odoo/bloste_info_usuario_page.png"><img alt="Página de Información de Usuario" src="../../../assets/frontend-odoo/bloste_info_usuario_page.png"/></a></p>
 <div class="mermaid">graph TD
     A[Usuario visita /suscripciones] --&gt; B[Ve planes disponibles]
     B --&gt; C[Clic en botón Suscribirse]
@@ -1370,9 +1889,7 @@
 </span></code></pre></div>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">¶</a></h2>
 <p>Para probar el módulo:</p>
-<!-- IMAGEN: Captura de pantalla de la página de éxito tras contratar una suscripción -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_subscription_success.png -->
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/frontend-odoo/bloste_subscription_success.png"><img alt="Página de Éxito de Suscripción" src="../assets/frontend-odoo/bloste_subscription_success.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/frontend-odoo/bloste_subscription_success.png"><img alt="Página de Éxito de Suscripción" src="../../../assets/frontend-odoo/bloste_subscription_success.png"/></a></p>
 <ol>
 <li>
 <p><strong>Página de inicio:</strong>
