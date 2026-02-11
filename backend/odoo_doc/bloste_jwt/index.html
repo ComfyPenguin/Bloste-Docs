@@ -80,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#modulo-odoo-bloste-custom-auth-jwt" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -695,6 +700,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestor de tokens (bloste_jwt)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -712,6 +737,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#funcionalidades-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades Clave
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints Disponibles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion-de-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descripción de parámetros:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consideraciones Importantes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencias-externas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencias Externas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -863,6 +979,88 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#funcionalidades-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades Clave
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints Disponibles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion-de-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descripción de parámetros:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consideraciones Importantes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencias-externas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencias Externas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -931,9 +1129,78 @@
   
 
 
-  <h1>Gestor de tokens (bloste_jwt)</h1>
-
-
+<h1 id="modulo-odoo-bloste-custom-auth-jwt">Módulo Odoo: Bloste Custom Auth JWT<a class="headerlink" href="#modulo-odoo-bloste-custom-auth-jwt" title="Permanent link">¶</a></h1>
+<p><code>Bloste_custom_auth_jwt</code> es un módulo de Odoo diseñado para exponer una <strong>API REST</strong> de autenticación basada en <strong>JWT (JSON Web Token)</strong>. Su propósito principal es permitir que aplicaciones externas (<em>frontends</em> en Vue, Flutter, o servicios <em>backend</em>) autentiquen usuarios sin depender del sistema de sesiones basado en cookies tradicional de Odoo.</p>
+<h2 id="funcionalidades-clave">Funcionalidades Clave<a class="headerlink" href="#funcionalidades-clave" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Registro de usuarios:</strong> Permite dar de alta cuentas de usuario de tipo "Portal" desde clientes externos.</li>
+<li><strong>Autenticación:</strong> Genera un token JWT válido tras validar las credenciales del usuario (login y contraseña).</li>
+<li><strong>Validación de sesión:</strong> Recupera la información del usuario autenticado enviando el JWT en la cabecera.</li>
+<li><strong>Refresco de Token:</strong> Incluye un endpoint para renovar el <em>access token</em> mediante un <em>refresh token</em>, manteniendo la sesión activa de forma segura.</li>
+</ul>
+<h2 id="endpoints-disponibles">Endpoints Disponibles<a class="headerlink" href="#endpoints-disponibles" title="Permanent link">¶</a></h2>
+<p>Todos los endpoints aceptan y devuelven datos en formato <code>application/json</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Endpoint</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/auth/register</code></td>
+<td>Crear una nueva cuenta de usuario (tipo portal).</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/auth/token</code></td>
+<td>Generar JWT (<strong>Access</strong> y <strong>Refresh Tokens</strong>).</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/users/me</code></td>
+<td>Obtener datos del usuario autenticado.</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/auth/refresh</code></td>
+<td>Refrescar un token de acceso usando un token de refresco.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">¶</a></h2>
+<p>Para que el módulo funcione correctamente, es imperativo configurar el archivo <code>odoo.conf</code> con los siguientes parámetros:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>jwt_secret = tu_clave_super_secreta
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>jwt_expiration = 3600
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>private = /ruta/a/tu/clave_privada.pem
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>public = /ruta/a/tu/clave_publica.pem
+</span></code></pre></div>
+<h3 id="descripcion-de-parametros">Descripción de parámetros:<a class="headerlink" href="#descripcion-de-parametros" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong><code>jwt_secret</code></strong>: Clave utilizada para firmar los tokens JWT.</li>
+<li><strong><code>jwt_expiration</code></strong>: Tiempo de validez del token de acceso expresado en segundos (ej. <code>3600</code> para 1 hora).</li>
+<li><strong><code>private</code></strong>: Ruta absoluta al archivo de <strong>clave privada RSA</strong> (necesaria para la firma de tokens).</li>
+<li><strong><code>public</code></strong>: Ruta absoluta al archivo de <strong>clave pública RSA</strong> (necesaria para la verificación).</li>
+</ol>
+<h2 id="consideraciones-importantes">Consideraciones Importantes<a class="headerlink" href="#consideraciones-importantes" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Flujo de Registro:</strong> El registro de usuarios <strong>no inicia sesión automáticamente</strong>. El frontend debe registrar al usuario y luego llamar explícitamente al endpoint <code>/api/auth/token</code> para obtener los tokens.</li>
+<li><strong>Gestión de Sesión:</strong> El control de la sesión recae exclusivamente en el frontend externo. Este módulo <strong>no crea cookies</strong> ni sesiones tradicionales en el servidor de Odoo.</li>
+<li><strong>Estilo de API:</strong> Se utiliza un estilo <strong>REST sencillo</strong>. A diferencia de otros módulos de Odoo, <strong>NO</strong> se emplea el formato envoltorio de JSON-RPC.</li>
+</ul>
+<h2 id="dependencias-externas">Dependencias Externas<a class="headerlink" href="#dependencias-externas" title="Permanent link">¶</a></h2>
+<p>Este módulo requiere las siguientes librerías de Python, las cuales deben incluirse en el archivo <code>requirements.txt</code>:</p>
+<ul>
+<li><strong><code>PyJWT==2.10.1</code></strong>: Para la gestión de los JSON Web Tokens.</li>
+<li><strong><code>cryptography</code></strong>: Fundamental para manejar el algoritmo <strong>RS256</strong> usado en la firma.</li>
+<li><em>Versión para Python &lt; 3.12:</em> <code>3.4.8</code></li>
+<li><em>Versión para Python &gt;= 3.12:</em> <code>42.0.8</code></li>
+</ul>
+<hr>
+<p><em>Documentación generada para el módulo de autenticación Bloste.</em></p>
 
 
 
