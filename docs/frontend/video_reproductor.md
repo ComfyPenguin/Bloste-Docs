@@ -1,6 +1,9 @@
 # Reproductor Móvil
 Este es el reproductor principal de blosteflix, una app móvil multiplataforma desarrollada con Flutter para consultar el catálogo y reproducir contenido.
 
+## Showcase
+![Carrousel de blosteflix](../assets/blosteflixApp.gif){ style="display: block; margin: 0 auto; width: 300px;" }
+
 ## Arquitectura
 
 La aplicación está construida siguiendo los principios de **Clean Architecture**, dividida en tres capas principales:
