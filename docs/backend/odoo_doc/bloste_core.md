@@ -54,8 +54,6 @@ Representa los planes de suscripción disponibles en la plataforma.
 ##### bloste.user_subscription
 Tabla de relación entre usuarios y sus suscripciones (historial).
 
-<!-- TODO: Imagen -->
-![Historial de Suscripciones](../../assets/backend-odoo/bloste_user_subscription_list.png)
 
 **Campos:**
 - `user_id`: Usuario que tiene la suscripción
@@ -114,9 +112,6 @@ Extiende el modelo de productos de Odoo.
 
 #### Vistas (views/)
 
-<!-- TODO: Imagen -->
-![Estructura de Vistas](../../assets/backend-odoo/bloste_core_views_structure.png)
-
 - **menu_view.xml**: Define el menú principal "Bloste Software" en la interfaz de Odoo
 - **subscriptors.xml**: Vista para gestionar planes de suscripción
 - **user_subscription.xml**: Vista para el historial de suscripciones de usuarios
@@ -124,9 +119,6 @@ Extiende el modelo de productos de Odoo.
 - **product_view.xml**: Vista extendida de productos para marcar planes de suscripción
 
 #### Seguridad (security/)
-
-<!-- TODO: Imagen -->
-![Configuración de Seguridad](../../assets/backend-odoo/bloste_core_security_csv.png)
 
 **ir.model.access.csv**: Define los permisos de acceso a los modelos:
 - `access_bloste_subscription`: Permisos completos (CRUD) para usuarios internos
@@ -366,7 +358,7 @@ Usuarios del sistema con funcionalidad específica de BlosteFlix.
 ### bloste.subscription
 Planes de suscripción disponibles en la plataforma.
 
-![Formulario de Plan de Suscripción](../../assets/backend-odoo/bloste_subscription_form.png)
+![Formulario de Plan de Suscripción](../../assets/backend-odoo/bloste_subscription_list.png)
 
 **Campos:**
 - `id`: Identificador único del plan
@@ -381,8 +373,7 @@ Planes de suscripción disponibles en la plataforma.
 ### bloste.user_subscription
 Historial de suscripciones de usuarios (relación usuario-plan).
 
-<!-- TODO: Imagen -->
-![Formulario de Suscripción de Usuario](../../assets/backend-odoo/bloste_user_subscription_form.png)
+![Formulario de Suscripción de Usuario](../../assets/backend-odoo/bloste_subscription_form.png)
 
 **Campos:**
 - `id`: Identificador único de la relación
@@ -424,103 +415,81 @@ Historial de pagos realizados.
 <!-- TODO: Revisar casos de uso, no se entiende nada, igual con plantuml es mejor -->
 ## Casos de uso
 
-```mermaid
-%%{init: {'theme':'base','themeVariables': {'primaryColor':'#0ea5a4','edgeColor':'#065f46','fontFamily':'"Inter", Arial'}} }%%
-graph LR
-  %% Agrupación de usuarios
-  subgraph Usuarios
-    direction TB
-    U1[Usuario/Cliente]
-    U2[Administrador]
-    U3[Portal Web]
-    U4[Video Player]
-  end
+```plantuml
+@startuml
+left to right direction
 
-  %% Casos de uso divididos en áreas
-  subgraph "Casos de uso"
-    direction LR
-    
-    subgraph "Gestión de Usuarios"
-      direction TB
-      UC1((Crear usuario))
-      UC2((Autenticar usuario))
-      UC3((Editar perfil))
-      UC4((Cambiar contraseña))
-      UC5((Activar/Desactivar))
-    end
+actor Usuario
+actor Administrador
+actor "Portal Web" as Portal
+actor "Video Player" as Player
 
-    subgraph "Gestión de Suscripciones"
-      direction TB
-      UC6((Crear plan suscripción))
-      UC7((Asignar suscripción))
-      UC8((Renovar suscripción))
-      UC9((Consultar estado))
-      UC10((Ver historial))
-      UC11((Cancelar suscripción))
-    end
+package "Gestión de Usuarios" {
+  usecase "Crear usuario" as UC1
+  usecase "Autenticar usuario" as UC2
+  usecase "Editar perfil" as UC3
+  usecase "Cambiar contraseña" as UC4
+  usecase "Activar/Desactivar" as UC5
+}
 
-    subgraph "Gestión de Roles"
-      direction TB
-      UC12((Asignar admin))
-      UC13((Revocar admin))
-      UC14((Gestionar permisos))
-    end
+package "Gestión de Suscripciones" {
+  usecase "Crear plan suscripción" as UC6
+  usecase "Asignar suscripción" as UC7
+  usecase "Renovar suscripción" as UC8
+  usecase "Consultar estado" as UC9
+  usecase "Ver historial" as UC10
+  usecase "Cancelar suscripción" as UC11
+}
 
-    subgraph "Gestión de Pagos"
-      direction TB
-      UC15((Registrar método pago))
-      UC16((Procesar pago))
-      UC17((Consultar pagos))
-      UC18((Reembolsar))
-    end
-    
-    subgraph "Integración API"
-      direction TB
-      UC19((Generar JWT))
-      UC20((Validar token))
-      UC21((Consultar suscripción activa))
-    end
-  end
+package "Gestión de Roles" {
+  usecase "Asignar admin" as UC12
+  usecase "Revocar admin" as UC13
+  usecase "Gestionar permisos" as UC14
+}
 
-  %% Relaciones - Usuario Cliente
-  U1 -->|POST| UC1
-  U1 -->|POST| UC2
-  U1 -->|PUT| UC3
-  U1 -->|PUT| UC4
-  U1 -->|GET| UC9
-  U1 -->|POST| UC15
-  U1 -->|GET| UC17
+package "Gestión de Pagos" {
+  usecase "Registrar método pago" as UC15
+  usecase "Procesar pago" as UC16
+  usecase "Consultar pagos" as UC17
+  usecase "Reembolsar" as UC18
+}
 
-  %% Relaciones - Administrador
-  U2 -->|POST/PUT| UC1
-  U2 -->|POST/PUT| UC5
-  U2 -->|POST/PUT| UC6
-  U2 -->|POST| UC7
-  U2 -->|GET| UC10
-  U2 -->|POST| UC12
-  U2 -->|POST| UC13
-  U2 -->|POST/PUT| UC14
-  U2 -->|POST| UC16
-  U2 -->|GET| UC17
-  U2 -->|POST| UC18
+package "Integración API" {
+  usecase "Generar JWT" as UC19
+  usecase "Validar token" as UC20
+  usecase "Consultar suscripción activa" as UC21
+}
 
-  %% Relaciones - Portal Web
-  U3 -->|POST| UC2
-  U3 -->|POST| UC8
-  U3 -->|POST| UC16
-  U3 -->|GET| UC9
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+Usuario --> UC4
+Usuario --> UC9
+Usuario --> UC15
+Usuario --> UC17
 
-  %% Relaciones - Video Player
-  U4 -->|POST| UC19
-  U4 -->|POST| UC20
-  U4 -->|GET| UC21
+Administrador --> UC1
+Administrador --> UC5
+Administrador --> UC6
+Administrador --> UC7
+Administrador --> UC10
+Administrador --> UC12
+Administrador --> UC13
+Administrador --> UC14
+Administrador --> UC16
+Administrador --> UC17
+Administrador --> UC18
 
-  %% Estilos
-  class U1,U2,U3,U4 usernode
-  class UC1,UC2,UC3,UC4,UC5,UC6,UC7,UC8,UC9,UC10,UC11,UC12,UC13,UC14,UC15,UC16,UC17,UC18,UC19,UC20,UC21 usecase
+Portal --> UC2
+Portal --> UC8
+Portal --> UC16
+Portal --> UC9
 
-  classDef usernode fill:#e0f2fe,stroke:#0369a1,stroke-width:2px,rx:8px;
-  classDef usecase fill:#ecfccb,stroke:#65a30d,stroke-width:1.5px,rx:20px;
+Player --> UC19
+Player --> UC20
+Player --> UC21
+
+@enduml
 ```
 
 ## Diagramas de flujo
@@ -918,9 +887,6 @@ deactivate API
 ### Seguridad y Permisos
 
 #### Grupos de Odoo
-
-<!-- TODO: Imagen -->
-![Configuración de Grupos Odoo](../../assets/backend-odoo/bloste_core_groups_config.png)
 
 - **Portal User** (`base.group_portal`): Usuario básico con acceso limitado
 - **Internal User** (`base.group_user`): Usuario interno con acceso a backend
