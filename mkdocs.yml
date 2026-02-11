@@ -9,11 +9,13 @@ nav:
   - Backend:
     - Catalogo (SpringBoot): backend/catalogo_contenidos.md
     - Servidor de contenidos (ExpressJS): backend/servicio_contenidos.md
-    - Gestor de Suscripciones (Odoo): backend/gestor_suscripciones_odoo.md
+    - Odoo:
+      - Núcleo (bloste_core): backend/odoo_doc/bloste_core.md
+      - Sitio web (bloste_web): backend/odoo_doc/bloste_web.md
+      - Gestor de tokens (bloste_jwt): backend/odoo_doc/bloste_jwt.md
   - Frontend:
     - Reproductor de videos (Flutter): frontend/video_reproductor.md
     - Administrador de contenidos (VUE): frontend/administrador_contenidos.md
-    - Web de Suscripciones (Odoo): frontend/gestor_suscripciones_web.md
 
 
 theme:

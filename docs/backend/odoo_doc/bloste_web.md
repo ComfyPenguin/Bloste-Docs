@@ -4,9 +4,7 @@
 
 `bloste_web` es el módulo de Odoo que proporciona la interfaz web pública para la plataforma Bloste. Este módulo gestiona las páginas públicas del sitio, el registro de usuarios, la visualización de planes de suscripción y el proceso de contratación.
 
-<!-- IMAGEN: Captura de la página de inicio de BlosteFlix -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_home_page.png -->
-![Página de Inicio BlosteFlix](../assets/frontend-odoo/bloste_home_page.png)
+![Página de Inicio BlosteFlix](../../assets/frontend-odoo/bloste_home_page.png)
 
 **Características principales:**
 - Página de inicio (home) con hero section y características del servicio
@@ -167,9 +165,8 @@ def products(self):
 
 ##### `/info-usuario` - Información del Usuario
 
-<!-- IMAGEN: Formulario de Información de Usuario -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_info_usuario_form.png -->
-![Formulario de Información de Usuario](../assets/frontend-odoo/bloste_info_usuario_form.png)
+
+![Formulario de Información de Usuario](../../assets/frontend-odoo/bloste_info_usuario_form.png)
 
 ```python
 @http.route('/info-usuario', type='http', auth='public', website=True)
@@ -227,9 +224,7 @@ def info_usuario_submit(self, **post):
 
 Template de registro de usuarios con diseño moderno y validación.
 
-<!-- IMAGEN: Formulario de Registro -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_register_form.png -->
-![Formulario de Registro](../assets/frontend-odoo/bloste_register_form.png)
+![Formulario de Registro](../../assets/frontend-odoo/bloste_register_form.png)
 
 **Características:**
 - Diseño con gradiente de colores Bloste
@@ -268,9 +263,7 @@ Template de registro de usuarios con diseño moderno y validación.
 
 Template de la página principal con diseño moderno.
 
-<!-- IMAGEN: Vista completa de la página de inicio con hero section y características -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_home_full.png -->
-![Página de Inicio Completa](../assets/frontend-odoo/bloste_home_full.png)
+![Página de Inicio Completa](../../assets/frontend-odoo/bloste_home_full.png)
 
 **Secciones:**
 
@@ -292,9 +285,7 @@ Template de la página principal con diseño moderno.
 
 Template para mostrar planes de suscripción disponibles.
 
-<!-- IMAGEN: Captura de la página /suscripciones mostrando los planes en cards -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_subscriptions_page.png -->
-![Página de Planes de Suscripción](../assets/frontend-odoo/bloste_subscriptions_page.png)
+![Página de Planes de Suscripción](../../assets/frontend-odoo/bloste_subscriptions_page.png)
 
 **Elementos:**
 - Título y descripción
@@ -308,9 +299,7 @@ Template para mostrar planes de suscripción disponibles.
 
 **Condicional:** Muestra alerta si no hay planes disponibles
 
-<!-- IMAGEN: Vista de la alerta cuando no hay planes disponibles -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_no_plans_alert.png -->
-![Alerta sin Planes Disponibles](../assets/frontend-odoo/bloste_no_plans_alert.png)
+![Alerta sin Planes Disponibles](../../assets/frontend-odoo/bloste_no_plans_alert.png)
 
 #### Templates Adicionales
 
@@ -321,9 +310,7 @@ El archivo contiene más templates incluyendo:
 
 ### Menús (views/menus.xml)
 
-<!-- IMAGEN: Captura del menú Bloste Website en el backend de Odoo -->
-<!-- Ruta sugerida: assets/backend/bloste_web_backend_menu.png -->
-![Menú Backend Bloste Website](../assets/backend/bloste_web_backend_menu.png)
+![Menú Backend Bloste Website](../../assets/backend-odoo/bloste_web_backend_menu.png)
 
 Estructura de menús en el backend de Odoo:
 
@@ -477,9 +464,7 @@ access_bloste_web,access_bloste_web,model_bloste_web,,1,1,1,1
 
 ## Flujo de Contratación de Suscripción
 
-<!-- IMAGEN: Captura de la página /info-usuario con formulario de autenticación -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_info_usuario_page.png -->
-![Página de Información de Usuario](../assets/frontend-odoo/bloste_info_usuario_page.png)
+![Página de Información de Usuario](../../assets/frontend-odoo/bloste_info_usuario_page.png)
 
 ```mermaid
 graph TD
@@ -653,9 +638,7 @@ request.env['ir.http']._get_routing()
 
 Para probar el módulo:
 
-<!-- IMAGEN: Captura de pantalla de la página de éxito tras contratar una suscripción -->
-<!-- Ruta sugerida: assets/frontend-odoo/bloste_subscription_success.png -->
-![Página de Éxito de Suscripción](../assets/frontend-odoo/bloste_subscription_success.png)
+![Página de Éxito de Suscripción](../../assets/frontend-odoo/bloste_subscription_success.png)
 
 1. **Página de inicio:**
    ```
